@@ -33,6 +33,30 @@ export const IrisTextbook: React.FC = () => {
   const activeChapter = textbook.chapters.find((c) => c.id === selectedChapterId) || textbook.chapters[0];
   const activeSection = activeChapter.sections.find((s) => s.id === selectedSectionId) || activeChapter.sections[0];
 
+  // Navigate to target anchor across chapters/sections
+  const handleNavigateToAnchor = (anchorId: string) => {
+    for (const chap of textbook.chapters) {
+      for (const sec of chap.sections) {
+        if (sec.contentAsciiDoc.includes(`[#${anchorId}]`) || sec.contentAsciiDoc.includes(anchorId)) {
+          setSelectedChapterId(chap.id);
+          setSelectedSectionId(sec.id);
+          
+          setTimeout(() => {
+            const el = document.getElementById(anchorId);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              el.classList.add('ring-2', 'ring-amber-400', 'ring-offset-2', 'ring-offset-slate-900');
+              setTimeout(() => {
+                el.classList.remove('ring-2', 'ring-amber-400', 'ring-offset-2', 'ring-offset-slate-900');
+              }, 2500);
+            }
+          }, 150);
+          return;
+        }
+      }
+    }
+  };
+
   // Export full textbook as raw AsciiDoc file (.adoc)
   const handleExportAsciiDoc = () => {
     const adoc = generateFullAsciiDoc(textbook);
@@ -245,7 +269,7 @@ export const IrisTextbook: React.FC = () => {
           {/* Textbook Main Content Display */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl min-h-[500px]">
             {viewMode === 'rendered' ? (
-              <AsciiDocViewer content={activeSection.contentAsciiDoc} />
+              <AsciiDocViewer content={activeSection.contentAsciiDoc} onNavigate={handleNavigateToAnchor} />
             ) : (
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-2 text-xs font-mono text-slate-400">
