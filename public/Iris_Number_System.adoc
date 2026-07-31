@@ -217,7 +217,7 @@ The star-finite rational grid \(\mathcal{G}_N\) provides an exact discrete compu
 
 This index provides a canonical reference of all axiomatic Postulates, Theorems, and Definitions established across the Counting-Iris Treatise. Click any entry below to jump directly to its position in the textbook.
 
-=== Postulates
+== Postulates
 
 * xref:postulate-1[**Postulate 1: Successor Order and Discrete Ring Properties**]
   -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
@@ -238,14 +238,14 @@ This index provides a canonical reference of all axiomatic Postulates, Theorems,
 * xref:postulate-rational-commutation[**Postulate: Rational Commutation and Cyclotomic Density**]
   -- Chapter: *The Iris and the Rational Numbers* | Section: *Geometric Fractional Rotors in Cl(4,1,1)*
 
-=== Theorems
+== Theorems
 
 * xref:theorem-parity-conservation[**Theorem: Parity Conservation in Geometric Products**]
   -- Chapter: *The Integers* | Section: *Clifford Algebra Integration and Parity Algebra*
 * xref:theorem-standard-part-mapping[**Theorem: Exact Rational Grid Coverage and Discrete Density**]
   -- Chapter: *The Iris and the Rational Numbers* | Section: *Discrete Rational Densities and Star-Finite Partition Grids*
 
-=== Definitions
+== Definitions
 
 * xref:definition-iris-ratio-operator[**Definition: Iris Ratio Operator**]
   -- Chapter: *The Iris and the Rational Numbers* | Section: *Definition of the Iris-Rational Domain*

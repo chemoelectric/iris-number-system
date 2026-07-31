@@ -46,11 +46,10 @@ export function generateFormalIndexChapter(chapters: TextbookChapter[]): Textboo
   const definitions = entries.filter((e) => e.type === 'DEFINITION');
   const others = entries.filter((e) => !['POSTULATE', 'THEOREM', 'DEFINITION'].includes(e.type));
 
-  let indexDoc = `== Index of Formal Statements\n\n`;
-  indexDoc += `This index provides a canonical reference of all axiomatic Postulates, Theorems, and Definitions established across the Counting-Iris Treatise. Click any entry below to jump directly to its position in the textbook.\n\n`;
+  let indexDoc = `This index provides a canonical reference of all axiomatic Postulates, Theorems, and Definitions established across the Counting-Iris Treatise. Click any entry below to jump directly to its position in the textbook.\n\n`;
 
   if (postulates.length > 0) {
-    indexDoc += `=== Postulates\n\n`;
+    indexDoc += `== Postulates\n\n`;
     postulates.forEach((e) => {
       indexDoc += `* xref:${e.anchorId}[**${e.title}**]\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
     });
@@ -58,7 +57,7 @@ export function generateFormalIndexChapter(chapters: TextbookChapter[]): Textboo
   }
 
   if (theorems.length > 0) {
-    indexDoc += `=== Theorems\n\n`;
+    indexDoc += `== Theorems\n\n`;
     theorems.forEach((e) => {
       indexDoc += `* xref:${e.anchorId}[**${e.title}**]\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
     });
@@ -66,7 +65,7 @@ export function generateFormalIndexChapter(chapters: TextbookChapter[]): Textboo
   }
 
   if (definitions.length > 0) {
-    indexDoc += `=== Definitions\n\n`;
+    indexDoc += `== Definitions\n\n`;
     definitions.forEach((e) => {
       indexDoc += `* xref:${e.anchorId}[**${e.title}**]\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
     });
@@ -74,7 +73,7 @@ export function generateFormalIndexChapter(chapters: TextbookChapter[]): Textboo
   }
 
   if (others.length > 0) {
-    indexDoc += `=== Axioms & Formal Statements\n\n`;
+    indexDoc += `== Axioms & Formal Statements\n\n`;
     others.forEach((e) => {
       indexDoc += `* xref:${e.anchorId}[**${e.title}**]\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
     });
