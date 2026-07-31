@@ -115,7 +115,7 @@ export const INITIAL_TEXTBOOK: {
     {
       id: 'chap-integers',
       title: 'The Integers',
-      summary: 'Foundational definition of the discrete integer domain Z, its canonical scalar embedding into Clifford Algebra Cl(4,1,1), and the essential postulates governing the tautological structure.',
+      summary: 'Foundational definition of the discrete integer domain Z and its canonical scalar embedding into Clifford Algebra Cl(4,1,1).',
       sections: [
         {
           id: 'sec-integers-def',
@@ -140,10 +140,84 @@ In the Counting-Iris Number System, chapters and sections are un-numbered to emp
 `
         },
         {
-          id: 'sec-integers-postulates',
-          title: 'Postulates of the Tautological Structure',
+          id: 'sec-integers-clifford',
+          title: 'Clifford Algebra Integration and Parity Algebra',
           contentAsciiDoc: `
-== Postulates of the Tautological Structure
+== Clifford Algebra Integration and Parity Algebra
+
+Through Postulate 2 and Postulate 4, integer arithmetic in \\(\\mathbb{Z}\\) is not merely isolated symbolic counting, but a projection of geometric operations in \\(Cl(4,1,1)\\).
+
+Let \\(n, m \\in \\mathbb{Z}\\). Consider their representation as bivector-graded multivectors:
+
+\\[
+M(n) = n \\cdot \\mathbf{1}_{Cl} + \\frac{1 - (-1)^n}{2} e_{12}
+\\]
+
+When \\(n\\) is even, \\(M(n) = n \\mathbf{1}_{Cl}\\) is purely scalar. When \\(n\\) is odd, \\(M(n) = n \\mathbf{1}_{Cl} + e_{12}\\) acquires a unit bivector component whose square is \\(e_{12}^2 = -1\\).
+
+[#theorem-parity-conservation]
+[THEOREM]
+.Theorem: Parity Conservation in Geometric Products
+====
+For any two integers \\(n, m \\in \\mathbb{Z}\\), the geometric product \\(M(n) M(m)\\) preserves the additive parity rule in \\(\\mathbb{Z}\\):
+
+\\[
+\\text{Grade}_2\\left( M(n) M(m) \\right) \\neq 0 \\iff n+m \\equiv 1 \\pmod 2
+\\]
+====
+
+This algebraic duality provides the structural foundation for proving parity-based number theory conjectures (such as Goldbach's Partition Problem) without relying on heuristic approximations.
+`
+        }
+      ]
+    },
+    {
+      id: 'chap-iris',
+      title: 'The Iris',
+      summary: 'Conceptual introduction to the Iris optical-geometric analogy, variable aperture flux gating, Spin(2) bivector rotation planes, and the nilpotent perimeter boundary.',
+      sections: [
+        {
+          id: 'sec-iris-intro',
+          title: 'Introduction to the Iris Analogy',
+          contentAsciiDoc: `
+== Introduction to the Iris Analogy
+
+The Counting-Iris Number System takes its name and primary geometric conceptual framework from the optical **iris diaphragm**—a mechanical aperture composed of overlapping curved blades that expand and contract radially while rotating in phase space.
+
+In physical optics and geometric field theory, an iris diaphragm does not merely truncate light; it dynamically regulates total flux, boundary curvature, and phase distribution across a continuous aperture.
+
+In our mathematical unification, the **Iris** serves as a dynamic algebraic aperture bridging the discrete integers \\(\\mathbb{Z}\\) with continuous multivector space \\(Cl(4,1,1)\\).
+
+The primary physical and mathematical components of the Iris analogy are:
+
+* **Central Aperture Opening (\\(\\iota\\))**: Represents the active field generator \\(\\iota\\), whose aperture area corresponds to the scaling flux of discrete integer counts.
+* **Overlapping Aperture Blades**: Execute Spin(2) bivector plane rotations \\(e_{12}\\) in \\(Cl(4,1,1)\\), imparting phase orientation and parity residue.
+* **Nilpotent Perimeter Boundary (\\(\\varpi \\vartheta\\))**: The microscopic perimeter contact boundary of the blades acts as an infinitesimal boundary constraint satisfying \\(\\varpi^2 = 0, \\vartheta^2 = 0\\), preventing singular boundary collapse while enforcing exact local contact.
+* **Variable Aperture Scaling**: Radial expansion and contraction \\(r\\) controls scaling dilatation, bridging discrete count states with continuous field density.
+
+[IRIS_VISUALIZATION]
+
+As illustrated in the dynamic model above, adjusting the aperture opening magnitude \\(r\\) and phase angle \\(\\theta\\) directly updates the multivector operator state:
+
+\\[
+\\iota(r,\\theta) = r \\left( \\cos\\theta \\cdot \\mathbf{1}_{Cl} + \\sin\\theta \\cdot e_{12} \\right) + \\sqrt{1-r^2} \\cdot \\varpi \\vartheta
+\\]
+
+maintaining the exact quadratic aperture constraint \\(\\iota^2 = -\\mathbf{1} + \\varpi \\vartheta\\).
+`
+        }
+      ]
+    },
+    {
+      id: 'chap-postulates',
+      title: 'Initial Postulates of the Tautological Structure',
+      summary: 'Essential postulates governing the tautological structure of the Counting-Iris Number System.',
+      sections: [
+        {
+          id: 'sec-postulates-initial',
+          title: 'Initial Postulates of the Tautological Structure',
+          contentAsciiDoc: `
+== Initial Postulates of the Tautological Structure
 
 To establish the tautological engine of the Iris Number System starting strictly from the integers \\(\\mathbb{Z}\\), we postulate the following foundational axioms:
 
@@ -220,36 +294,19 @@ All domain extensions, rational partition grids, and spectral operator spaces in
 ====
 All mathematical operations, operator field evolutions, and spectral density transfers in the Iris Number System are strictly representations of action by direct contact. Physical and geometric interactions occur exclusively via local contact between contiguous discrete grid elements and local Clifford geometric product commutators, forbidding non-local action at a distance.
 ====
-`
-        },
-        {
-          id: 'sec-integers-clifford',
-          title: 'Clifford Algebra Integration and Parity Algebra',
-          contentAsciiDoc: `
-== Clifford Algebra Integration and Parity Algebra
 
-Through Postulate 2 and Postulate 4, integer arithmetic in \\(\\mathbb{Z}\\) is not merely isolated symbolic counting, but a projection of geometric operations in \\(Cl(4,1,1)\\).
-
-Let \\(n, m \\in \\mathbb{Z}\\). Consider their representation as bivector-graded multivectors:
+[#postulate-iris-generator]
+[POSTULATE]
+.Postulate 9: Formal Definition of the Iris Generator (\iota)
+====
+The fundamental Iris generator \\(\\iota\\) is defined as a multivector operator in Clifford Algebra \\(Cl(4,1,1)\\) acting as an algebraic aperture whose quadratic constraint satisfies:
 
 \\[
-M(n) = n \\cdot \\mathbf{1}_{Cl} + \\frac{1 - (-1)^n}{2} e_{12}
+\\iota^2 = -\\mathbf{1} + \\varpi \\vartheta
 \\]
 
-When \\(n\\) is even, \\(M(n) = n \\mathbf{1}_{Cl}\\) is purely scalar. When \\(n\\) is odd, \\(M(n) = n \\mathbf{1}_{Cl} + e_{12}\\) acquires a unit bivector component whose square is \\(e_{12}^2 = -1\\).
-
-[#theorem-parity-conservation]
-[THEOREM]
-.Theorem: Parity Conservation in Geometric Products
+where \\(\\varpi\\) and \\(\\vartheta\\) are orthogonal nilpotent basis generators (\\(\\varpi^2 = 0, \\vartheta^2 = 0\\)) constituting the infinitesimal perimeter boundary of the aperture, and \\(\\mathbf{1}\\) is the Clifford scalar unit identity.
 ====
-For any two integers \\(n, m \\in \\mathbb{Z}\\), the geometric product \\(M(n) M(m)\\) preserves the additive parity rule in \\(\\mathbb{Z}\\):
-
-\\[
-\\text{Grade}_2\\left( M(n) M(m) \\right) \\neq 0 \\iff n+m \\equiv 1 \\pmod 2
-\\]
-====
-
-This algebraic duality provides the structural foundation for proving parity-based number theory conjectures (such as Goldbach's Partition Problem) without relying on heuristic approximations.
 `
         }
       ]

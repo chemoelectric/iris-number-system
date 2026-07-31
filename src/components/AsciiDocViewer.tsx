@@ -1,5 +1,6 @@
 import React from 'react';
 import katex from 'katex';
+import { IrisApertureDiagram } from './IrisApertureDiagram';
 
 interface AsciiDocViewerProps {
   content: string;
@@ -233,6 +234,13 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
             {renderMathInline(title)}
           </h3>
         );
+        i++;
+        continue;
+      }
+
+      // Custom Visualization Block: [IRIS_VISUALIZATION] or [IRIS_DIAGRAM] or [VISUALIZATION]
+      if (line.startsWith('[IRIS_VISUALIZATION]') || line.startsWith('[IRIS_DIAGRAM]') || line.startsWith('[VISUALIZATION]')) {
+        nodes.push(<IrisApertureDiagram key={`iris-vis-${i}`} />);
         i++;
         continue;
       }
