@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ActiveView, TheoremProof, IrisDomain } from './types';
 import { PRESET_THEOREMS } from './lib/irisEngine';
 import { Navbar } from './components/Navbar';
+import { IrisTextbook } from './components/IrisTextbook';
 import { DeductionFramework } from './components/DeductionFramework';
 import { IrisSandbox } from './components/IrisSandbox';
 import { SpectralAnalysis } from './components/SpectralAnalysis';
@@ -11,7 +12,7 @@ import { AxiomWorkbench } from './components/AxiomWorkbench';
 import { InfoModal } from './components/InfoModal';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<ActiveView['tab']>('deduction');
+  const [activeTab, setActiveTab] = useState<ActiveView['tab']>('textbook');
   const [currentProof, setCurrentProof] = useState<TheoremProof>(
     PRESET_THEOREMS[0] as TheoremProof
   );
@@ -68,6 +69,8 @@ export default function App() {
 
       {/* Main Content Workspace */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {activeTab === 'textbook' && <IrisTextbook />}
+
         {activeTab === 'deduction' && (
           <DeductionFramework
             currentProof={currentProof}

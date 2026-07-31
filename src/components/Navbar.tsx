@@ -27,6 +27,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const navItems = [
     {
+      id: 'textbook' as const,
+      label: 'Iris Textbook',
+      icon: BookOpen,
+      badge: 'AsciiDoc',
+    },
+    {
       id: 'deduction' as const,
       label: 'Deduction Framework',
       icon: GitCommit,

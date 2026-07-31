@@ -101,7 +101,21 @@ export interface IrisPrimePoint {
   spectralDensity: number;
 }
 
+export interface TextbookSection {
+  id: string;
+  title: string;
+  contentAsciiDoc: string; // AsciiDoc + LatexMath content
+  subsections?: { id: string; title: string; contentAsciiDoc: string }[];
+}
+
+export interface TextbookChapter {
+  id: string;
+  title: string;
+  summary?: string;
+  sections: TextbookSection[];
+}
+
 export interface ActiveView {
-  tab: 'sandbox' | 'deduction' | 'spectral' | 'library' | 'assistant' | 'axioms';
+  tab: 'textbook' | 'deduction' | 'sandbox' | 'spectral' | 'assistant' | 'library' | 'axioms';
 }
 

@@ -3,6 +3,7 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
+import { generateFullAsciiDoc } from "./src/data/textbookData";
 
 dotenv.config();
 
@@ -144,6 +145,19 @@ Return JSON format:
     } catch (err: any) {
       console.error("Step verification error:", err);
       return res.status(500).json({ error: err.message || "Verification failed." });
+    }
+  });
+
+  // API endpoint for dynamic synchronized AsciiDoc textbook download
+  app.get(["/Iris_Number_System.adoc", "/public/Iris_Number_System.adoc"], (req, res) => {
+    try {
+      const adoc = generateFullAsciiDoc();
+      res.setHeader("Content-Type", "text/plain; charset=utf-8");
+      res.setHeader("Content-Disposition", 'inline; filename="Iris_Number_System.adoc"');
+      return res.send(adoc);
+    } catch (err: any) {
+      console.error("Textbook adoc serving error:", err);
+      return res.status(500).send("Error serving textbook adoc.");
     }
   });
 
