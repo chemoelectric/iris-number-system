@@ -132,87 +132,6 @@ For any two integers \(n, m \in \mathbb{Z}\), the geometric product \(M(n) M(m)\
 
 This algebraic duality provides the structural foundation for proving parity-based number theory conjectures (such as Goldbach's Partition Problem) without relying on heuristic approximations.
 
-= The Iris and the Rational Numbers
-
-Construction of the rational field Q and its extension into the Iris domain via multiplicative quotients, Clifford fractional rotors, and exact star-finite rational partition grids.
-
-== Definition of the Iris-Rational Domain
-
-The construction of the rational numbers \(\mathbb{Q}\) proceeds from the discrete integers \(\mathbb{Z}\) via the quotient field construction (localization with respect to \(\mathbb{Z} \setminus \{0\}\)). 
-
-In the **Counting-Iris Number System**, a rational number \(q = \frac{a}{b} \in \mathbb{Q}\) (with \(a, b \in \mathbb{Z}, b \neq 0, \gcd(a,b) = 1\)) is interpreted not merely as a fraction of integers, but as a discrete ratio operator that scales and rotates the fundamental Iris generator \(\iota\).
-
-We define the extended **Iris-Rational Domain** \(\mathbb{Q}(\iota)\) as the formal set of elements:
-
-\[
-\mathbb{Q}(\iota) = \left\{ q_0 + q_1 \iota \; \middle| \; q_0, q_1 \in \mathbb{Q} \right\}
-\]
-
-where the Iris generator \(\iota\) satisfies the fundamental quadratic constraint:
-
-\[
-\iota^2 = -\mathbf{1} + \varpi \vartheta
-\]
-
-Here, \(\varpi\) and \(\vartheta\) represent the non-zero nilpotent-infinitesimal basis elements of the Iris spectrum.
-
-[#definition-iris-ratio-operator]
-[DEFINITION]
-.Definition: Iris Ratio Operator
-====
-For any non-zero rational quotient \(q = \frac{a}{b}\), the associated Iris ratio operator \(\hat{R}_q\) acts on the Clifford scalar basis via fractional dilatation:
-
-\[
-\hat{R}_q \left( n \cdot \mathbf{1}_{Cl} \right) = \frac{a n}{b} \cdot \mathbf{1}_{Cl} + \sin\left( \pi \frac{a}{b} \right) e_{12}
-\]
-
-where \(e_{12}\) is the primary bivector generator of \(Cl(4,1,1)\).
-====
-
-== Geometric Fractional Rotors in Cl(4,1,1)
-
-Every rational ratio \(q = \frac{p}{q} \in \mathbb{Q}\) induces a discrete fractional rotor \(\Omega_q \in Cl(4,1,1)\) through exponentiation of the bivector plane \(e_{12}\):
-
-\[
-\Omega_q = \exp\left( \frac{\pi}{2} \frac{p}{q} e_{12} \right) = \cos\left( \frac{\pi p}{2 q} \right) \mathbf{1}_{Cl} + \sin\left( \frac{\pi p}{2 q} \right) e_{12}
-\]
-
-[#postulate-rational-commutation]
-[POSTULATE]
-.Postulate: Rational Commutation and Cyclotomic Density
-====
-The family of fractional rotors \(\{\Omega_q \mid q \in \mathbb{Q}\}\) forms a dense abelian subgroup of the Spin(2) rotor group in \(Cl(4,1,1)\). For any rational phase \(q = p/q\), the rotor \(\Omega_q\) is cyclotomic with finite order \(2q\):
-
-\[
-(\Omega_q)^{2q} = \cos(\pi p) \mathbf{1}_{Cl} + \sin(\pi p) e_{12} = (-1)^p \mathbf{1}_{Cl}
-\]
-====
-
-This cyclotomic density bridges the discrete lattice of integers \(\mathbb{Z}\) with the discrete phase space required for spectral density analysis in the Iris Number System.
-
-== Discrete Rational Densities and Star-Finite Partition Grids
-
-Discrete densities and partition measure operations in the Iris system are defined directly on the **Star-Finite Rational Grid** \(\mathcal{G}_N\):
-
-\[
-\mathcal{G}_N = \left\{ \frac{k}{N} \; \middle| \; k \in \mathbb{Z}, \, -N^2 \le k \le N^2 \right\}
-\]
-
-where \(N \in \mathbb{N}_{>0}\) is an arbitrary finite or star-finite discrete counting bound.
-
-[#theorem-standard-part-mapping]
-[THEOREM]
-.Theorem: Exact Rational Grid Coverage and Discrete Density
-====
-For every real value \(x \in [-N, N]\), there exists a rational grid point \(g \in \mathcal{G}_N\) satisfying:
-
-\[
-|g - x| \le \frac{1}{2N}
-\]
-====
-
-The star-finite rational grid \(\mathcal{G}_N\) provides an exact discrete computational substrate where calculus operations are executed as exact finite rational sum manipulations without truncation or rounding approximations.
-
 = Index of Formal Statements
 
 This index provides a canonical reference of all axiomatic Postulates, Theorems, and Definitions established across the Counting-Iris Treatise. Click any entry below to jump directly to its position in the textbook.
@@ -235,17 +154,8 @@ This index provides a canonical reference of all axiomatic Postulates, Theorems,
   -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
 * xref:postulate-8[**Postulate 8: Action by Direct Contact**]
   -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
-* xref:postulate-rational-commutation[**Postulate: Rational Commutation and Cyclotomic Density**]
-  -- Chapter: *The Iris and the Rational Numbers* | Section: *Geometric Fractional Rotors in Cl(4,1,1)*
 
 == Theorems
 
 * xref:theorem-parity-conservation[**Theorem: Parity Conservation in Geometric Products**]
   -- Chapter: *The Integers* | Section: *Clifford Algebra Integration and Parity Algebra*
-* xref:theorem-standard-part-mapping[**Theorem: Exact Rational Grid Coverage and Discrete Density**]
-  -- Chapter: *The Iris and the Rational Numbers* | Section: *Discrete Rational Densities and Star-Finite Partition Grids*
-
-== Definitions
-
-* xref:definition-iris-ratio-operator[**Definition: Iris Ratio Operator**]
-  -- Chapter: *The Iris and the Rational Numbers* | Section: *Definition of the Iris-Rational Domain*
