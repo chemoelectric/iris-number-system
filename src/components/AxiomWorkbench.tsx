@@ -50,7 +50,7 @@ export const AxiomWorkbench: React.FC = () => {
               <h2 className="text-xl font-bold text-white">Iris System Axiom Workbench</h2>
             </div>
             <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-              Inspect and extend fundamental axioms governing algebraic relations, spectral norms, and continuous operators in the Iris framework.
+              Inspect and extend fundamental axioms governing algebraic relations, spectral norms, and discrete operators in the Iris framework.
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export const AxiomWorkbench: React.FC = () => {
                 className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white font-mono focus:outline-none focus:border-indigo-500"
               >
                 <option value="Number Theory">Number Theory</option>
-                <option value="Continuous Analysis">Continuous Analysis</option>
+                <option value="Discrete Spectrum Algebra">Discrete Spectrum Algebra</option>
                 <option value="Abstract Algebra">Abstract Algebra</option>
                 <option value="Spectral Topology">Spectral Topology</option>
               </select>

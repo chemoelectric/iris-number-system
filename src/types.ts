@@ -4,7 +4,7 @@ export interface IrisNumber {
   a: number; // Real scalar component (1)
   b: number; // Iris imaginary component (ι)
   c: number; // Phase spectrum component (ϖ)
-  d: number; // Continuous measure component (ϑ)
+  d: number; // Discrete measure component (ϑ)
   label?: string;
 }
 
@@ -40,7 +40,7 @@ export interface MaxEntState {
 
 export type IrisDomain =
   | 'Tautological Discrete Arithmetic'
-  | 'Continuous Spectrum Algebra'
+  | 'Discrete Spectrum Algebra'
   | 'Clifford Algebra Cl(4,1,1)'
   | 'Jaynesian MaxEnt Probability'
   | 'Star-Finite Rational Algebra'

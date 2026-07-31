@@ -108,7 +108,7 @@ export default function App() {
       <footer className="border-t border-slate-900 bg-slate-950/80 py-6 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div>
-            Iris Number System Deduction Engine • Continuous Analysis & Number Theory
+            Iris Number System Deduction Engine • Discrete Analysis & Number Theory
           </div>
           <div className="font-mono text-slate-600">
             basis: {'{1, ι, ϖ, ϑ}'} • τ = (1+√5)/2

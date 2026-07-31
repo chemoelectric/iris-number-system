@@ -35,7 +35,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
         {/* Foundations Content */}
         <div className="space-y-4 text-xs leading-relaxed text-slate-300 font-sans">
           <p>
-            The <strong className="text-amber-300">Counting-Iris Number System (INS)</strong> is an autonomous tautological structure designed to unify discrete arithmetic with continuous physical operator dynamics:
+            The <strong className="text-amber-300">Counting-Iris Number System (INS)</strong> is an autonomous tautological structure designed to unify discrete arithmetic with discrete physical operator dynamics:
           </p>
 
           <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-3 font-mono text-[11px]">
@@ -71,6 +71,18 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
             </div>
             <p className="text-slate-400 text-[10px]">
               Objective Jaynesian prior probability distributions maximize Shannon entropy under observational constraints, guaranteeing tautological proofs for Goldbach, RH, Twin Primes, and Collatz.
+            </p>
+          </div>
+
+          <div className="p-4 bg-slate-950 rounded-xl border border-emerald-900/50 bg-emerald-950/10 space-y-3 font-mono text-[11px]">
+            <div className="text-emerald-400 font-semibold uppercase tracking-wider text-[10px]">
+              4. Engineering Reliability: Discrete Countable Domains &amp; Direct Contact
+            </div>
+            <div className="text-amber-200 font-bold">
+              Recursively Enumerable Discrete Domain &amp; Action by Direct Contact
+            </div>
+            <p className="text-slate-400 text-[10px]">
+              The Iris system restricts all domain extensions to recursively enumerable discrete sets. All physical and mathematical analysis represents action by direct contact between contiguous discrete grid elements and local Clifford product commutators.
             </p>
           </div>
 

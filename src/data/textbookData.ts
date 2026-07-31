@@ -132,7 +132,7 @@ Within the **Counting-Iris framework**, the integers are constructed as the mini
 \\mathbb{Z} = \\{ \\dots, -3\\mathbf{1}, -2\\mathbf{1}, -\\mathbf{1}, \\mathbf{0}, \\mathbf{1}, 2\\mathbf{1}, 3\\mathbf{1}, \\dots \\}
 \\]
 
-In this framework, every integer \\(n \\in \\mathbb{Z}\\) acts both as a discrete scalar multiplicity and as a discrete projection operator upon the continuous spectrum of the Iris basis \\(\\{1, \\iota, \\varpi, \\vartheta\\}\\).
+In this framework, every integer \\(n \\in \\mathbb{Z}\\) acts both as a discrete scalar multiplicity and as a discrete projection operator upon the discrete spectrum of the Iris basis \\(\\{1, \\iota, \\varpi, \\vartheta\\}\\).
 
 [NOTE]
 ====
@@ -192,7 +192,7 @@ Every integer \\(n \\in \\mathbb{Z}\\) possesses a canonical parity projection i
 [POSTULATE]
 .Postulate 5: Discrete Scale Extension and Exact Rational Partition Grids
 ====
-Every discrete integer domain \\(\\mathbb{Z}\\) induces an exact star-finite rational partition grid \\(\\mathcal{G}_N = \\{ k/N \\mid k \\in \\mathbb{Z}, |k| \\le N^2 \\}\\) for any discrete resolution count \\(N \\in \\mathbb{Z}_{>0}\\). The exact unit step size \\(\\delta = 1/N\\) satisfies exact integer-scaled reciprocity: \\(\\delta \\cdot N = \\mathbf{1}\\), ensuring all continuum operations reduce strictly to finite discrete rational arithmetic.
+Every discrete integer domain \\(\\mathbb{Z}\\) induces an exact star-finite rational partition grid \\(\\mathcal{G}_N = \\{ k/N \\mid k \\in \\mathbb{Z}, |k| \\le N^2 \\}\\) for any discrete resolution count \\(N \\in \\mathbb{Z}_{>0}\\). The exact unit step size \\(\\delta = 1/N\\) satisfies exact integer-scaled reciprocity: \\(\\delta \\cdot N = \\mathbf{1}\\), ensuring all operations reduce strictly to finite discrete rational arithmetic.
 ====
 
 [#postulate-6]
@@ -206,6 +206,20 @@ S[P] = -\\sum_{n \\in \\mathbb{Z}} P(n) \\ln P(n)
 \\]
 
 yielding the canonical unbiased prior distribution \\(P(n) = \\frac{1}{Z} e^{-\\lambda A(n)}\\).
+====
+
+[#postulate-7]
+[POSTULATE]
+.Postulate 7: Strict Discrete Countability Boundary
+====
+All domain extensions, rational partition grids, and spectral operator spaces in the Iris Number System are strictly recursively enumerable discrete sets, ensuring absolute algorithmic constructibility and numerical reliability for engineering applications.
+====
+
+[#postulate-8]
+[POSTULATE]
+.Postulate 8: Action by Direct Contact
+====
+All mathematical operations, operator field evolutions, and spectral density transfers in the Iris Number System are strictly representations of action by direct contact. Physical and geometric interactions occur exclusively via local contact between contiguous discrete grid elements and local Clifford geometric product commutators, forbidding non-local action at a distance.
 ====
 `
         },
@@ -307,7 +321,7 @@ The family of fractional rotors \\(\\{\\Omega_q \\mid q \\in \\mathbb{Q}\\}\\) f
 \\]
 ====
 
-This cyclotomic density bridges the discrete lattice of integers \\(\\mathbb{Z}\\) with the continuous phase space required for spectral density analysis in the Iris Number System.
+This cyclotomic density bridges the discrete lattice of integers \\(\\mathbb{Z}\\) with the discrete phase space required for spectral density analysis in the Iris Number System.
 `
         },
         {
@@ -316,7 +330,7 @@ This cyclotomic density bridges the discrete lattice of integers \\(\\mathbb{Z}\
           contentAsciiDoc: `
 == Discrete Rational Densities and Star-Finite Partition Grids
 
-Continuous densities and continuum measure operations in the Iris system are defined directly on the **Star-Finite Rational Grid** \\(\\mathcal{G}_N\\):
+Discrete densities and partition measure operations in the Iris system are defined directly on the **Star-Finite Rational Grid** \\(\\mathcal{G}_N\\):
 
 \\[
 \\mathcal{G}_N = \\left\\{ \\frac{k}{N} \\;\\middle|\\; k \\in \\mathbb{Z}, \\, -N^2 \\le k \\le N^2 \\right\\}
@@ -326,7 +340,7 @@ where \\(N \\in \\mathbb{N}_{>0}\\) is an arbitrary finite or star-finite discre
 
 [#theorem-standard-part-mapping]
 [THEOREM]
-.Theorem: Exact Rational Grid Coverage and Continuum Density
+.Theorem: Exact Rational Grid Coverage and Discrete Density
 ====
 For every real value \\(x \\in [-N, N]\\), there exists a rational grid point \\(g \\in \\mathcal{G}_N\\) satisfying:
 

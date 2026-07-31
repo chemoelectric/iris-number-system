@@ -329,7 +329,7 @@ ${currentProof.steps
                   ))}
                   <option value="Modus Iris Deduction">Modus Iris Deduction</option>
                   <option value="Iris Spectral Conjugation">Iris Spectral Conjugation</option>
-                  <option value="Continuous Induction Axiom">Continuous Induction Axiom</option>
+                  <option value="Discrete Spectral Induction Axiom">Discrete Spectral Induction Axiom</option>
                 </select>
               </div>
 

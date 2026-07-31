@@ -99,7 +99,7 @@ export const AIProofAssistant: React.FC<AIProofAssistantProps> = ({
     {
       title: 'Iris Zeta Pole Residue at s = 1',
       query: 'Derive the exact residue of ζ_I(s) at s = 1 and demonstrate its relation to the golden ratio shift τ.',
-      domain: 'Continuous Analysis' as const,
+      domain: 'Discrete Spectrum Algebra' as const,
     },
     {
       title: 'Modular Iris Prime Fermat Congruence',
@@ -158,7 +158,7 @@ export const AIProofAssistant: React.FC<AIProofAssistantProps> = ({
               className="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white font-mono focus:outline-none focus:border-purple-500"
             >
               <option value="Number Theory">Number Theory</option>
-              <option value="Continuous Analysis">Continuous Analysis</option>
+              <option value="Discrete Spectrum Algebra">Discrete Spectrum Algebra</option>
               <option value="Abstract Algebra">Abstract Algebra</option>
               <option value="Spectral Topology">Spectral Topology</option>
             </select>

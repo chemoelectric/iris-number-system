@@ -46,7 +46,7 @@ export const TheoremLibrary: React.FC<TheoremLibraryProps> = ({
               <h2 className="text-xl font-bold text-white">Iris System Theorem Library</h2>
             </div>
             <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-              Foundational theorems, lemmas, and proved propositions across Number Theory, Continuous Analysis, and Spectral Topology.
+              Foundational theorems, lemmas, and proved propositions across Number Theory, Discrete Analysis, and Spectral Topology.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export const TheoremLibrary: React.FC<TheoremLibraryProps> = ({
 
         {/* Domain Filter Pills */}
         <div className="flex items-center space-x-1.5 overflow-x-auto w-full md:w-auto scrollbar-none">
-          {['All', 'Number Theory', 'Continuous Analysis', 'Abstract Algebra'].map((dom) => (
+          {['All', 'Number Theory', 'Discrete Analysis', 'Abstract Algebra'].map((dom) => (
             <button
               key={dom}
               onClick={() => setSelectedDomain(dom)}
