@@ -1,5 +1,97 @@
 import { TextbookChapter } from '../types';
 
+export function generateFormalIndexChapter(chapters: TextbookChapter[]): TextbookChapter {
+  interface FormalEntry {
+    type: string;
+    title: string;
+    chapterTitle: string;
+    sectionTitle: string;
+  }
+
+  const entries: FormalEntry[] = [];
+
+  chapters.filter((c) => c.id !== 'chap-index').forEach((chap) => {
+    chap.sections.forEach((sec) => {
+      const lines = sec.contentAsciiDoc.split('\n');
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (line.match(/^\[(POSTULATE|THEOREM|DEFINITION|AXIOM|LEMMA|COROLLARY)\]$/i)) {
+          const type = line.replace(/[\[\]]/g, '').toUpperCase();
+          let title = `${type}`;
+          if (i + 1 < lines.length && lines[i + 1].trim().startsWith('.')) {
+            title = lines[i + 1].trim().substring(1).trim();
+          }
+          entries.push({
+            type,
+            title,
+            chapterTitle: chap.title,
+            sectionTitle: sec.title
+          });
+        }
+      }
+    });
+  });
+
+  const postulates = entries.filter((e) => e.type === 'POSTULATE');
+  const theorems = entries.filter((e) => e.type === 'THEOREM');
+  const definitions = entries.filter((e) => e.type === 'DEFINITION');
+  const others = entries.filter((e) => !['POSTULATE', 'THEOREM', 'DEFINITION'].includes(e.type));
+
+  let indexDoc = `== Index of Formal Statements\n\n`;
+  indexDoc += `This index provides a canonical reference of all axiomatic Postulates, Theorems, and Definitions established across the Counting-Iris Treatise.\n\n`;
+
+  if (postulates.length > 0) {
+    indexDoc += `=== Postulates\n\n`;
+    postulates.forEach((e) => {
+      indexDoc += `* **${e.title}**\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
+    });
+    indexDoc += `\n`;
+  }
+
+  if (theorems.length > 0) {
+    indexDoc += `=== Theorems\n\n`;
+    theorems.forEach((e) => {
+      indexDoc += `* **${e.title}**\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
+    });
+    indexDoc += `\n`;
+  }
+
+  if (definitions.length > 0) {
+    indexDoc += `=== Definitions\n\n`;
+    definitions.forEach((e) => {
+      indexDoc += `* **${e.title}**\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
+    });
+    indexDoc += `\n`;
+  }
+
+  if (others.length > 0) {
+    indexDoc += `=== Axioms & Formal Statements\n\n`;
+    others.forEach((e) => {
+      indexDoc += `* **${e.title}**\n  -- Chapter: *${e.chapterTitle}* | Section: *${e.sectionTitle}*\n`;
+    });
+    indexDoc += `\n`;
+  }
+
+  return {
+    id: 'chap-index',
+    title: 'Index of Formal Statements',
+    summary: 'A canonical index of all Postulates, Theorems, Definitions, and Axioms established within the Counting-Iris Treatise.',
+    sections: [
+      {
+        id: 'sec-index-formal',
+        title: 'Index of Postulates, Theorems, and Definitions',
+        contentAsciiDoc: indexDoc
+      }
+    ]
+  };
+}
+
+export function getCompleteChapters(chapters: TextbookChapter[]): TextbookChapter[] {
+  const baseChapters = chapters.filter((c) => c.id !== 'chap-index');
+  const indexChap = generateFormalIndexChapter(baseChapters);
+  return [...baseChapters, indexChap];
+}
+
 export const INITIAL_TEXTBOOK: {
   title: string;
   subtitle: string;
@@ -9,9 +101,9 @@ export const INITIAL_TEXTBOOK: {
 } = {
   title: 'The Iris Number System',
   subtitle: 'An Unnumbered AsciiDoc / LatexMath Treatise on Unified Multi-Algebra',
-  author: 'Counting-Iris Mathematical Foundation',
+  author: 'Frederic Custer',
   description: 'A formal axiomatic development of the Counting-Iris Number System unifying discrete arithmetic, Clifford Algebra Cl(4,1,1), Nonstandard Analysis (*R), Jaynesian Maximum Entropy, and tautological proofs in number theory.',
-  chapters: [
+  chapters: getCompleteChapters([
     {
       id: 'chap-integers',
       title: 'The Integers',
@@ -136,20 +228,118 @@ This algebraic duality provides the structural foundation for proving parity-bas
 `
         }
       ]
+    },
+    {
+      id: 'chap-rationals',
+      title: 'The Iris and the Rational Numbers',
+      summary: 'Construction of the rational field Q and its extension into the Iris domain via multiplicative quotients, Clifford fractional rotors, and hyperfinite partition grids in nonstandard analysis.',
+      sections: [
+        {
+          id: 'sec-rationals-def',
+          title: 'Definition of the Iris-Rational Domain',
+          contentAsciiDoc: `
+== Definition of the Iris-Rational Domain
+
+The construction of the rational numbers \\(\\mathbb{Q}\\) proceeds from the discrete integers \\(\\mathbb{Z}\\) via the quotient field construction (localization with respect to \\(\\mathbb{Z} \\setminus \\{0\\}\\)). 
+
+In the **Counting-Iris Number System**, a rational number \\(q = \\frac{a}{b} \\in \\mathbb{Q}\\) (with \\(a, b \\in \\mathbb{Z}, b \\neq 0, \\gcd(a,b) = 1\\)) is interpreted not merely as a fraction of integers, but as a discrete ratio operator that scales and rotates the fundamental Iris generator \\(\\iota\\).
+
+We define the extended **Iris-Rational Domain** \\(\\mathbb{Q}(\\iota)\\) as the formal set of elements:
+
+\\[
+\\mathbb{Q}(\\iota) = \\left\\{ q_0 + q_1 \\iota \\;\\middle|\\; q_0, q_1 \\in \\mathbb{Q} \\right\\}
+\\]
+
+where the Iris generator \\(\\iota\\) satisfies the fundamental quadratic constraint:
+
+\\[
+\\iota^2 = -\\mathbf{1} + \\varpi \\vartheta
+\\]
+
+Here, \\(\\varpi\\) and \\(\\vartheta\\) represent the non-zero nilpotent-infinitesimal basis elements of the Iris spectrum.
+
+[DEFINITION]
+.Definition: Iris Ratio Operator
+====
+For any non-zero rational quotient \\(q = \\frac{a}{b}\\), the associated Iris ratio operator \\(\\hat{R}_q\\) acts on the Clifford scalar basis via fractional dilatation:
+
+\\[
+\\hat{R}_q \\left( n \\cdot \\mathbf{1}_{Cl} \\right) = \\frac{a n}{b} \\cdot \\mathbf{1}_{Cl} + \\sin\\left( \\pi \\frac{a}{b} \\right) e_{12}
+\\]
+
+where \\(e_{12}\\) is the primary bivector generator of \\(Cl(4,1,1)\\).
+====
+`
+        },
+        {
+          id: 'sec-rationals-rotors',
+          title: 'Geometric Fractional Rotors in Cl(4,1,1)',
+          contentAsciiDoc: `
+== Geometric Fractional Rotors in Cl(4,1,1)
+
+Every rational ratio \\(q = \\frac{p}{q} \\in \\mathbb{Q}\\) induces a discrete fractional rotor \\(\\Omega_q \\in Cl(4,1,1)\\) through exponentiation of the bivector plane \\(e_{12}\\):
+
+\\[
+\\Omega_q = \\exp\\left( \\frac{\\pi}{2} \\frac{p}{q} e_{12} \\right) = \\cos\\left( \\frac{\\pi p}{2 q} \\right) \\mathbf{1}_{Cl} + \\sin\\left( \\frac{\\pi p}{2 q} \\right) e_{12}
+\\]
+
+[POSTULATE]
+.Postulate: Rational Commutation and Cyclotomic Density
+====
+The family of fractional rotors \\(\\{\\Omega_q \\mid q \\in \\mathbb{Q}\\}\\) forms a dense abelian subgroup of the Spin(2) rotor group in \\(Cl(4,1,1)\\). For any rational phase \\(q = p/q\\), the rotor \\(\\Omega_q\\) is cyclotomic with finite order \\(2q\\):
+
+\\[
+(\\Omega_q)^{2q} = \\cos(\\pi p) \\mathbf{1}_{Cl} + \\sin(\\pi p) e_{12} = (-1)^p \\mathbf{1}_{Cl}
+\\]
+====
+
+This cyclotomic density bridges the discrete lattice of integers \\(\\mathbb{Z}\\) with the continuous phase space required for spectral density analysis in the Iris Number System.
+`
+        },
+        {
+          id: 'sec-rationals-nonstandard',
+          title: 'Nonstandard Rational Densities and Hyperfinite Grids',
+          contentAsciiDoc: `
+== Nonstandard Rational Densities and Hyperfinite Grids
+
+Under nonstandard extension via ultraproducts, the rational field \\(\\mathbb{Q}\\) extends to the hyperrational field \\({}^*\\mathbb{Q}\\).
+
+Let \\(\\omega \\in {}^*\\mathbb{N} \\setminus \\mathbb{N}\\) be an infinite nonstandard integer. We construct the **Hyperfinite Rational Grid** \\(\\mathcal{G}_\\omega\\):
+
+\\[
+\\mathcal{G}_\\omega = \\left\\{ \\frac{k}{\\omega} \\;\\middle|\\; k \\in {}^*\\mathbb{Z}, \\, -\\omega^2 \\le k \\le \\omega^2 \\right\\}
+\\]
+
+[THEOREM]
+.Theorem: Standard Part Mapping of Rational Grids
+====
+For every standard real number \\(x \\in \\mathbb{R}\\), there exists a hyperrational grid point \\(g \\in \\mathcal{G}_\\omega\\) such that \\(x = \\mathrm{st}(g)\\), where \\(\\mathrm{st}: {}^*\\mathbb{R} \\to \\mathbb{R}\\) is the standard part map. The error \\(\\delta = g - x\\) is an exact infinitesimal satisfying:
+
+\\[
+|g - x| \\le \\frac{1}{2\\omega} \\in {}^*\\mathbb{R}_{>0}
+\\]
+====
+
+The hyperfinite rational grid \\(\\mathcal{G}_\\omega\\) provides an exact computational substrate where continuous real calculus is executed as hyperfinite discrete sum manipulations on rational fractions, ensuring that no rounding or truncation errors occur in tautological deductions.
+`
+        }
+      ]
     }
-  ]
+  ])
 };
 
 export function generateFullAsciiDoc(textbook = INITIAL_TEXTBOOK): string {
+  const chapters = getCompleteChapters(textbook.chapters);
   let adoc = `= ${textbook.title}\n`;
   adoc += `:author: ${textbook.author}\n`;
+  adoc += `:doctype: book\n`;
   adoc += `:toc: left\n`;
   adoc += `:toc-title: Table of Contents\n`;
   adoc += `:stem: latexmath\n`;
   adoc += `:sectnums!:\n\n`; // Chapters and sections are not numbered, only named!
   adoc += `${textbook.description}\n\n`;
 
-  textbook.chapters.forEach((chap) => {
+  chapters.forEach((chap) => {
     adoc += `= ${chap.title}\n\n`; // Un-numbered chapter name
     if (chap.summary) {
       adoc += `${chap.summary}\n\n`;

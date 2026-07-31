@@ -1,5 +1,6 @@
 = The Iris Number System
-:author: Counting-Iris Mathematical Foundation
+:author: Frederic Custer
+:doctype: book
 :toc: left
 :toc-title: Table of Contents
 :stem: latexmath
@@ -113,3 +114,119 @@ For any two integers \(n, m \in \mathbb{Z}\), the geometric product \(M(n) M(m)\
 ====
 
 This algebraic duality provides the structural foundation for proving parity-based number theory conjectures (such as Goldbach's Partition Problem) without relying on heuristic approximations.
+
+= The Iris and the Rational Numbers
+
+Construction of the rational field Q and its extension into the Iris domain via multiplicative quotients, Clifford fractional rotors, and hyperfinite partition grids in nonstandard analysis.
+
+== Definition of the Iris-Rational Domain
+
+The construction of the rational numbers \(\mathbb{Q}\) proceeds from the discrete integers \(\mathbb{Z}\) via the quotient field construction (localization with respect to \(\mathbb{Z} \setminus \{0\}\)). 
+
+In the **Counting-Iris Number System**, a rational number \(q = \frac{a}{b} \in \mathbb{Q}\) (with \(a, b \in \mathbb{Z}, b \neq 0, \gcd(a,b) = 1\)) is interpreted not merely as a fraction of integers, but as a discrete ratio operator that scales and rotates the fundamental Iris generator \(\iota\).
+
+We define the extended **Iris-Rational Domain** \(\mathbb{Q}(\iota)\) as the formal set of elements:
+
+\[
+\mathbb{Q}(\iota) = \left\{ q_0 + q_1 \iota \; \middle| \; q_0, q_1 \in \mathbb{Q} \right\}
+\]
+
+where the Iris generator \(\iota\) satisfies the fundamental quadratic constraint:
+
+\[
+\iota^2 = -\mathbf{1} + \varpi \vartheta
+\]
+
+Here, \(\varpi\) and \(\vartheta\) represent the non-zero nilpotent-infinitesimal basis elements of the Iris spectrum.
+
+[DEFINITION]
+.Definition: Iris Ratio Operator
+====
+For any non-zero rational quotient \(q = \frac{a}{b}\), the associated Iris ratio operator \(\hat{R}_q\) acts on the Clifford scalar basis via fractional dilatation:
+
+\[
+\hat{R}_q \left( n \cdot \mathbf{1}_{Cl} \right) = \frac{a n}{b} \cdot \mathbf{1}_{Cl} + \sin\left( \pi \frac{a}{b} \right) e_{12}
+\]
+
+where \(e_{12}\) is the primary bivector generator of \(Cl(4,1,1)\).
+====
+
+== Geometric Fractional Rotors in Cl(4,1,1)
+
+Every rational ratio \(q = \frac{p}{q} \in \mathbb{Q}\) induces a discrete fractional rotor \(\Omega_q \in Cl(4,1,1)\) through exponentiation of the bivector plane \(e_{12}\):
+
+\[
+\Omega_q = \exp\left( \frac{\pi}{2} \frac{p}{q} e_{12} \right) = \cos\left( \frac{\pi p}{2 q} \right) \mathbf{1}_{Cl} + \sin\left( \frac{\pi p}{2 q} \right) e_{12}
+\]
+
+[POSTULATE]
+.Postulate: Rational Commutation and Cyclotomic Density
+====
+The family of fractional rotors \(\{\Omega_q \mid q \in \mathbb{Q}\}\) forms a dense abelian subgroup of the Spin(2) rotor group in \(Cl(4,1,1)\). For any rational phase \(q = p/q\), the rotor \(\Omega_q\) is cyclotomic with finite order \(2q\):
+
+\[
+(\Omega_q)^{2q} = \cos(\pi p) \mathbf{1}_{Cl} + \sin(\pi p) e_{12} = (-1)^p \mathbf{1}_{Cl}
+\]
+====
+
+This cyclotomic density bridges the discrete lattice of integers \(\mathbb{Z}\) with the continuous phase space required for spectral density analysis in the Iris Number System.
+
+== Nonstandard Rational Densities and Hyperfinite Grids
+
+Under nonstandard extension via ultraproducts, the rational field \(\mathbb{Q}\) extends to the hyperrational field \({}^*\mathbb{Q}\).
+
+Let \(\omega \in {}^*\mathbb{N} \setminus \mathbb{N}\) be an infinite nonstandard integer. We construct the **Hyperfinite Rational Grid** \(\mathcal{G}_\omega\):
+
+\[
+\mathcal{G}_\omega = \left\{ \frac{k}{\omega} \; \middle| \; k \in {}^*\mathbb{Z}, \, -\omega^2 \le k \le \omega^2 \right\}
+\]
+
+[THEOREM]
+.Theorem: Standard Part Mapping of Rational Grids
+====
+For every standard real number \(x \in \mathbb{R}\), there exists a hyperrational grid point \(g \in \mathcal{G}_\omega\) such that \(x = \mathrm{st}(g)\), where \(\mathrm{st}: {}^*\mathbb{R} \to \mathbb{R}\) is the standard part map. The error \(\delta = g - x\) is an exact infinitesimal satisfying:
+
+\[
+|g - x| \le \frac{1}{2\omega} \in {}^*\mathbb{R}_{>0}
+\]
+====
+
+The hyperfinite rational grid \(\mathcal{G}_\omega\) provides an exact computational substrate where continuous real calculus is executed as hyperfinite discrete sum manipulations on rational fractions, ensuring that no rounding or truncation errors occur in tautological deductions.
+
+= Index of Formal Statements
+
+A canonical index of all Postulates, Theorems, Definitions, and Axioms established within the Counting-Iris Treatise.
+
+== Index of Formal Statements
+
+This index provides a canonical reference of all axiomatic Postulates, Theorems, and Definitions established across the Counting-Iris Treatise.
+
+=== Postulates
+
+* **Postulate 1: Successor Order and Discrete Ring Properties**
+  -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
+* **Postulate 2: Canonical Scalar Embedding into Clifford Algebra Cl(4,1,1)**
+  -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
+* **Postulate 3: Metric Preservation of Quadratic Forms**
+  -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
+* **Postulate 4: Bivector Parity Duality**
+  -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
+* **Postulate 5: Nonstandard Extension via Transfer**
+  -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
+* **Postulate 6: Jaynesian Maximum Entropy Prior**
+  -- Chapter: *The Integers* | Section: *Postulates of the Tautological Structure*
+* **Postulate: Rational Commutation and Cyclotomic Density**
+  -- Chapter: *The Iris and the Rational Numbers* | Section: *Geometric Fractional Rotors in Cl(4,1,1)*
+
+=== Theorems
+
+* **Theorem: Parity Conservation in Geometric Products**
+  -- Chapter: *The Integers* | Section: *Clifford Algebra Integration and Parity Algebra*
+* **Theorem: Standard Part Mapping of Rational Grids**
+  -- Chapter: *The Iris and the Rational Numbers* | Section: *Nonstandard Rational Densities and Hyperfinite Grids*
+
+=== Definitions
+
+* **Definition: Iris Ratio Operator**
+  -- Chapter: *The Iris and the Rational Numbers* | Section: *Definition of the Iris-Rational Domain*
+
