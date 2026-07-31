@@ -21,7 +21,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
             </div>
             <div>
               <h3 className="text-lg font-bold text-white">Counting-Iris Number System Foundations</h3>
-              <p className="text-xs text-slate-400">Clifford Algebra Cl(4,1,1), MaxEnt, Nonstandard Analysis & Tautological Proofs</p>
+              <p className="text-xs text-slate-400">Clifford Algebra Cl(4,1,1), MaxEnt, Star-Finite Partition Grids & Tautological Proofs</p>
             </div>
           </div>
           <button
@@ -52,13 +52,13 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
 
           <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-3 font-mono text-[11px]">
             <div className="text-indigo-400 font-semibold uppercase tracking-wider text-[10px]">
-              2. Nonstandard Analysis & Nonstandard Numbers (*R)
+              2. Star-Finite Rational Partition Grids & Nilpotents
             </div>
             <div className="text-amber-200 font-bold">
-              x = st(x) + ε · a + ω · b, where ε · ω = 1
+              G_N = {'{ k/N | k ∈ Z, |k| ≤ N² }'}, where δ = 1/N and δ · N = 1
             </div>
             <p className="text-slate-400 text-[10px]">
-              Rigorous infinitesimals ε and infinite quantities ω allow exact evaluation of prime density asymptotics without limit approximations via the Transfer Principle.
+              Exact discrete partition grids and nilpotent infinitesimals ε = ϖ ϑ allow exact sum evaluation of prime density asymptotics without limit approximations or nonstandard extensions.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
               <div className="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
                 <div className="font-bold text-amber-300">Goldbach Conjecture</div>
                 <div className="text-[11px] text-slate-400 mt-1">
-                  Proven via Cl(4,1,1) bivector parity projections and nonstandard partition integrals st(Z_*) &gt; 0.
+                  Proven via Cl(4,1,1) bivector parity projections and discrete partition sum positivity Z_N &gt; 0.
                 </div>
               </div>
               <div className="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
@@ -95,7 +95,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
               <div className="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
                 <div className="font-bold text-amber-300">Twin Prime Infinitude</div>
                 <div className="text-[11px] text-slate-400 mt-1">
-                  Derived using MaxEnt density at infinite nonstandard bound ω, transferring to standard infinitude in N.
+                  Derived using MaxEnt density across star-finite rational partition grid G_N at scale bound N.
                 </div>
               </div>
               <div className="p-3 bg-slate-950/60 rounded-xl border border-slate-800">

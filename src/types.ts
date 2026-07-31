@@ -19,14 +19,15 @@ export interface Cl411Multivector {
   label?: string;
 }
 
-// Nonstandard Number: x + ε * infinitesimal + ω * infinite extension
-export interface NonstandardNumber {
-  st: number; // Standard part
-  eps: number; // Infinitesimal coefficient ε (1/ω)
-  omega: number; // Infinite coefficient ω
+// Discrete Spectrum Number: x + ε * nilpotent_infinitesimal + δ * discrete_grid_step
+export interface DiscreteSpectrumNumber {
+  st: number; // Primary scalar component
+  eps: number; // Nilpotent infinitesimal coefficient ε (ϖ ϑ)
+  omega: number; // Discrete partition scale coefficient δ
   label?: string;
 }
-export type HyperrealNumber = NonstandardNumber;
+export type NonstandardNumber = DiscreteSpectrumNumber;
+export type HyperrealNumber = DiscreteSpectrumNumber;
 
 // Jaynesian MaxEnt Probability Distribution Point
 export interface MaxEntState {
@@ -38,11 +39,11 @@ export interface MaxEntState {
 }
 
 export type IrisDomain =
-  | 'Number Theory'
-  | 'Continuous Analysis'
+  | 'Tautological Discrete Arithmetic'
+  | 'Continuous Spectrum Algebra'
   | 'Clifford Algebra Cl(4,1,1)'
   | 'Jaynesian MaxEnt Probability'
-  | 'Nonstandard Analysis'
+  | 'Star-Finite Rational Algebra'
   | 'Spectral Topology'
   | 'Quantum Iris Field';
 
@@ -52,7 +53,7 @@ export interface IrisAxiom {
   latex: string;
   domain: IrisDomain;
   description: string;
-  category: 'Fundamental' | 'Clifford' | 'Jaynesian' | 'Nonstandard' | 'Duality' | 'Convergence' | 'Modular' | 'Differential';
+  category: 'Fundamental' | 'Clifford' | 'Jaynesian' | 'Star-Finite' | 'Duality' | 'Convergence' | 'Modular' | 'Differential';
 }
 
 export interface DeductionStep {

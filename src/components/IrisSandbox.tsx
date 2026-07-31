@@ -99,7 +99,7 @@ export const IrisSandbox: React.FC = () => {
               <h2 className="text-xl font-bold text-white">Counting-Iris Multi-Algebra Calculator</h2>
             </div>
             <p className="text-slate-400 text-sm mt-1 max-w-2xl">
-              Compute over 4D basis, Clifford Algebra Cl(4,1,1) multivectors, nonstandard numbers *R, and Jaynesian MaxEnt probability fields.
+              Compute over 4D basis, Clifford Algebra Cl(4,1,1) multivectors, exact discrete spectrum grids, and Jaynesian MaxEnt probability fields.
             </p>
           </div>
 
@@ -133,7 +133,7 @@ export const IrisSandbox: React.FC = () => {
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
-              Nonstandard *R
+              Discrete Spectrum
             </button>
             <button
               onClick={() => setActiveSubTab('maxent')}
@@ -398,35 +398,35 @@ export const IrisSandbox: React.FC = () => {
         </div>
       )}
 
-      {/* NONSTANDARD ANALYSIS *R SECTION */}
+      {/* DISCRETE SPECTRUM & RATIONAL GRID SECTION */}
       {activeSubTab === 'nonstandard' && (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="lg:col-span-6 space-y-6">
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 shadow-xl">
               <div className="border-b border-slate-800 pb-3">
-                <h3 className="font-bold text-white text-sm">Nonstandard Number Extensions x = st(x) + ε · a + ω · b</h3>
-                <p className="text-xs text-slate-400 mt-1">Rigorous infinitesimals ε (1/ω) and infinite numbers ω.</p>
+                <h3 className="font-bold text-white text-sm">Discrete Spectrum Number x = st(x) + ε · a + δ · b</h3>
+                <p className="text-xs text-slate-400 mt-1">Nilpotent infinitesimal ε = ϖ ϑ and discrete partition grid step size δ = 1/N.</p>
               </div>
 
               <div className="space-y-3">
-                <div className="text-xs font-mono text-slate-300">Nonstandard Number N₁ = {hr1.st} + {hr1.eps}·ε + {hr1.omega}·ω</div>
+                <div className="text-xs font-mono text-slate-300">Discrete Element D₁ = {hr1.st} + {hr1.eps}·ε + {hr1.omega}·δ</div>
                 <div className="grid grid-cols-3 gap-2">
                   <div>
-                    <label className="text-[10px] font-mono text-slate-400">Standard Part:</label>
+                    <label className="text-[10px] font-mono text-slate-400">Scalar Part:</label>
                     <input
                       type="number" value={hr1.st} onChange={(e) => setHr1({ ...hr1, st: parseFloat(e.target.value) || 0 })}
                       className="w-full px-2 py-1 bg-slate-950 border border-slate-800 rounded text-xs text-white font-mono"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] font-mono text-slate-400">Infinitesimal ε:</label>
+                    <label className="text-[10px] font-mono text-slate-400">Nilpotent ε:</label>
                     <input
                       type="number" value={hr1.eps} onChange={(e) => setHr1({ ...hr1, eps: parseFloat(e.target.value) || 0 })}
                       className="w-full px-2 py-1 bg-slate-950 border border-slate-800 rounded text-xs text-white font-mono"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] font-mono text-slate-400">Infinite ω:</label>
+                    <label className="text-[10px] font-mono text-slate-400">Grid Step δ:</label>
                     <input
                       type="number" value={hr1.omega} onChange={(e) => setHr1({ ...hr1, omega: parseFloat(e.target.value) || 0 })}
                       className="w-full px-2 py-1 bg-slate-950 border border-slate-800 rounded text-xs text-white font-mono"
@@ -436,24 +436,24 @@ export const IrisSandbox: React.FC = () => {
               </div>
 
               <div className="space-y-3 pt-3 border-t border-slate-800">
-                <div className="text-xs font-mono text-slate-300">Nonstandard Number N₂ = {hr2.st} + {hr2.eps}·ε + {hr2.omega}·ω</div>
+                <div className="text-xs font-mono text-slate-300">Discrete Element D₂ = {hr2.st} + {hr2.eps}·ε + {hr2.omega}·δ</div>
                 <div className="grid grid-cols-3 gap-2">
                   <div>
-                    <label className="text-[10px] font-mono text-slate-400">Standard Part:</label>
+                    <label className="text-[10px] font-mono text-slate-400">Scalar Part:</label>
                     <input
                       type="number" value={hr2.st} onChange={(e) => setHr2({ ...hr2, st: parseFloat(e.target.value) || 0 })}
                       className="w-full px-2 py-1 bg-slate-950 border border-slate-800 rounded text-xs text-white font-mono"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] font-mono text-slate-400">Infinitesimal ε:</label>
+                    <label className="text-[10px] font-mono text-slate-400">Nilpotent ε:</label>
                     <input
                       type="number" value={hr2.eps} onChange={(e) => setHr2({ ...hr2, eps: parseFloat(e.target.value) || 0 })}
                       className="w-full px-2 py-1 bg-slate-950 border border-slate-800 rounded text-xs text-white font-mono"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] font-mono text-slate-400">Infinite ω:</label>
+                    <label className="text-[10px] font-mono text-slate-400">Grid Step δ:</label>
                     <input
                       type="number" value={hr2.omega} onChange={(e) => setHr2({ ...hr2, omega: parseFloat(e.target.value) || 0 })}
                       className="w-full px-2 py-1 bg-slate-950 border border-slate-800 rounded text-xs text-white font-mono"
@@ -466,7 +466,7 @@ export const IrisSandbox: React.FC = () => {
 
           <div className="lg:col-span-6 space-y-6">
             <div className="bg-slate-900 border border-indigo-500/30 rounded-2xl p-6 shadow-2xl space-y-4">
-              <h3 className="font-bold text-white text-base border-b border-slate-800 pb-3">Nonstandard Algebra Evaluation</h3>
+              <h3 className="font-bold text-white text-base border-b border-slate-800 pb-3">Discrete Spectrum Algebra Evaluation</h3>
 
               <div className="space-y-3">
                 <div className="p-3 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs">

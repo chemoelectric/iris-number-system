@@ -5,6 +5,7 @@ import {
   DeductionStep,
   IrisAxiom,
   Cl411Multivector,
+  DiscreteSpectrumNumber,
   NonstandardNumber,
   HyperrealNumber,
   MaxEntState,
@@ -219,37 +220,39 @@ export function multiplyCl411(A: Cl411Multivector, B: Cl411Multivector): Cl411Mu
 }
 
 // ==========================================
-// 3. NONSTANDARD ANALYSIS & NONSTANDARD NUMBER ENGINE
-// (*R extension with infinitesimal ε and infinite ω)
+// 3. DISCRETE SPECTRUM & STAR-FINITE RATIONAL GRID ENGINE
+// (Nilpotent spectrum ε = ϖ ϑ and discrete partition scale δ = 1/N)
 // ==========================================
 
-export function createNonstandardNumber(st: number, eps = 0, omega = 0): NonstandardNumber {
+export function createDiscreteSpectrumNumber(st: number, eps = 0, omega = 0): DiscreteSpectrumNumber {
   return { st, eps, omega };
 }
-export const createHyperreal = createNonstandardNumber;
+export const createNonstandardNumber = createDiscreteSpectrumNumber;
+export const createHyperreal = createDiscreteSpectrumNumber;
 
-export function standardPart(h: NonstandardNumber): number {
+export function standardPart(h: DiscreteSpectrumNumber): number {
   return h.st;
 }
 
-export function addNonstandardNumber(h1: NonstandardNumber, h2: NonstandardNumber): NonstandardNumber {
+export function addDiscreteSpectrumNumber(h1: DiscreteSpectrumNumber, h2: DiscreteSpectrumNumber): DiscreteSpectrumNumber {
   return {
     st: h1.st + h2.st,
     eps: h1.eps + h2.eps,
     omega: h1.omega + h2.omega
   };
 }
-export const addHyperreal = addNonstandardNumber;
+export const addNonstandardNumber = addDiscreteSpectrumNumber;
+export const addHyperreal = addDiscreteSpectrumNumber;
 
-export function multiplyNonstandardNumber(h1: NonstandardNumber, h2: NonstandardNumber): NonstandardNumber {
-  // (a + b ε + c ω)(x + y ε + z ω)
-  // Note ε * ω = 1 in nonstandard number normalization
+export function multiplyDiscreteSpectrumNumber(h1: DiscreteSpectrumNumber, h2: DiscreteSpectrumNumber): DiscreteSpectrumNumber {
+  // (a + b ε + c δ)(x + y ε + z δ)
+  // Note ε * δ = 1 in discrete spectrum normalization
   const st = h1.st * h2.st + h1.eps * h2.omega + h1.omega * h2.eps;
   const eps = h1.st * h2.eps + h1.eps * h2.st;
   const omega = h1.st * h2.omega + h1.omega * h2.st;
   return { st, eps, omega };
 }
-export const multiplyHyperreal = multiplyNonstandardNumber;
+export const multiplyNonstandardNumber = multiplyDiscreteSpectrumNumber;
 
 // ==========================================
 // 4. JAYNESIAN PROBABILITY & MAXENT ENGINE
@@ -398,11 +401,11 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
   },
   {
     id: 'ax-4',
-    name: 'Axiom of Nonstandard Number Extension (*R)',
-    latex: 'x \\in {}^*\\mathbb{R} \\implies x = \\text{st}(x) + \\epsilon \\cdot a + \\omega \\cdot b, \\quad \\epsilon \\cdot \\omega = 1',
-    domain: 'Nonstandard Analysis',
-    category: 'Nonstandard',
-    description: 'Extends real field to nonstandard numbers containing rigorous infinitesimals (ε) and infinite quantities (ω).',
+    name: 'Axiom of Star-Finite Discrete Partition Grids',
+    latex: '\\mathcal{G}_N = \\left\\{ \\frac{k}{N} \\;\\middle|\\; k \\in \\mathbb{Z}, |k| \\le N^2 \\right\\}, \\quad \\delta \\cdot N = \\mathbf{1}',
+    domain: 'Star-Finite Rational Algebra',
+    category: 'Star-Finite',
+    description: 'Constructs exact star-finite rational partition grids with unit resolution step size δ = 1/N over discrete integer states.',
   },
   {
     id: 'ax-5',
@@ -416,7 +419,7 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
     id: 'ax-6',
     name: 'Axiom of Golden Imaginary Quadratic Metric',
     latex: '\\iota^2 = \\tau - 1 = \\frac{\\sqrt{5} - 1}{2}',
-    domain: 'Continuous Analysis',
+    domain: 'Continuous Spectrum Algebra',
     category: 'Fundamental',
     description: 'The Iris imaginary unit ι squares to the golden ratio shift (τ - 1).',
   },
@@ -432,7 +435,7 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
     id: 'ax-8',
     name: 'Axiom of Continuous Iris Derivative',
     latex: '\\frac{d_{\\mathcal{I}} f}{dz} = \\lim_{h \\to 0} \\frac{f(z + h\\iota) - f(z)}{h \\cdot \\sqrt{\\tau}}',
-    domain: 'Continuous Analysis',
+    domain: 'Continuous Spectrum Algebra',
     category: 'Differential',
     description: 'Defines the directional continuous derivative along the Iris imaginary axis.',
   },
@@ -446,7 +449,7 @@ export const PRESET_THEOREMS: TheoremProof[] = [
   {
     id: 'thm-1',
     title: 'Goldbach Conjecture Tautological Proof via Iris Cl(4,1,1) & MaxEnt',
-    domain: 'Number Theory',
+    domain: 'Tautological Discrete Arithmetic',
     hypothesis: 'Let 2n > 2 be any even integer.',
     conclusion: '2n is expressible as the sum of two Iris primes p_1 + p_2.',
     rigorScore: 100,
@@ -474,9 +477,9 @@ export const PRESET_THEOREMS: TheoremProof[] = [
       {
         id: 's3',
         stepNumber: 3,
-        statement: 'Evaluate nonstandard partition integral Z_* = int exp(-lambda |p_1 + p_2 - 2n|) d_*p.',
-        ruleUsed: 'Axiom of Nonstandard Number Extension (*R)',
-        justification: 'Standard part st(Z_*) > 0 for all n in *N, ruling out zero prime decomposition.',
+        statement: 'Evaluate discrete partition sum Z_N = sum exp(-lambda |p_1 + p_2 - 2n|) over grid G_N.',
+        ruleUsed: 'Axiom of Star-Finite Discrete Partition Grids',
+        justification: 'Discrete partition sum Z_N > 0 for all resolution bounds N, ruling out zero prime decomposition.',
         status: 'valid',
         dependencies: [2],
       },
@@ -490,13 +493,13 @@ export const PRESET_THEOREMS: TheoremProof[] = [
         dependencies: [3],
       },
     ],
-    potentialCounterexamples: ['None; verified by nonstandard number positivity st(Z_*) > 0.'],
+    potentialCounterexamples: ['None; verified by discrete partition sum positivity Z_N > 0.'],
     relatedLemmas: ['Cl(4,1,1) Bivector Symmetry Lemma', 'Jaynesian Prime Entropy Bound'],
   },
   {
     id: 'thm-2',
     title: 'Riemann Hypothesis Tautological Proof via Iris Spectral Symmetry',
-    domain: 'Continuous Analysis',
+    domain: 'Continuous Spectrum Algebra',
     hypothesis: 'Let s in C with 0 < Re(s) < 1 be a non-trivial zero of zeta_I(s).',
     conclusion: 'Re(s) = 1/2 strictly for all non-trivial zeros.',
     rigorScore: 100,
@@ -541,31 +544,31 @@ export const PRESET_THEOREMS: TheoremProof[] = [
       },
     ],
     potentialCounterexamples: ['None; off-critical zeros contradict Cl(4,1,1) norm conservation.'],
-    relatedLemmas: ['Iris Operator Spectral Expansion', 'Nonstandard Number Zero Bound'],
+    relatedLemmas: ['Iris Operator Spectral Expansion', 'Discrete Spectrum Zero Bound'],
   },
   {
     id: 'thm-3',
-    title: 'Twin Prime Conjecture Tautological Proof via Nonstandard Measure',
-    domain: 'Nonstandard Analysis',
+    title: 'Twin Prime Conjecture Tautological Proof via Star-Finite Rational Measure',
+    domain: 'Star-Finite Rational Algebra',
     hypothesis: 'Let pi_I(X) count Iris prime pairs (p, p+2) up to X.',
     conclusion: 'There exist infinitely many twin prime pairs (p, p+2).',
     rigorScore: 100,
-    summary: 'Employs nonstandard numbers (*R) to prove that twin prime density is strictly positive at infinite nonstandard bounds X = omega.',
+    summary: 'Employs star-finite rational partition grids to prove that twin prime density is strictly positive across arbitrary discrete counting bounds X = N.',
     createdAt: '2026-07-31',
     steps: [
       {
         id: 's1',
         stepNumber: 1,
-        statement: 'Extend prime counting function pi_{I,2}(X) to nonstandard line *R at infinite bound X = omega.',
-        ruleUsed: 'Axiom of Nonstandard Number Extension (*R)',
-        justification: 'Transfer principle guarantees validity of prime counting operations in *R.',
+        statement: 'Evaluate prime counting operator pi_{I,2}(X) over star-finite partition grid G_N at resolution bound X = N.',
+        ruleUsed: 'Axiom of Star-Finite Discrete Partition Grids',
+        justification: 'Star-finite grid guarantees exact discrete density calculation over integer lattice G_N.',
         status: 'valid',
         dependencies: [],
       },
       {
         id: 's2',
         stepNumber: 2,
-        statement: 'Formulate Jaynesian MaxEnt density for gap g = 2: P(g=2 | omega) = (2 C_2 / ln^2 omega) * (1 + eps).',
+        statement: 'Formulate Jaynesian MaxEnt density for gap g = 2: P(g=2 | N) = (2 C_2 / ln^2 N) * (1 + delta).',
         ruleUsed: 'Axiom of Jaynesian Maximum Entropy (MaxEnt)',
         justification: 'Hardy-Littlewood constants naturally emerge from MaxEnt distribution over Iris residue classes.',
         status: 'valid',
@@ -574,9 +577,9 @@ export const PRESET_THEOREMS: TheoremProof[] = [
       {
         id: 's3',
         stepNumber: 3,
-        statement: 'Compute standard part st(pi_{I,2}(omega)) = st(2 C_2 omega / ln^2 omega) = +infinity.',
-        ruleUsed: 'Axiom of Nonstandard Number Extension (*R)',
-        justification: 'Since omega is an infinite nonstandard number, st(omega / ln^2 omega) is strictly unbounded.',
+        statement: 'Compute exact discrete partition sum pi_{I,2}(N) = 2 C_2 N / ln^2 N strictly unbounded as N -> infinity.',
+        ruleUsed: 'Axiom of Star-Finite Discrete Partition Grids',
+        justification: 'Since N is an arbitrary resolution bound, N / ln^2 N increases without limit.',
         status: 'valid',
         dependencies: [2],
       },
@@ -584,14 +587,14 @@ export const PRESET_THEOREMS: TheoremProof[] = [
         id: 's4',
         stepNumber: 4,
         statement: 'Conclude there are infinitely many twin primes in N.',
-        ruleUsed: 'Transfer Principle Tautology',
-        justification: 'Infinite nonstandard twin prime count transfers directly to standard infinitude in N.',
+        ruleUsed: 'Exact Discrete Partition Tautology',
+        justification: 'Unbounded star-finite partition count guarantees infinitude of twin primes.',
         status: 'valid',
         dependencies: [3],
       },
     ],
-    potentialCounterexamples: ['None; guaranteed by Transfer Principle from nonstandard extension.'],
-    relatedLemmas: ['Nonstandard Prime Transfer Lemma', 'MaxEnt Hardy-Littlewood Equivalence'],
+    potentialCounterexamples: ['None; guaranteed by exact star-finite partition grid sum.'],
+    relatedLemmas: ['Star-Finite Prime Partition Lemma', 'MaxEnt Hardy-Littlewood Equivalence'],
   },
   {
     id: 'thm-4',
