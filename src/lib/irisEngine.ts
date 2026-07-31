@@ -440,6 +440,14 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
     description: 'Defines the directional discrete difference along the Iris imaginary axis.',
   },
   {
+    id: 'ax-0',
+    name: 'Axiom of Primordial Measurement',
+    latex: '\\forall x \\in \\mathcal{D}_{\\text{Iris}}, \\quad x \\equiv \\operatorname{Measurement}(\\text{State}_0, \\text{Step}_x)',
+    domain: 'Tautological Discrete Arithmetic',
+    category: 'Fundamental',
+    description: 'Everything in the system is fundamentally an Operation of Measurement: numbers, operators, and field interactions are explicit outcomes of discrete gauging.',
+  },
+  {
     id: 'ax-9',
     name: 'Axiom of Discrete Countability Boundary',
     latex: '\\mathcal{D}_{\\text{Iris}} = \\{x_n \\mid n \\in \\mathbb{Z}\\}',
@@ -449,11 +457,11 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
   },
   {
     id: 'ax-10',
-    name: 'Axiom of Action by Direct Contact',
-    latex: '\\mathcal{O}_{i,j} = f(g_i, g_{i\\pm 1}) \\otimes (e_A e_B)_{\\text{local}}',
+    name: 'Axiom of Action by Contact via Topological Halos',
+    latex: '\\operatorname{Interaction}(A,B) \\neq 0 \\iff \\mathcal{H}(A) \\cap \\mathcal{H}(B) \\neq \\emptyset',
     domain: 'Clifford Algebra Cl(4,1,1)',
     category: 'Clifford',
-    description: 'All mathematical and physical operations represent direct contact between contiguous grid elements and local Clifford product commutators.',
+    description: 'Defines action by contact topologically via halo intersections H(A) ∩ H(B) ≠ ∅ across local contiguous boundaries.',
   },
 ];
 

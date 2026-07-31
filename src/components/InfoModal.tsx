@@ -76,13 +76,13 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
 
           <div className="p-4 bg-slate-950 rounded-xl border border-emerald-900/50 bg-emerald-950/10 space-y-3 font-mono text-[11px]">
             <div className="text-emerald-400 font-semibold uppercase tracking-wider text-[10px]">
-              4. Engineering Reliability: Discrete Countable Domains &amp; Direct Contact
+              4. Engineering Reliability: Discrete Countable Domains &amp; Topological Halos
             </div>
             <div className="text-amber-200 font-bold">
-              Recursively Enumerable Discrete Domain &amp; Action by Direct Contact
+              Recursively Enumerable Discrete Domain &amp; Topological Action by Contact
             </div>
             <p className="text-slate-400 text-[10px]">
-              The Iris system restricts all domain extensions to recursively enumerable discrete sets. All physical and mathematical analysis represents action by direct contact between contiguous discrete grid elements and local Clifford product commutators.
+              The Iris system restricts all domain extensions to recursively enumerable discrete sets. Action by contact is defined topologically via halos H(x): physical and mathematical interactions occur if and only if topological halos intersect (H(A) ∩ H(B) ≠ ∅), strictly prohibiting non-local action at a distance.
             </p>
           </div>
 
