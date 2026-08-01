@@ -445,7 +445,7 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
   {
     id: 'ax-0',
     name: 'Axiom of Primordial Measurement',
-    latex: '\\forall x \\in \\mathcal{D}_{\\text{Iris}}, \\quad x \\equiv \\operatorname{Measurement}(\\text{State}_0, \\text{Step}_x)',
+    latex: '\\forall x \\in \\mathcal{D}_{\\text{Iris}}, \\quad x \\equiv \\text{Measurement}(\\text{State}_0, \\text{Step}_x)',
     domain: 'Tautological Discrete Arithmetic',
     category: 'Fundamental',
     description: 'Everything in the system is fundamentally an Operation of Measurement: numbers, operators, and field interactions are explicit outcomes of discrete gauging.',
@@ -461,7 +461,7 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
   {
     id: 'ax-10',
     name: 'Axiom of Action by Contact via Topological Halos',
-    latex: '\\operatorname{Interaction}(A,B) \\neq 0 \\iff \\mathcal{H}(A) \\cap \\mathcal{H}(B) \\neq \\emptyset',
+    latex: '\\text{Interaction}(A,B) \\neq 0 \\iff \\mathcal{H}(A) \\cap \\mathcal{H}(B) \\neq \\emptyset',
     domain: 'Clifford Algebra Cl(4,1,1)',
     category: 'Clifford',
     description: 'Defines action by contact topologically via halo intersections H(A) ∩ H(B) ≠ ∅ across local contiguous boundaries.',

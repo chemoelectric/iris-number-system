@@ -209,7 +209,7 @@ For every element or operator \( x \in \mathcal { D } _ { \text { Iris } } \), i
 
 
 \[
-\mathcal { H } ( x ) = \left\{ y \in \mathcal { D } _ { \text { Iris } } \; \middle| \; d _ { Cl } ( x , y ) \le \epsilon _ { \text { local } } \text { or } ( x - y ) ^ 2 \in \operatorname { span } ( \varpi , \vartheta ) \right\}
+\mathcal { H } ( x ) = \left\{ y \in \mathcal { D } _ { \text { Iris } } \; \middle| \; d _ { Cl } ( x , y ) \le \epsilon _ { \text { local } } \text { or } ( x - y ) ^ 2 \in \text { span } ( \varpi , \vartheta ) \right\}
 \]
 
 
@@ -217,7 +217,7 @@ Physical and mathematical interactions between entities \( A \) and \( B \) occu
 
 
 \[
-\operatorname { Interaction } ( A , B ) \neq 0 \iff \mathcal { H } ( A ) \cap \mathcal { H } ( B ) \neq \emptyset
+\text { Interaction } ( A , B ) \neq 0 \iff \mathcal { H } ( A ) \cap \mathcal { H } ( B ) \neq \emptyset
 \]
 
 
@@ -467,11 +467,11 @@ x ^ * = r + \epsilon ^ * , \quad r \in \mathbb { R } , \quad |\epsilon ^ *| \lt 
 \]
 
 
-The **Main Scale Projection** operator \( \operatorname { st } : \operatorname { Fin } ( \mathbb { R } ^ * ) \to \mathbb { R } \) maps the fine vernier reading back to its unique nearest main scale real flux value:
+The **Main Scale Projection** operator \( \text { st } : \text { Fin } ( \mathbb { R } ^ * ) \to \mathbb { R } \) maps the fine vernier reading back to its unique nearest main scale real flux value:
 
 
 \[
-\operatorname { st } ( x ^ * ) = \operatorname { st } ( r + \epsilon ^ * ) = r
+\text { st } ( x ^ * ) = \text { st } ( r + \epsilon ^ * ) = r
 \]
 
 
@@ -479,11 +479,11 @@ The **Main Scale Projection** operator \( \operatorname { st } : \operatorname {
 [THEOREM]
 .Theorem: Vernier Flux Conservation and Main Scale Projection
 ====
-For any finite multiscale vernier measurement operations \( x ^ * , y ^ * \in \operatorname { Fin } ( \mathbb { R } ^ * ) \), the Main Scale Projection operator \( \operatorname { st } \) is a ring homomorphism into the real field \( \mathbb { R } \):
+For any finite multiscale vernier measurement operations \( x ^ * , y ^ * \in \text { Fin } ( \mathbb { R } ^ * ) \), the Main Scale Projection operator \( \text { st } \) is a ring homomorphism into the real field \( \mathbb { R } \):
 
 
 \[
-\operatorname { st } ( x ^ * + y ^ * ) = \operatorname { st } ( x ^ * ) + \operatorname { st } ( y ^ * ) , \quad \operatorname { st } ( x ^ * \cdot y ^ * ) = \operatorname { st } ( x ^ * ) \cdot \operatorname { st } ( y ^ * )
+\text { st } ( x ^ * + y ^ * ) = \text { st } ( x ^ * ) + \text { st } ( y ^ * ) , \quad \text { st } ( x ^ * \cdot y ^ * ) = \text { st } ( x ^ * ) \cdot \text { st } ( y ^ * )
 \]
 
 
@@ -491,7 +491,7 @@ Furthermore, in MSRA, calculus differentials \( d\Psi \) and derivatives \( \fra
 
 
 \[
-\frac { d\Psi } { dx } = \operatorname { st } \left ( \frac { \Delta \Psi } { \delta _ { \omega } } \right )
+\frac { d\Psi } { dx } = \text { st } \left ( \frac { \Delta \Psi } { \delta _ { \omega } } \right )
 \]
 
 
@@ -535,7 +535,7 @@ The imaginary unit \iota in Counting-Iris represents an active, physical apertur
 [THEOREM]
 .Theorem: Main Scale Complex Field Isomorphism
 ====
-Under Main Scale Projection \operatorname{st}(\iota^2) = -1, the Counting-Iris complex domain \mathbb{C}_{\text{Iris}} maps directly onto the classical field of complex numbers \mathbb{C}, preserving addition, multiplication, and modulus operations.
+Under Main Scale Projection \text{st}(\iota^2) = -1, the Counting-Iris complex domain \mathbb{C}_{\text{Iris}} maps directly onto the classical field of complex numbers \mathbb{C}, preserving addition, multiplication, and modulus operations.
 
 *Proof:*
 Let z_1 = a_1 + b_1 \iota and z_2 = a_2 + b_2 \iota be two Counting-Iris complex numbers. Their product in the multivector aperture algebra is given by:
@@ -546,11 +546,11 @@ z_1 z_2 = (a_1 a_2 + b_1 b_2 \iota^2) + (a_1 b_2 + a_2 b_1) \iota = (a_1 a_2 - b
 \]
 
 
-Applying the Main Scale Projection operator \operatorname{st} (Postulate 8 / MSRA) removes the nilpotent boundary residual \varpi \vartheta, yielding:
+Applying the Main Scale Projection operator \text{st} (Postulate 8 / MSRA) removes the nilpotent boundary residual \varpi \vartheta, yielding:
 
 
 \[
-\operatorname{st}(z_1 z_2) = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1) i
+\text{st}(z_1 z_2) = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1) i
 \]
 
 
@@ -558,7 +558,7 @@ which is identical to the canonical field multiplication rule in \mathbb{C}. Fur
 
 
 \[
-z \bar{z} = a^2 - b^2 \iota^2 = a^2 + b^2 - b^2 \varpi \vartheta \implies \operatorname{st}(z \bar{z}) = a^2 + b^2
+z \bar{z} = a^2 - b^2 \iota^2 = a^2 + b^2 - b^2 \varpi \vartheta \implies \text{st}(z \bar{z}) = a^2 + b^2
 \]
 
 
