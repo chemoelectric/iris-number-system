@@ -357,7 +357,7 @@ The real quantity \( x \) is the main scale aperture flux throughput value under
 
 
 \[
-x \equiv \text { st } ( r _ \omega ) = \text { st } \left ( \text { ApertureFlux } _ \omega \left ( k _ \omega \cdot \delta _ \omega \right ) \right )
+x \equiv \downarrow ( r _ \omega ) = \downarrow \left ( \text { ApertureFlux } _ \omega \left ( k _ \omega \cdot \delta _ \omega \right ) \right )
 \]
 
 
@@ -461,7 +461,7 @@ An elementary finite-duration step is executed by a physical measurement process
 
 Arithmetic operations on multiscale resolution numbers \( \mathbb { R } ^ * \) operate under MSRA as composite measurement operations on aligned vernier scales, preserving exact algebraic ring and field properties.
 
-=== Main Scale Projection (Standard Part Function)
+=== Main Scale Projection (Downwards Arrow Operator \(\downarrow\))
 Under Multiscale Resolution Analysis (MSRA), every finite multiscale vernier reading \( x ^ * \in \mathbb { R } ^ * \) decomposes uniquely into a main scale real aperture reading \( r \in \mathbb { R } \) plus a finite-duration observation residual \( \epsilon ^ * \) resulting from a measurement process conducted over a finite temporal duration:
 
 
@@ -470,11 +470,11 @@ x ^ * = r + \epsilon ^ * , \quad r \in \mathbb { R } , \quad |\epsilon ^ *| \lt 
 \]
 
 
-The **Main Scale Projection** operator \( \text { st } : \text { Fin } ( \mathbb { R } ^ * ) \to \mathbb { R } \) maps the fine vernier reading back to its unique nearest main scale real flux value:
+The **Main Scale Projection** operator \( \downarrow : \text { Fin } ( \mathbb { R } ^ * ) \to \mathbb { R } \) maps the fine vernier reading back to its unique nearest main scale real flux value:
 
 
 \[
-\text { st } ( x ^ * ) = \text { st } ( r + \epsilon ^ * ) = r
+\downarrow ( x ^ * ) = \downarrow ( r + \epsilon ^ * ) = r
 \]
 
 
@@ -482,11 +482,11 @@ The **Main Scale Projection** operator \( \text { st } : \text { Fin } ( \mathbb
 [THEOREM]
 .Theorem: Vernier Flux Conservation and Main Scale Projection
 ====
-For any finite multiscale vernier measurement operations \( x ^ * , y ^ * \in \text { Fin } ( \mathbb { R } ^ * ) \), the Main Scale Projection operator \( \text { st } \) is a ring homomorphism into the real field \( \mathbb { R } \):
+For any finite multiscale vernier measurement operations \( x ^ * , y ^ * \in \text { Fin } ( \mathbb { R } ^ * ) \), the Main Scale Projection operator \( \downarrow \) is a ring homomorphism into the real field \( \mathbb { R } \):
 
 
 \[
-\text { st } ( x ^ * + y ^ * ) = \text { st } ( x ^ * ) + \text { st } ( y ^ * ) , \quad \text { st } ( x ^ * \cdot y ^ * ) = \text { st } ( x ^ * ) \cdot \text { st } ( y ^ * )
+\downarrow ( x ^ * + y ^ * ) = \downarrow ( x ^ * ) + \downarrow ( y ^ * ) , \quad \downarrow ( x ^ * \cdot y ^ * ) = \downarrow ( x ^ * ) \cdot \downarrow ( y ^ * )
 \]
 
 
@@ -494,7 +494,7 @@ Furthermore, in MSRA, calculus differentials \( d\Psi \) and derivatives \( \fra
 
 
 \[
-\frac { d\Psi } { dx } = \text { st } \left ( \frac { \Delta \Psi } { \delta _ { \omega } } \right )
+\frac { d\Psi } { dx } = \downarrow \left ( \frac { \Delta \Psi } { \delta _ { \omega } } \right )
 \]
 
 
@@ -538,7 +538,7 @@ The imaginary unit \( \iota \) in Counting-Iris represents an active, physical a
 [THEOREM]
 .Theorem: Main Scale Complex Field Isomorphism
 ====
-Under Main Scale Projection \( \text{st}(\iota^2) = -1 \), the Counting-Iris complex domain \( \mathbb{C}_{\text{Iris}} \) maps directly onto the classical field of complex numbers \( \mathbb{C} \), preserving addition, multiplication, and modulus operations.
+Under Main Scale Projection \( \downarrow(\iota^2) = -1 \), the Counting-Iris complex domain \( \mathbb{C}_{\text{Iris}} \) maps directly onto the classical field of complex numbers \( \mathbb{C} \), preserving addition, multiplication, and modulus operations.
 
 *Proof:*
 Let \( z_1 = a_1 + b_1 \iota \) and \( z_2 = a_2 + b_2 \iota \) be two Counting-Iris complex numbers. Their product in the multivector aperture algebra is given by:
@@ -549,11 +549,11 @@ z_1 z_2 = (a_1 a_2 + b_1 b_2 \iota^2) + (a_1 b_2 + a_2 b_1) \iota = (a_1 a_2 - b
 \]
 
 
-Applying the Main Scale Projection operator \( \text{st} \) (Postulate 8 / MSRA) removes the nilpotent boundary residual \( \varpi \vartheta \), yielding:
+Applying the Main Scale Projection operator \( \downarrow \) (Postulate 8 / MSRA) removes the nilpotent boundary residual \( \varpi \vartheta \), yielding:
 
 
 \[
-\text{st}(z_1 z_2) = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1) i
+\downarrow(z_1 z_2) = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1) i
 \]
 
 
@@ -561,7 +561,7 @@ which is identical to the canonical field multiplication rule in \( \mathbb{C} \
 
 
 \[
-z \bar{z} = a^2 - b^2 \iota^2 = a^2 + b^2 - b^2 \varpi \vartheta \implies \text{st}(z \bar{z}) = a^2 + b^2
+z \bar{z} = a^2 - b^2 \iota^2 = a^2 + b^2 - b^2 \varpi \vartheta \implies \downarrow(z \bar{z}) = a^2 + b^2
 \]
 
 
@@ -640,11 +640,11 @@ This proves that quaternions in Counting-Iris are exact spatial bivector rotatio
 
 = How to do Differential Calculus
 
-Constructing differential calculus and real analysis within Multiscale Resolution Analysis (MSRA) without continuum limit paradoxes or uncountably infinite point-sets. Derivatives are defined as exact vernier aperture difference ratios projected onto the main-scale real domain via the Main Scale Projection operator \( \text{st} \).
+Constructing differential calculus and real analysis within Multiscale Resolution Analysis (MSRA) without continuum limit paradoxes or uncountably infinite point-sets. Derivatives are defined as exact vernier aperture difference ratios projected onto the main-scale real domain via the Main Scale Projection operator \( \downarrow \).
 
 == Vernier Differences and the MSRA Derivative
 
-In the Counting-Iris framework, differential calculus is formulated constructively on discrete Multiscale Resolution Analysis (MSRA) grids \( \mathcal{G}_\omega \). Instead of taking limits to uncountably infinite continua, derivatives are computed as exact ratios of vernier aperture differences divided by an ultra-refined discrete grid step size \( \delta_\omega = \frac{\bullet}{\omega} \), followed by Main Scale Projection \( \text{st} \) (Postulate 8 / MSRA).
+In the Counting-Iris framework, differential calculus is formulated constructively on discrete Multiscale Resolution Analysis (MSRA) grids \( \mathcal{G}_\omega \). Instead of taking limits to uncountably infinite continua, derivatives are computed as exact ratios of vernier aperture differences divided by an ultra-refined discrete grid step size \( \delta_\omega = \frac{\bullet}{\omega} \), followed by Main Scale Projection \( \downarrow \) (Postulate 8 / MSRA).
 
 [#definition-msra-derivative]
 [DEFINITION]
@@ -654,18 +654,18 @@ Let \( \Psi : \mathbb{R}^* \to \mathbb{R}^* \) be a finite multiscale aperture f
 
 
 \[
-\frac{d\Psi}{dx} = \text{st} \left( \frac{\Psi(x + \delta_\omega) - \Psi(x)}{\delta_\omega} \right)
+\frac{d\Psi}{dx} = \downarrow \left( \frac{\Psi(x + \delta_\omega) - \Psi(x)}{\delta_\omega} \right)
 \]
 
 
-where \( \text{st} : \mathbb{R}^* \to \mathbb{R} \) is the Main Scale Projection Operator mapping finite multiscale vernier readings to standard main-scale real numbers.
+where \( \downarrow : \mathbb{R}^* \to \mathbb{R} \) is the Main Scale Projection Operator mapping finite multiscale vernier readings to standard main-scale real numbers.
 ====
 
 Because \( \delta_\omega \neq 0 \) on the ultra-refined grid \( \mathcal{G}_\omega \), the ratio \( \frac{\Psi(x + \delta_\omega) - \Psi(x)}{\delta_\omega} \) is an exact, finite algebraic expression in the MSRA ring. The derivative is therefore free of indeterminate \( 0/0 \) paradoxes or non-constructive point-set continuum assumptions.
 
 == Proofs of Fundamental Differentiation Rules in MSRA
 
-The fundamental laws of differential calculus follow directly as algebraic tautologies under MSRA grid evaluation and Main Scale Projection \( \text{st} \).
+The fundamental laws of differential calculus follow directly as algebraic tautologies under MSRA grid evaluation and Main Scale Projection \( \downarrow \).
 
 [#theorem-msra-product-rule]
 [THEOREM]
@@ -704,15 +704,15 @@ Dividing by the non-zero grid increment \( \delta_\omega \) yields:
 \]
 
 
-Applying the Main Scale Projection operator \( \text{st} \) and utilizing its multiplicative and additive ring homomorphism properties (Postulate 8 / MSRA):
+Applying the Main Scale Projection operator \( \downarrow \) and utilizing its multiplicative and additive ring homomorphism properties (Postulate 8 / MSRA):
 
 
 \[
-\text{st}\left( \frac{\Delta(uv)}{\delta_\omega} \right) = \text{st}(u(x + \delta_\omega)) \cdot \text{st}\left( \frac{\Delta v}{\delta_\omega} \right) + \text{st}(v(x)) \cdot \text{st}\left( \frac{\Delta u}{\delta_\omega} \right)
+\downarrow\left( \frac{\Delta(uv)}{\delta_\omega} \right) = \downarrow(u(x + \delta_\omega)) \cdot \downarrow\left( \frac{\Delta v}{\delta_\omega} \right) + \downarrow(v(x)) \cdot \downarrow\left( \frac{\Delta u}{\delta_\omega} \right)
 \]
 
 
-Since \( \text{st}(u(x + \delta_\omega)) = \text{st}(u(x) + \Delta u) = u(x) + 0 = u(x) \), this reduces exactly to:
+Since \( \downarrow(u(x + \delta_\omega)) = \downarrow(u(x) + \Delta u) = u(x) + 0 = u(x) \), this reduces exactly to:
 
 
 \[
@@ -727,7 +727,7 @@ establishing the exact MSRA product rule within the Counting-Iris framework. \( 
 [THEOREM]
 .Theorem: MSRA Quotient Rule
 ====
-Let \( u, v : \mathbb{R}^* \to \mathbb{R}^* \) be finite, differentiable MSRA aperture functions with \( \text{st}(v(x)) \neq 0 \). The derivative of their ratio satisfies:
+Let \( u, v : \mathbb{R}^* \to \mathbb{R}^* \) be finite, differentiable MSRA aperture functions with \( \downarrow(v(x)) \neq 0 \). The derivative of their ratio satisfies:
 
 
 \[
@@ -752,11 +752,11 @@ Adding and subtracting \( u(x) v(x) \) in the numerator gives:
 \]
 
 
-Dividing by \( \delta_\omega \) and applying Main Scale Projection \( \text{st} \):
+Dividing by \( \delta_\omega \) and applying Main Scale Projection \( \downarrow \):
 
 
 \[
-\text{st}\left( \frac{1}{\delta_\omega} \Delta\left(\frac{u}{v}\right) \right) = \frac{\text{st}\left(\frac{\Delta u}{\delta_\omega}\right) \text{st}(v(x)) - \text{st}(u(x)) \text{st}\left(\frac{\Delta v}{\delta_\omega}\right)}{\text{st}(v(x + \delta_\omega)) \text{st}(v(x))} = \frac{v \frac{du}{dx} - u \frac{dv}{dx}}{v^2}
+\downarrow\left( \frac{1}{\delta_\omega} \Delta\left(\frac{u}{v}\right) \right) = \frac{\downarrow\left(\frac{\Delta u}{\delta_\omega}\right) \downarrow(v(x)) - \downarrow(u(x)) \downarrow\left(\frac{\Delta v}{\delta_\omega}\right)}{\downarrow(v(x + \delta_\omega)) \downarrow(v(x))} = \frac{v \frac{du}{dx} - u \frac{dv}{dx}}{v^2}
 \]
 
 
@@ -784,11 +784,11 @@ Evaluate the vernier increment \( \Delta g = g(x + \delta_\omega) - g(x) \). If 
 \]
 
 
-Applying Main Scale Projection \( \text{st} \):
+Applying Main Scale Projection \( \downarrow \):
 
 
 \[
-\text{st}\left( \frac{\Delta (f \circ g)}{\delta_\omega} \right) = \text{st}\left( \frac{f(y + \Delta g) - f(y)}{\Delta g} \right) \cdot \text{st}\left( \frac{\Delta g}{\delta_\omega} \right) = f'(g(x)) \cdot g'(x)
+\downarrow\left( \frac{\Delta (f \circ g)}{\delta_\omega} \right) = \downarrow\left( \frac{f(y + \Delta g) - f(y)}{\Delta g} \right) \cdot \downarrow\left( \frac{\Delta g}{\delta_\omega} \right) = f'(g(x)) \cdot g'(x)
 \]
 
 
@@ -801,7 +801,7 @@ Extending MSRA differential calculus to multivector field functions \( \Psi : \m
 
 
 \[
-\nabla \Psi = \sum_{a=1}^3 e_a \text{st} \left( \frac{\Psi(x + \delta_\omega e_a) - \Psi(x)}{\delta_\omega} \right)
+\nabla \Psi = \sum_{a=1}^3 e_a \downarrow \left( \frac{\Psi(x + \delta_\omega e_a) - \Psi(x)}{\delta_\omega} \right)
 \]
 
 
@@ -831,7 +831,7 @@ To illustrate the MSRA vernier derivative in practice, consider the multiscale a
 
 
 \[
-\frac{d}{dx}(x^2) = \text{st}(2x + \delta_\omega) = \text{st}(2x) + \text{st}(\delta_\omega) = 2x + 0 = 2x
+\frac{d}{dx}(x^2) = \downarrow(2x + \delta_\omega) = \downarrow(2x) + \downarrow(\delta_\omega) = 2x + 0 = 2x
 \]
 
 
@@ -853,7 +853,7 @@ Let \( f : \mathbb{R} \to \mathbb{R} \) be a continuous aperture function on a f
 
 
 \[
-\int_a^b f(x) \, dx = \text{st} \left( \sum_{k=0}^{N_\omega - 1} f(a + k \delta_\omega) \cdot \delta_\omega \right)
+\int_a^b f(x) \, dx = \downarrow \left( \sum_{k=0}^{N_\omega - 1} f(a + k \delta_\omega) \cdot \delta_\omega \right)
 \]
 
 
@@ -868,7 +868,7 @@ The MSRA indefinite integral (or anti-derivative aperture flux function) of \( f
 
 
 \[
-F(x) = \int_{x_0}^x f(t) \, dt + C = \text{st}\left( \sum_{k=0}^{\frac{x - x_0}{\delta_\omega} - 1} f(x_0 + k \delta_\omega) \cdot \delta_\omega \right) + C
+F(x) = \int_{x_0}^x f(t) \, dt + C = \downarrow\left( \sum_{k=0}^{\frac{x - x_0}{\delta_\omega} - 1} f(x_0 + k \delta_\omega) \cdot \delta_\omega \right) + C
 \]
 
 
@@ -896,7 +896,7 @@ Let \( f : \mathbb{R} \to \mathbb{R} \) be a continuous aperture function, and d
 
 
 \[
-F(x + \delta_\omega) - F(x) = \text{st} \left( \sum_{k=0}^{\frac{x + \delta_\omega - a}{\delta_\omega} - 1} f(a + k \delta_\omega) \delta_\omega \right) - \text{st} \left( \sum_{k=0}^{\frac{x - a}{\delta_\omega} - 1} f(a + k \delta_\omega) \delta_\omega \right)
+F(x + \delta_\omega) - F(x) = \downarrow \left( \sum_{k=0}^{\frac{x + \delta_\omega - a}{\delta_\omega} - 1} f(a + k \delta_\omega) \delta_\omega \right) - \downarrow \left( \sum_{k=0}^{\frac{x - a}{\delta_\omega} - 1} f(a + k \delta_\omega) \delta_\omega \right)
 \]
 
 
@@ -904,15 +904,15 @@ Subtracting the sums isolates the single vernier interval ending at \( x \):
 
 
 \[
-F(x + \delta_\omega) - F(x) = \text{st} \left( f(x) \delta_\omega \right)
+F(x + \delta_\omega) - F(x) = \downarrow \left( f(x) \delta_\omega \right)
 \]
 
 
-Dividing by \( \delta_\omega \) and applying Main Scale Projection \( \text{st} \) yields:
+Dividing by \( \delta_\omega \) and applying Main Scale Projection \( \downarrow \) yields:
 
 
 \[
-\frac{dF}{dx} = \text{st} \left( \frac{F(x + \delta_\omega) - F(x)}{\delta_\omega} \right) = \text{st}(f(x)) = f(x)
+\frac{dF}{dx} = \downarrow \left( \frac{F(x + \delta_\omega) - F(x)}{\delta_\omega} \right) = \downarrow(f(x)) = f(x)
 \]
 
 
@@ -963,7 +963,7 @@ S_\omega = \delta_\omega^2 \cdot \frac{\left(\frac{1}{\delta_\omega} - 1\right)\
 
 
 \[
-\int_0^1 x \, dx = \text{st}\left( S_\omega \right) = \text{st}\left( \frac{1 - \delta_\omega}{2} \right) = \frac{1 - 0}{2} = \frac{1}{2}
+\int_0^1 x \, dx = \downarrow\left( S_\omega \right) = \downarrow\left( \frac{1 - \delta_\omega}{2} \right) = \frac{1 - 0}{2} = \frac{1}{2}
 \]
 
 
@@ -985,7 +985,7 @@ Let \( \Psi : Cl(4,1,1) \to Cl(4,1,1) \) be a multivector field and \( \Gamma \)
 
 
 \[
-\int_\Gamma \Psi(z) \, dz = \text{st} \left( \sum_{k=0}^{M_\omega - 1} \Psi(\gamma(t_k)) \cdot \Delta \gamma_k \right)
+\int_\Gamma \Psi(z) \, dz = \downarrow \left( \sum_{k=0}^{M_\omega - 1} \Psi(\gamma(t_k)) \cdot \Delta \gamma_k \right)
 \]
 
 
@@ -1021,7 +1021,7 @@ Decompose the bounded region \( \mathcal{D} \) into a mesh of elementary ultra-r
 
 
 \[
-\oint_\Gamma \Psi(z) \, dz = \text{st}\left( \sum_{ij} \oint_{\partial \square_{ij}} \Psi(z) \, dz \right) = \text{st}\left( \iint_{\mathcal{D}} D \Psi(z) \, d\mathcal{A} \right)
+\oint_\Gamma \Psi(z) \, dz = \downarrow\left( \sum_{ij} \oint_{\partial \square_{ij}} \Psi(z) \, dz \right) = \downarrow\left( \iint_{\mathcal{D}} D \Psi(z) \, d\mathcal{A} \right)
 \]
 
 

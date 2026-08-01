@@ -32,7 +32,7 @@ The **Iris Number System Deduction & Inference Engine** provides a constructive 
 4. **Iris Calculator & Multivector Workbench**
    - Full implementation of the Cl(4,1,1) 6-generator Clifford algebra signature (+,+,+,+,-,0).
    - Embedded bivector quaternion algebra (i = e_23, j = e_31, k = e_12).
-   - Discrete Spectrum Arithmetic (x + ε · residual + ω · scale) and Nonstandard Analysis Standard Part projection st(x).
+   - Discrete Spectrum Arithmetic (x + ε · residual + ω · scale) and Nonstandard Analysis Main Scale Projection operator ↓(x).
 
 5. **Zeta & Prime Spectrum Visualizer**
    - Interactive Recharts visualization of the Iris Zeta function ζ_I(s) along the critical line.
@@ -83,7 +83,7 @@ The inference engine operates strictly within the Counting-Iris number system:
 - **Basis Elements**: {1, ι, ϖ, ϑ} with ι² = τ - 1 where τ = (1+√5)/2.
 - **Multiscale Resolution Analysis (MSRA)**: Multiscale resolution numbers (short name **m-res numbers**) x* ∈ ℝ* constructed as physical vernier aperture measurement quantities on ultra-refined grid G_ω.
 - **MSRA Calculus**: 
-  - *Differential Calculus*: Constructive derivatives dΨ/dx = st((Ψ(x+δ_ω) - Ψ(x))/δ_ω) with exact proofs of product, quotient, and chain rules, plus step-by-step worked polynomial examples.
+  - *Differential Calculus*: Constructive derivatives dΨ/dx = ↓((Ψ(x+δ_ω) - Ψ(x))/δ_ω) with exact proofs of product, quotient, and chain rules, plus step-by-step worked polynomial examples.
   - *Integral Calculus*: Indefinite and definite integrals defined as discrete vernier aperture sums with exact proof of the Fundamental Theorem of MSRA Calculus and explicit step-by-step sum calculations.
   - *Contour Integration*: Multivector path line integrals in Cl(4,1,1) with the vernier Cauchy-Goursat theorem, residue-free loop circulations, and closed circular path examples.
 - **Clifford Cl(4,1,1)**: 6 basis generators {e1, e2, e3, e4, e+, e-} satisfying e1²=e2²=e3²=1, e4²=0, e+²=1, e-²=-1.
