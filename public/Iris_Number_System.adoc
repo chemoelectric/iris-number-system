@@ -807,6 +807,36 @@ Extending MSRA differential calculus to multivector field functions \( \Psi : \m
 
 Combining the spatial gradient \( \nabla \) with the convective time derivative \( D_t = \frac{\partial}{\partial t} - u \cdot \nabla \) forms the full Clifford Dirac-Iris differential operator \( D = \nabla + e_4 \frac{1}{c} D_t \), directly powering the Master Field Equation \( D F_{\text{total}} = J_{\text{total}} \).
 
+== Worked Example: MSRA Derivative of a Quadratic Polynomial
+
+To illustrate the MSRA vernier derivative in practice, consider the multiscale aperture function \( \Psi(x) = x^2 \) at a main-scale point \( x \in \mathbb{R} \).
+
+1. **Evaluate Vernier Shift**: On an ultra-refined grid \( \mathcal{G}_\omega \) with step size \( \delta_\omega = \frac{\bullet}{\omega} \), compute the shifted value:
+
+
+\[
+\Psi(x + \delta_\omega) = (x + \delta_\omega)^2 = x^2 + 2x \delta_\omega + \delta_\omega^2
+\]
+
+
+2. **Form Difference Ratio**: Subtract \( \Psi(x) = x^2 \) and divide by the non-zero step \( \delta_\omega \):
+
+
+\[
+\frac{\Psi(x + \delta_\omega) - \Psi(x)}{\delta_\omega} = \frac{2x \delta_\omega + \delta_\omega^2}{\delta_\omega} = 2x + \delta_\omega
+\]
+
+
+3. **Apply Main Scale Projection**: Project the finite vernier reading back to the main-scale real domain:
+
+
+\[
+\frac{d}{dx}(x^2) = \text{st}(2x + \delta_\omega) = \text{st}(2x) + \text{st}(\delta_\omega) = 2x + 0 = 2x
+\]
+
+
+This demonstrates how MSRA derivatives compute exact standard values purely through discrete algebraic steps without continuum limits or indeterminate forms.
+
 = How to do Integral Calculus
 
 Constructing indefinite and definite integration within Multiscale Resolution Analysis (MSRA) as exact vernier aperture summations over discrete partition grids \( \mathcal{G}_\omega \), proving the Fundamental Theorem of MSRA Calculus without infinite measure theory.
@@ -909,6 +939,36 @@ For finite differentiable aperture functions \( u(x) \) and \( v(x) \) on \( [a,
 From the MSRA product rule, \( \frac{d(uv)}{dx} = u v' + v u' \). Integrating both sides from \( a \) to \( b \) using the Fundamental Theorem of MSRA Calculus yields \( [u(x)v(x)]_a^b = \int_a^b u v' dx + \int_a^b v u' dx \), which rearranges to the result. \( \blacksquare \)
 ====
 
+== Worked Example: MSRA Definite Integral of a Linear Function
+
+To illustrate discrete MSRA integration, evaluate \( \int_0^1 x \, dx \) directly from Definition 13.
+
+1. **Construct Vernier Sum**: Partition the interval \( [0, 1] \) on an ultra-refined grid \( \mathcal{G}_\omega \) into \( N_\omega = \frac{1}{\delta_\omega} \) steps, where \( \delta_\omega = \frac{\bullet}{\omega} \):
+
+
+\[
+S_\omega = \sum_{k=0}^{N_\omega - 1} f(k \delta_\omega) \cdot \delta_\omega = \sum_{k=0}^{N_\omega - 1} (k \delta_\omega) \cdot \delta_\omega = \delta_\omega^2 \sum_{k=0}^{N_\omega - 1} k
+\]
+
+
+2. **Apply Discrete Sum Formula**: Using the standard arithmetic sum \( \sum_{k=0}^{N-1} k = \frac{(N-1)N}{2} \) with \( N = N_\omega = \frac{1}{\delta_\omega} \):
+
+
+\[
+S_\omega = \delta_\omega^2 \cdot \frac{\left(\frac{1}{\delta_\omega} - 1\right)\frac{1}{\delta_\omega}}{2} = \frac{1 - \delta_\omega}{2}
+\]
+
+
+3. **Apply Main Scale Projection**:
+
+
+\[
+\int_0^1 x \, dx = \text{st}\left( S_\omega \right) = \text{st}\left( \frac{1 - \delta_\omega}{2} \right) = \frac{1 - 0}{2} = \frac{1}{2}
+\]
+
+
+This matches the anti-derivative calculation \( \left[ \frac{x^2}{2} \right]_0^1 = \frac{1}{2} \).
+
 = How to Compute a Contour Integral
 
 Formulating line integrals and contour integration across multivector paths in \( Cl(4,1,1) \) Clifford space, establishing the discrete MSRA Cauchy-Goursat analogue on ultra-refined vernier grids and residue-free aperture loop circulations.
@@ -979,6 +1039,44 @@ When a closed path \( \Gamma \) encloses an isolated Spin(2) bivector vortex cor
 
 
 This guarantees that circulation along closed observation loops measures exact, non-fractional topological winding numbers, establishing total conservation of electromagnetic flux in the Counting-Iris framework.
+
+== Worked Example: Circular Contour Integral of a Constant Vector Field
+
+To verify the MSRA Cauchy-Goursat theorem with an explicit example, evaluate the contour integral of a constant multivector field \( \Psi(z) = \mathbf{c} \in Cl(4,1,1) \) along a closed circular path \( \Gamma \) parameterized by \( \gamma(t) = R e^{i t} \) for \( t \in [0, 2\pi] \).
+
+1. **Parameter Derivative**: Compute the velocity vector along the curve:
+
+
+\[
+\gamma'(t) = \frac{d\gamma}{dt} = i R e^{i t}
+\]
+
+
+2. **Set up Parameterized Integral**: Substitute \( \Psi(\gamma(t)) = \mathbf{c} \) and \( \gamma'(t) \) into the MSRA line integral formula:
+
+
+\[
+\oint_\Gamma \mathbf{c} \, dz = \int_0^{2\pi} \mathbf{c} \cdot (i R e^{i t}) \, dt = \mathbf{c} \cdot i R \int_0^{2\pi} e^{i t} \, dt
+\]
+
+
+3. **Evaluate MSRA Integral**: Integrate \( e^{i t} \) using its anti-derivative aperture function \( \frac{e^{i t}}{i} \):
+
+
+\[
+\int_0^{2\pi} e^{i t} \, dt = \left[ \frac{e^{i t}}{i} \right]_0^{2\pi} = \frac{e^{2\pi i} - e^0}{i} = \frac{1 - 1}{i} = 0
+\]
+
+
+4. **Result**:
+
+
+\[
+\oint_\Gamma \mathbf{c} \, dz = \mathbf{c} \cdot i R \cdot 0 = 0
+\]
+
+
+This confirms that the closed circulation of any source-free constant field vanishes identically in MSRA.
 
 
 = Appendix: The Master Field Equation
