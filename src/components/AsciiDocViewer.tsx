@@ -11,10 +11,8 @@ interface AsciiDocViewerProps {
 export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, className = '', onNavigate }) => {
   // Render LaTeX math strings cleanly using KaTeX
   const renderMathInline = (text: string): React.ReactNode[] => {
-    // Replace inline math \( ... \), $ ... $, latexmath:[...] or stem:[...]
+    // 1. First split out block math delimiters \[ ... \] or $$ ... $$
     const blockMathRegex = /\\\[([\s\S]*?)\\\]|\$\$([\s\S]*?)\$\$/g;
-    
-    // Simple block splitter for math and text
     const blocks: { type: 'text' | 'math-block'; content: string }[] = [];
     
     let currentIdx = 0;
@@ -35,11 +33,11 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
     return blocks.map((block, idx) => {
       if (block.type === 'math-block') {
         try {
-          const html = katex.renderToString(block.content, { displayMode: true, throwOnError: false });
+          const html = katex.renderToString(block.content.trim(), { displayMode: true, throwOnError: false });
           return (
             <div
               key={`block-${idx}`}
-              className="my-4 p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 overflow-x-auto text-amber-200 text-center text-sm font-mono"
+              className="my-4 p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 overflow-x-auto text-amber-200 text-center text-sm sm:text-base font-mono"
               dangerouslySetInnerHTML={{ __html: html }}
             />
           );
@@ -53,7 +51,7 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
       }
 
       // Inline math parsing inside text blocks
-      const inlineMathRegex = /\\\((.*?)\\\)|(\$([^\$]+)\$)|latexmath:\[(.*?)\]|stem:\[(.*?)\]/g;
+      const inlineMathRegex = /\\\(([\s\S]*?)\\\)|(\$([^\$]+)\$)|latexmath:\[([\s\S]*?)\]|stem:\[([\s\S]*?)\]/g;
       const inlineElements: React.ReactNode[] = [];
       let iIdx = 0;
       let iMatch;
@@ -66,7 +64,7 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
         }
         const inlineMathCode = iMatch[1] || iMatch[3] || iMatch[4] || iMatch[5];
         try {
-          const html = katex.renderToString(inlineMathCode, { displayMode: false, throwOnError: false });
+          const html = katex.renderToString(inlineMathCode.trim(), { displayMode: false, throwOnError: false });
           inlineElements.push(
             <span
               key={`inmath-${iMatch.index}`}
@@ -94,7 +92,7 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
   const formatInlineText = (text: string): React.ReactNode[] => {
     const parts: React.ReactNode[] = [];
     // Regex matches xref:anchorId[label], <<anchorId,label>>, <<anchorId>>, **bold**, *bold*, _italic_, `code`
-    const fmtRegex = /(xref:([a-zA-Z0-9_-]+)\[(.*?)\]|<<([a-zA-Z0-9_-]+),(.*?)>>|<<([a-zA-Z0-9_-]+)>>|\*\*(.*?)\*\*|\*(.*?)\*|_(.*?)_|`(.*?)`)/g;
+    const fmtRegex = /(xref:([a-zA-Z0-9_-]+)\[(.*?)\]|<<([a-zA-Z0-9_-]+),(.*?)>>|<<([a-zA-Z0-9_-]+)>>|\*\*(.*?)\*\*|(?<=\s|^)\*([^\s\*].*?[^\s\*]|\S)\*(?=\s|$|[.,!?;:]|\))|(?<=\s|^)_([^\s_].*?[^\s_]|\S)_(?=\s|$|[.,!?;:]|\))|`([^`]+)`)/g;
     let lastIdx = 0;
     let match;
 
@@ -171,7 +169,7 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
     while (i < lines.length) {
       const line = lines[i].trim();
 
-      if (!line) {
+      if (!line || line === '\]' || line === '\]\]' || line === '\\]' || line === '\\\]') {
         i++;
         continue;
       }
@@ -181,6 +179,207 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
       if (anchorMatch) {
         pendingAnchorId = anchorMatch[1];
         i++;
+        continue;
+      }
+
+      // Standalone LaTeX math line auto-detection (e.g., \mathbb{Z} = ..., |\epsilon^*| < ..., x^* = ...)
+      const isStandaloneMathLine =
+        !line.startsWith('=') &&
+        !line.startsWith('[') &&
+        !line.startsWith('* ') &&
+        !line.startsWith('- ') &&
+        !line.match(/^\d+\.\s+\*\*/) &&
+        /(\\mathbb|\\mathcal|\\frac|\\sum|\\int|\\iota|\\varpi|\\vartheta|\\mathbf|\\nabla|\\operatorname|\\left|\\right|\\equiv|\\in|\\forall|\\exists|\\partial|\\epsilon|\\[a-zA-Z]+|\^\*)/.test(line) &&
+        !line.includes(' represents ') &&
+        !line.includes(' is an active ') &&
+        !line.includes(' operates as ') &&
+        !line.includes(' decomposes ');
+
+      if (isStandaloneMathLine && !line.startsWith('\\[')) {
+        const mathCode = line.replace(/^\\\[\s*/, '').replace(/\s*\\\]$/, '').trim();
+        const currentAnchor = pendingAnchorId;
+        pendingAnchorId = null;
+        try {
+          const html = katex.renderToString(mathCode, { displayMode: true, throwOnError: false });
+          nodes.push(
+            <div
+              id={currentAnchor || undefined}
+              key={`standalone-math-${i}`}
+              className="my-4 p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 overflow-x-auto text-amber-200 text-center text-sm sm:text-base font-mono"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          );
+        } catch {
+          nodes.push(
+            <div key={`standalone-math-err-${i}`} className="my-2 p-2 bg-rose-950/40 text-rose-300 font-mono text-xs rounded">
+              {line}
+            </div>
+          );
+        }
+        i++;
+        continue;
+      }
+
+      // Multi-line / Single-line display math blocks starting with \[ or $$
+      if (line.startsWith('\[') || line.startsWith('$$')) {
+        const isDoubleDollar = line.startsWith('$$');
+        const endDelimiter = isDoubleDollar ? '$$' : '\]';
+
+        // Check if single-line block math e.g. \[ x = y \] or $$ x = y $$
+        if (line.length > 2 && line.endsWith(endDelimiter)) {
+          const mathCode = line.substring(2, line.length - endDelimiter.length).trim().replace(/\\+$/, '').trim();
+          const currentAnchor = pendingAnchorId;
+          pendingAnchorId = null;
+          try {
+            const html = katex.renderToString(mathCode, { displayMode: true, throwOnError: false });
+            nodes.push(
+              <div
+                id={currentAnchor || undefined}
+                key={`math-block-${i}`}
+                className="my-4 p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 overflow-x-auto text-amber-200 text-center text-sm sm:text-base font-mono"
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+            );
+          } catch {
+            nodes.push(
+              <div key={`math-err-${i}`} className="my-2 p-2 bg-rose-950/40 text-rose-300 font-mono text-xs rounded">
+                {line}
+              </div>
+            );
+          }
+          i++;
+          continue;
+        }
+
+        // Multi-line block math
+        const mathLines: string[] = [];
+        // First line after delimiter if any text remains on line
+        const firstLineText = line.substring(2).trim();
+        if (firstLineText && firstLineText !== endDelimiter) {
+          mathLines.push(firstLineText);
+        }
+
+        i++;
+        while (i < lines.length) {
+          const currLine = lines[i].trim();
+          if (currLine === endDelimiter || currLine.endsWith(endDelimiter)) {
+            if (currLine !== endDelimiter) {
+              const lastLineText = currLine.substring(0, currLine.length - endDelimiter.length).trim();
+              if (lastLineText) mathLines.push(lastLineText);
+            }
+            i++; // skip closing delimiter
+            break;
+          }
+          mathLines.push(lines[i]);
+          i++;
+        }
+
+        let mathCode = mathLines.join('\n').trim();
+        mathCode = mathCode.replace(/^\\\[\s*/, '').replace(/\s*\\\]$/, '').replace(/\\+$/, '').trim();
+        const currentAnchor = pendingAnchorId;
+        pendingAnchorId = null;
+
+        try {
+          const html = katex.renderToString(mathCode, { displayMode: true, throwOnError: false });
+          nodes.push(
+            <div
+              id={currentAnchor || undefined}
+              key={`math-multiline-${i}`}
+              className="my-4 p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 overflow-x-auto text-amber-200 text-center text-sm sm:text-base font-mono"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          );
+        } catch {
+          nodes.push(
+            <div key={`math-err-${i}`} className="my-2 p-2 bg-rose-950/40 text-rose-300 font-mono text-xs rounded">
+              \[{mathCode}\]
+            </div>
+          );
+        }
+        continue;
+      }
+
+      // AsciiDoc [latexmath] or [stem] blocks
+      if (line === '[latexmath]' || line === '[stem]') {
+        i++;
+        let delimiter = '';
+        if (i < lines.length && (lines[i].trim() === '++++' || lines[i].trim() === '--')) {
+          delimiter = lines[i].trim();
+          i++;
+        }
+
+        const mathLines: string[] = [];
+        while (i < lines.length) {
+          const curr = lines[i].trim();
+          if (delimiter && curr === delimiter) {
+            i++;
+            break;
+          }
+          if (!delimiter && (!curr || curr.startsWith('['))) {
+            break;
+          }
+          mathLines.push(lines[i]);
+          i++;
+        }
+
+        const mathCode = mathLines.join('\n').trim();
+        const currentAnchor = pendingAnchorId;
+        pendingAnchorId = null;
+
+        try {
+          const html = katex.renderToString(mathCode, { displayMode: true, throwOnError: false });
+          nodes.push(
+            <div
+              id={currentAnchor || undefined}
+              key={`latexmath-block-${i}`}
+              className="my-4 p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 overflow-x-auto text-amber-200 text-center text-sm sm:text-base font-mono"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          );
+        } catch {
+          nodes.push(
+            <div key={`latexmath-err-${i}`} className="my-2 p-2 bg-rose-950/40 text-rose-300 font-mono text-xs rounded">
+              {mathCode}
+            </div>
+          );
+        }
+        continue;
+      }
+
+      // LaTeX \begin{...} ... \end{...} environments
+      if (line.startsWith('\\begin{')) {
+        const mathLines: string[] = [line];
+        i++;
+        while (i < lines.length) {
+          const curr = lines[i].trim();
+          mathLines.push(lines[i]);
+          i++;
+          if (curr.startsWith('\\end{')) {
+            break;
+          }
+        }
+
+        const mathCode = mathLines.join('\n').trim();
+        const currentAnchor = pendingAnchorId;
+        pendingAnchorId = null;
+
+        try {
+          const html = katex.renderToString(mathCode, { displayMode: true, throwOnError: false });
+          nodes.push(
+            <div
+              id={currentAnchor || undefined}
+              key={`latex-env-${i}`}
+              className="my-4 p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 overflow-x-auto text-amber-200 text-center text-sm sm:text-base font-mono"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+          );
+        } catch {
+          nodes.push(
+            <div key={`latex-env-err-${i}`} className="my-2 p-2 bg-rose-950/40 text-rose-300 font-mono text-xs rounded">
+              {mathCode}
+            </div>
+          );
+        }
         continue;
       }
 
@@ -332,11 +531,11 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
         continue;
       }
 
-      // Unordered list items starting with * or -
-      if (line.startsWith('* ') || line.startsWith('- ')) {
+      // Unordered list items starting with *, -, or **
+      if (line.startsWith('* ') || line.startsWith('- ') || line.startsWith('** ')) {
         const listItems: string[] = [];
-        while (i < lines.length && (lines[i].trim().startsWith('* ') || lines[i].trim().startsWith('- '))) {
-          listItems.push(lines[i].trim().replace(/^[\*\-]\s+/, ''));
+        while (i < lines.length && (lines[i].trim().startsWith('* ') || lines[i].trim().startsWith('- ') || lines[i].trim().startsWith('** '))) {
+          listItems.push(lines[i].trim().replace(/^(\*\*|\*|\-)\s+/, ''));
           i++;
         }
         const currentAnchor = pendingAnchorId;
@@ -346,10 +545,10 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
           <ul
             id={currentAnchor || undefined}
             key={`ul-${i}`}
-            className="my-3 space-y-1.5 list-disc list-inside text-xs sm:text-sm text-slate-300"
+            className="my-4 space-y-2 list-disc list-outside pl-6 text-xs sm:text-sm text-slate-300"
           >
             {listItems.map((li, liIdx) => (
-              <li key={`li-${liIdx}`} className="leading-relaxed">
+              <li key={`li-${liIdx}`} className="leading-relaxed pl-1">
                 {renderMathInline(li)}
               </li>
             ))}
@@ -379,3 +578,4 @@ export const AsciiDocViewer: React.FC<AsciiDocViewerProps> = ({ content, classNa
 
   return <div className={`prose prose-invert max-w-none font-sans ${className}`}>{parseAsciiDoc(content)}</div>;
 };
+

@@ -58,7 +58,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => {
               G_N = {'{ k/N | k ∈ Z, |k| ≤ N² }'}, where δ = 1/N and δ · N = 1
             </div>
             <p className="text-slate-400 text-[10px]">
-              Exact discrete partition grids and nilpotent infinitesimals ε = ϖ ϑ allow exact sum evaluation of prime density asymptotics without limit approximations or nonstandard extensions.
+              Exact discrete partition grids and nilpotent boundary residuals ε = ϖ ϑ allow exact sum evaluation of prime density asymptotics without limit approximations or nonstandard extensions.
             </p>
           </div>
 

@@ -405,7 +405,7 @@ export const IrisSandbox: React.FC = () => {
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-4 shadow-xl">
               <div className="border-b border-slate-800 pb-3">
                 <h3 className="font-bold text-white text-sm">Discrete Spectrum Number x = st(x) + ε · a + δ · b</h3>
-                <p className="text-xs text-slate-400 mt-1">Nilpotent infinitesimal ε = ϖ ϑ and discrete partition grid step size δ = 1/N.</p>
+                <p className="text-xs text-slate-400 mt-1">Nilpotent boundary residual ε = ϖ ϑ and discrete partition grid step size δ = 1/N.</p>
               </div>
 
               <div className="space-y-3">

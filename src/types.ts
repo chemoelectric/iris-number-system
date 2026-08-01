@@ -19,10 +19,10 @@ export interface Cl411Multivector {
   label?: string;
 }
 
-// Discrete Spectrum Number: x + ε * nilpotent_infinitesimal + δ * discrete_grid_step
+// Discrete Spectrum Number: x + ε * nilpotent_boundary_residual + δ * discrete_grid_step
 export interface DiscreteSpectrumNumber {
   st: number; // Primary scalar component
-  eps: number; // Nilpotent infinitesimal coefficient ε (ϖ ϑ)
+  eps: number; // Nilpotent boundary residual coefficient ε (ϖ ϑ)
   omega: number; // Discrete partition scale coefficient δ
   label?: string;
 }
@@ -114,6 +114,17 @@ export interface TextbookChapter {
   title: string;
   summary?: string;
   sections: TextbookSection[];
+}
+
+export interface Textbook {
+  id: string;
+  title: string;
+  subtitle?: string;
+  author: string;
+  version: string;
+  lastUpdated: string;
+  description: string;
+  chapters: TextbookChapter[];
 }
 
 export interface ActiveView {
