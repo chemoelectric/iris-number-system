@@ -81,16 +81,16 @@ Conceptual introduction to the Iris optical-geometric analogy, variable aperture
 
 The Counting-Iris Number System takes its name and primary geometric conceptual framework from the optical **iris diaphragm**—a mechanical aperture composed of overlapping curved blades that expand and contract radially while rotating in phase space.
 
-In physical optics and geometric field theory, an iris diaphragm does not merely truncate light; it dynamically regulates total flux, boundary curvature, and phase distribution across a continuous aperture.
+In physical optics and geometric field theory, an iris diaphragm does not merely truncate light; it dynamically regulates total flux, boundary curvature, and phase distribution across a finite aperture.
 
-In our mathematical unification, the **Iris** serves as a dynamic algebraic aperture bridging the discrete integers \( \mathbb { Z } \) with continuous multivector space \( Cl ( 4 , 1 , 1 ) \).
+In our mathematical unification, the **Iris** serves as a dynamic algebraic aperture bridging the discrete integers \( \mathbb { Z } \) with finite multivector space \( Cl ( 4 , 1 , 1 ) \).
 
 The primary physical and mathematical components of the Iris analogy are:
 
 * **Central Aperture Opening (\( \iota \))**: Represents the active field generator \( \iota \), whose aperture area corresponds to the scaling flux of discrete integer counts.
 * **Overlapping Aperture Blades**: Execute Spin(2) bivector plane rotations \( e _ { 12 } \) in \( Cl ( 4 , 1 , 1 ) \), imparting phase orientation and parity residue.
 * **Nilpotent Perimeter Boundary (\( \varpi \vartheta \))**: The microscopic perimeter contact boundary of the blades acts as a nilpotent boundary constraint satisfying \( \varpi ^ 2 = 0 , \vartheta ^ 2 = 0 \), preventing singular boundary collapse while enforcing exact local contact.
-* **Variable Aperture Scaling**: Radial expansion and contraction \( r \) controls scaling dilatation, bridging discrete count states with continuous field density.
+* **Variable Aperture Scaling**: Radial expansion and contraction \( r \) controls scaling dilatation, bridging discrete count states with smooth macro-level field density.
 
 [IRIS_VISUALIZATION]
 
@@ -367,15 +367,15 @@ where \( r _ \omega = \frac { k _ \omega } { \omega } \in \mathcal { G } _ \omeg
 
 Under this physical Iris aperture limit model:
 
-* **Bounded Iris Continuum**: The normalized central aperture transmission parameter \( r \in [-1 , 1] \) spans a smooth, continuous interval of light flux, bounded by total closure (\( r = -1 \) or \( r = 0 \)) and full aperture opening (\( r = 1 \)).
+* **Bounded Iris Aperture Interval**: The normalized central aperture transmission parameter \( r \in [-1 , 1] \) spans a smooth interval of light flux across finite partition steps, bounded by total closure (\( r = -1 \) or \( r = 0 \)) and full aperture opening (\( r = 1 \)).
 * **Exact Constructibility**: Every operational state in physics or computing corresponds to a finite grid truncation \( r _ N \in \mathcal { G } _ N \), ensuring that physical measurements remain free of actual infinity paradoxes.
 
 == Real Aperture Dynamics, Transcendental Functions, and Clifford Rotations
 
 With real numbers \( \mathbb { R } \) established as constructive limits of Iris aperture partition measurements, real arithmetic and transcendental functions operate seamlessly within the Clifford Algebra \( Cl ( 4 , 1 , 1 ) \).
 
-=== Continuous Bivector Rotations and Transcendental Angles
-In the Iris generator operator \( \iota ( r , \theta ) \) defined in Postulate 9, the continuous rotation angle \( \theta \in \mathbb { R } \) parameterizes the spatial orientation of the aperture plane along the Spin(2) bivector generator \( e _ { 12 } \):
+=== Bivector Rotations and Transcendental Angles
+In the Iris generator operator \( \iota ( r , \theta ) \) defined in Postulate 9, the rotation angle \( \theta \in \mathbb { R } \) parameterizes the spatial orientation of the aperture plane along the Spin(2) bivector generator \( e _ { 12 } \):
 
 
 \[
@@ -395,9 +395,9 @@ The transcendental functions \( \cos\theta \) and \( \sin\theta \) are not mysti
 [THEOREM]
 .Theorem: Constructive Completeness of Iris Grid Limits
 ====
-Every Cauchy sequence of rational Iris aperture ratios \( ( r _ N ) _ { N \in \mathbb { Z } _ { \gt 0 } } \) converges to a unique real measurement state \( x \in \mathbb { R } \) that acts continuously upon the Clifford multivector field \( \Psi \in Cl ( 4 , 1 , 1 ) \). 
+Every Cauchy sequence of rational Iris aperture ratios \( ( r _ N ) _ { N \in \mathbb { Z } _ { \gt 0 } } \) converges to a unique real measurement state \( x \in \mathbb { R } \) that acts upon the Clifford multivector field \( \Psi \in Cl ( 4 , 1 , 1 ) \). 
 
-Furthermore, the space of real aperture flux parameters \( [-1 , 1] \) is constructively complete: any continuous aperture modulation \( f ( r ) \) can be uniformly approximated to arbitrary precision \( \epsilon \in \mathbb { Q } _ { \gt 0 } \) by a finite rational polynomial operator on an Iris partition grid \( \mathcal { G } _ N \).
+Furthermore, the space of real aperture flux parameters \( [-1 , 1] \) is constructively complete: any smooth aperture modulation \( f ( r ) \) can be uniformly approximated to arbitrary precision \( \epsilon \in \mathbb { Q } _ { \gt 0 } \) by a finite rational polynomial operator on an Iris partition grid \( \mathcal { G } _ N \).
 ====
 
 === Multiplicative Real Inverse and Flux Conservation
@@ -409,7 +409,7 @@ x \cdot x ^ { -1 } = 1 \quad \implies \quad \left ( \lim _ { N \to \infty } r _ 
 \]
 
 
-This guarantees strict conservation of light flux and geometric scale invariance across all continuous real transformations within the Counting-Iris Number System.
+This guarantees strict conservation of light flux and geometric scale invariance across all real transformations within the Counting-Iris Number System.
 
 = The Multiscale Resolution Numbers
 
