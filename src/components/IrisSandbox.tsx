@@ -558,7 +558,7 @@ export const IrisSandbox: React.FC = () => {
               </div>
 
               <p className="text-xs text-slate-400 leading-relaxed">
-                Objective Jaynesian distribution maximizes Shannon entropy $S[P] = -\sum P_i \ln P_i$ subject to mean energy constraints, guaranteeing tautological non-biased priors in Iris number theory.
+                Objective Jaynesian distribution maximizes Shannon entropy S[P] = -∑ P_i ln P_i subject to mean energy constraints, guaranteeing tautological non-biased priors in Iris number theory.
               </p>
             </div>
           </div>

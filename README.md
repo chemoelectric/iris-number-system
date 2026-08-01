@@ -2,7 +2,7 @@
 
 **Author:** Frédéric Blondel Custer
 
-An interactive deduction framework, analytical workbench, and comprehensive textbook environment for the **Counting-Iris Number System (INS)** in number theory, Clifford algebra $Cl(4,1,1)$, nonstandard analysis, Jaynesian Maximum Entropy probability, and constructive multivector analysis.
+An interactive deduction framework, analytical workbench, and comprehensive textbook environment for the **Counting-Iris Number System (INS)** in number theory, Clifford algebra Cl(4,1,1), nonstandard analysis, Jaynesian Maximum Entropy probability, and constructive multivector analysis.
 
 ---
 
@@ -21,7 +21,7 @@ The **Iris Number System Deduction & Inference Engine** provides a constructive 
 2. **Search & Inference Engine Prover**
    - Server-side inference integration powered by Gemini 3.6 Flash.
    - Generates multi-step, rigorous Iris deductions from natural language or mathematical conjectures.
-   - Restricts logical inferences to the Counting-Iris framework, Master Field Equation, and $Cl(4,1,1)$ metric preservation.
+   - Restricts logical inferences to the Counting-Iris framework, Master Field Equation, and Cl(4,1,1) metric preservation.
    - Instant step-by-step verification and direct import into the active deduction workspace.
 
 3. **Deduction Framework & Proof Builder**
@@ -30,18 +30,18 @@ The **Iris Number System Deduction & Inference Engine** provides a constructive 
    - High-contrast formatted display with one-click **LaTeX Export** and JSON workspace state export/import.
 
 4. **Iris Calculator & Multivector Workbench**
-   - Full implementation of the $Cl(4,1,1)$ 6-generator Clifford algebra signature $(+,+,+,+,-,0)$.
-   - Embedded bivector quaternion algebra ($i = e_{23}, j = e_{31}, k = e_{12}$).
-   - Discrete Spectrum Arithmetic ($x + \epsilon \cdot \text{residual} + \omega \cdot \text{scale}$) and Nonstandard Analysis Standard Part projection $\text{st}(x)$.
+   - Full implementation of the Cl(4,1,1) 6-generator Clifford algebra signature (+,+,+,+,-,0).
+   - Embedded bivector quaternion algebra (i = e_23, j = e_31, k = e_12).
+   - Discrete Spectrum Arithmetic (x + ε · residual + ω · scale) and Nonstandard Analysis Standard Part projection st(x).
 
 5. **Zeta & Prime Spectrum Visualizer**
-   - Interactive Recharts visualization of the Iris Zeta function $\zeta_I(s)$ along the critical line.
+   - Interactive Recharts visualization of the Iris Zeta function ζ_I(s) along the critical line.
    - Numerical zero candidate search and phase spectrum density analysis.
    - Iris Prime Distribution spiral and residue distribution modeling.
 
 6. **Theorem Library & Axiom Workbench**
    - Complete repository of formal axioms, postulates, definitions, and proven theorems.
-   - Filterable by domain (*Tautological Discrete Arithmetic*, *Clifford Algebra $Cl(4,1,1)$*, *Jaynesian MaxEnt Probability*, *Spectral Topology*, etc.).
+   - Filterable by domain (*Tautological Discrete Arithmetic*, *Clifford Algebra Cl(4,1,1)*, *Jaynesian MaxEnt Probability*, *Spectral Topology*, etc.).
 
 ---
 
@@ -80,11 +80,11 @@ npm start
 ## 📜 Mathematical Foundations
 
 The inference engine operates strictly within the Counting-Iris number system:
-- **Basis Elements**: $\{1, \iota, \varpi, \vartheta\}$ with $\iota^2 = \tau - 1$ where $\tau = \frac{1+\sqrt{5}}{2}$.
-- **Multiscale Resolution Analysis (MSRA)**: Multiscale resolution numbers (short name **m-res numbers**) $x^* \in \mathbb{R}^*$ constructed as physical vernier aperture measurement quantities on hyper-refined grid $\mathcal{G}_\omega$.
-- **Clifford $Cl(4,1,1)$**: 6 basis generators $\{e_1, e_2, e_3, e_4, e_+, e_-\}$ satisfying $e_1^2=e_2^2=e_3^2=1$, $e_4^2=0$, $e_+^2=1$, $e_-^2=-1$.
-- **Conformal Null Vectors**: $e_\infty = e_+ + e_-$, $e_0 = \frac{1}{2}(e_- - e_+)$.
-- **Master Field Equation**: $D F_{\text{total}} = J_{\text{total}}$ where $D = \nabla + e_4 \frac{1}{c} D_t$.
+- **Basis Elements**: {1, ι, ϖ, ϑ} with ι² = τ - 1 where τ = (1+√5)/2.
+- **Multiscale Resolution Analysis (MSRA)**: Multiscale resolution numbers (short name **m-res numbers**) x* ∈ ℝ* constructed as physical vernier aperture measurement quantities on hyper-refined grid G_ω.
+- **Clifford Cl(4,1,1)**: 6 basis generators {e1, e2, e3, e4, e+, e-} satisfying e1²=e2²=e3²=1, e4²=0, e+²=1, e-²=-1.
+- **Conformal Null Vectors**: e_∞ = e_+ + e_-, e_0 = 1/2(e_- - e_+).
+- **Master Field Equation**: D F_total = J_total where D = ∇ + e4 (1/c) D_t.
 
 ---
 
