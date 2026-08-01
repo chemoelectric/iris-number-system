@@ -433,15 +433,15 @@ x ^ * = \frac { k } { \omega } \equiv \text { VernierApertureFlux } _ { \omega }
 
 
 1. **Finite-Duration Observation Step**: A multiscale resolution quantity \( \epsilon ^ * \in \mathbb { R } ^ * \) represents an observation or measurement process conducted over a finite temporal duration \( \tau _ { \text { obs } } \), whose measured flux magnitude is strictly smaller than any standard positive rational step:
-
++
 \[
 |\epsilon ^ *| \lt \frac { 1 } { N } , \quad \forall N \in \mathbb { Z } _ { \gt 0 }
 \]
-
++
 An elementary finite-duration step is executed by a physical measurement process taking a finite time duration to perform across a fine vernier sub-tick step \( \delta _ { \omega } = \frac { \bullet } { \omega } \).
 
 2. **Extended Temporal Measurement Scale**: A multiscale resolution quantity \( \Omega ^ * \in \mathbb { R } ^ * \) represents a cumulative measurement process conducted over an extended series of finite time observation steps whose step count exceeds any standard integer bound:
-
++
 \[
 |\Omega ^ *| \gt M , \quad \forall M \in \mathbb { Z } _ { \gt 0 }
 \]
