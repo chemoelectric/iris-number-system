@@ -9,3 +9,4 @@
 - Otherwise, only the Iris number system and the Master Field Equation may be used for drawing inferences or deductions, unless Command Officer gives orders to use as well some other assumption.
 - Except as specified above, never drift outside the Iris number system into conventional mathematics.
 - Always avoid formulations that hint at the existence of a continuum. Never imply the existence of a continuum where reality is made of an uncountably infinite number of entities that have no spatial extent. Always speak only of finite numbers of finite entities. Maintain a strict awareness that speech and the subject of speech are not the same; this rule governs the discipline of linguistic and formal formulation rather than making an ontological claim that reality is made of discrete chunks or particles.
+- Proof by contradiction is always allowed.
