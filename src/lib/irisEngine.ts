@@ -227,6 +227,7 @@ export function multiplyCl411(A: Cl411Multivector, B: Cl411Multivector): Cl411Mu
 export function createDiscreteSpectrumNumber(st: number, eps = 0, omega = 0): DiscreteSpectrumNumber {
   return { st, eps, omega };
 }
+export const createMultiscaleResolutionNumber = createDiscreteSpectrumNumber;
 export const createNonstandardNumber = createDiscreteSpectrumNumber;
 export const createHyperreal = createDiscreteSpectrumNumber;
 
@@ -241,6 +242,7 @@ export function addDiscreteSpectrumNumber(h1: DiscreteSpectrumNumber, h2: Discre
     omega: h1.omega + h2.omega
   };
 }
+export const addMultiscaleResolutionNumber = addDiscreteSpectrumNumber;
 export const addNonstandardNumber = addDiscreteSpectrumNumber;
 export const addHyperreal = addDiscreteSpectrumNumber;
 
@@ -252,6 +254,7 @@ export function multiplyDiscreteSpectrumNumber(h1: DiscreteSpectrumNumber, h2: D
   const omega = h1.st * h2.omega + h1.omega * h2.st;
   return { st, eps, omega };
 }
+export const multiplyMultiscaleResolutionNumber = multiplyDiscreteSpectrumNumber;
 export const multiplyNonstandardNumber = multiplyDiscreteSpectrumNumber;
 
 // ==========================================
@@ -371,7 +374,7 @@ export function generateIrisPrimes(count = 150): IrisPrimePoint[] {
 
 // ==========================================
 // 6. DEFAULT AXIOMS OF THE IRIS SYSTEM
-// (Clifford Cl(4,1,1), Jaynesian, Nonstandard, Topology)
+// (Clifford Cl(4,1,1), Jaynesian, Multiscale Resolution, Topology)
 // ==========================================
 
 export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [

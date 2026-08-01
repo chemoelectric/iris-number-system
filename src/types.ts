@@ -26,7 +26,8 @@ export interface DiscreteSpectrumNumber {
   omega: number; // Discrete partition scale coefficient δ
   label?: string;
 }
-export type NonstandardNumber = DiscreteSpectrumNumber;
+export type MultiscaleResolutionNumber = DiscreteSpectrumNumber;
+export type NonstandardNumber = MultiscaleResolutionNumber;
 export type HyperrealNumber = DiscreteSpectrumNumber;
 
 // Jaynesian MaxEnt Probability Distribution Point

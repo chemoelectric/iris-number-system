@@ -33,15 +33,11 @@ Under this directional measurement representation:
 * \( ( \bullet\bullet ) _ { \to } \): Two discrete measurement steps in the forward direction.
 * \( \bullet _ { \leftarrow } \): A single discrete measurement step in the opposite direction (replacing the abstract '-1' symbol).
 * \( ( \bullet\bullet ) _ { \leftarrow } \): Two discrete measurement steps in the opposite direction.
+* **etc** (*et cetera*): Explicitly utilized in place of standard mathematical ellipsis dots \( ( \dots ) \) to represent countable infinity, reminding the reader that **etc** signifies *"and indefinitely onwards in similar fashion"*, denoting an active, open-ended operational process of step-by-step measurement carrying none of the conventional mathematical assumptions or completed-infinity abstractions found in set theory and classical real analysis.
 
 Positive integers represent measurement operations counting steps in the forward direction, while negative integers represent identical measurement steps in the opposite spatial/algebraic direction from the zero origin.
 
 In this framework, every integer \( n \in \mathbb { Z } \) acts as an active **Operation of Measurement**—both as a directional tally of physical dots and as a discrete projection operator upon the spectrum of the Iris basis \( \{ \bullet , \iota , \varpi , \vartheta \} \).
-
-[NOTE]
-====
-In the Iris Number System, the notation **etc** (*et cetera*) is explicitly utilized in place of standard mathematical ellipsis dots \( ( \dots ) \) to represent countable infinity. This serves as an intentional reminder to the reader that **etc** signifies *"and indefinitely onwards in similar fashion"*, denoting an active, open-ended operational process of step-by-step measurement. It carries none of the conventional mathematical assumptions or completed-infinity abstractions found in set theory and classical real analysis.
-====
 
 [NOTE]
 ====
@@ -412,23 +408,23 @@ x \cdot x ^ { -1 } = 1 \quad \implies \quad \left ( \lim _ { N \to \infty } r _ 
 
 This guarantees strict conservation of light flux and geometric scale invariance across all continuous real transformations within the Counting-Iris Number System.
 
-= The Nonstandard Numbers
+= The Multiscale Resolution Numbers
 
-Constructing nonstandard numbers as measurement quantities evaluated across finer and finer vernier scales on the Iris aperture grid, establishing exact finite-duration observation steps and extended temporal scale parameters without external non-constructive set mappings.
+Constructing multiscale resolution numbers as measurement quantities evaluated across finer and finer vernier scales on the Iris aperture grid, establishing Multiscale Resolution Analysis (MSRA) with exact finite-duration observation steps and extended temporal scale parameters without external non-constructive set mappings.
 
-== Vernier Scale Metrology and Nonstandard Aperture Resolutions
+== Vernier Scale Metrology and Multiscale Aperture Resolutions
 
-In the Counting-Iris framework, **The Nonstandard Numbers** are constructed directly as physical measurement quantities evaluated across **finer and finer vernier scales** of the Iris partition grid.
+In the Counting-Iris framework, **Multiscale Resolution Analysis (MSRA)** replaces abstract nonstandard analysis by constructing **The Multiscale Resolution Numbers** directly as physical measurement quantities evaluated across **finer and finer vernier scales** of the Iris partition grid.
 
-Rather than invoking abstract model-theoretic set constructions or external star-maps, the Iris system provides a unified metrological foundation: nonstandard numbers are to real numbers what fine vernier gauge readings are to coarse main-scale ruler marks.
+Rather than invoking non-constructive model-theoretic ultrafilters or external star-maps, MSRA provides a unified metrological foundation: multiscale resolution numbers are to real numbers what fine vernier gauge readings are to coarse main-scale ruler marks.
 
-Just as a physical vernier caliper uses an auxiliary sliding scale aligned with a main scale to measure fractional displacements far below the main scale's smallest tick mark, nonstandard Iris numbers represent discrete measurement increments evaluated at hyper-refined vernier aperture resolutions \( \mathcal { G } _ { \omega } \).
+Just as a physical vernier caliper uses an auxiliary sliding scale aligned with a main scale to measure fractional displacements far below the main scale's smallest tick mark, multiscale resolution Iris numbers represent discrete measurement increments evaluated at hyper-refined vernier aperture resolutions \( \mathcal { G } _ { \omega } \).
 
-[#definition-nonstandard-vernier-number]
+[#definition-multiscale-vernier-number]
 [DEFINITION]
-.Definition: Nonstandard Vernier Measurement Number
+.Definition: Multiscale Vernier Measurement Number
 ====
-A nonstandard number \( x ^ * \in \mathbb { R } ^ * \) is an active measurement operation defined on a hyper-refined vernier aperture grid \( \mathcal { G } _ { \omega } \), where \( \omega \) is an unbounded grid resolution parameter exceeding any standard integer count \( N \in \mathbb { Z } _ { \gt 0 } \):
+A multiscale resolution number \( x ^ * \in \mathbb { R } ^ * \) is an active measurement operation defined under Multiscale Resolution Analysis (MSRA) on a hyper-refined vernier aperture grid \( \mathcal { G } _ { \omega } \), where \( \omega \) is an unbounded grid resolution parameter exceeding any standard integer count \( N \in \mathbb { Z } _ { \gt 0 } \):
 
 
 \[
@@ -436,7 +432,7 @@ x ^ * = \frac { k } { \omega } \equiv \text { VernierApertureFlux } _ { \omega }
 \]
 
 
-1. **Finite-Duration Observation Step**: A nonstandard quantity \( \epsilon ^ * \in \mathbb { R } ^ * \) represents an observation or measurement process conducted over a finite temporal duration \( \tau _ { \text { obs } } \), whose measured flux magnitude is strictly smaller than any standard positive rational step:
+1. **Finite-Duration Observation Step**: A multiscale resolution quantity \( \epsilon ^ * \in \mathbb { R } ^ * \) represents an observation or measurement process conducted over a finite temporal duration \( \tau _ { \text { obs } } \), whose measured flux magnitude is strictly smaller than any standard positive rational step:
 
 \[
 |\epsilon ^ *| \lt \frac { 1 } { N } , \quad \forall N \in \mathbb { Z } _ { \gt 0 }
@@ -444,7 +440,7 @@ x ^ * = \frac { k } { \omega } \equiv \text { VernierApertureFlux } _ { \omega }
 
 An elementary finite-duration step is executed by a physical measurement process taking a finite time duration to perform across a fine vernier sub-tick step \( \delta _ { \omega } = \frac { \bullet } { \omega } \).
 
-2. **Extended Temporal Measurement Scale**: A nonstandard quantity \( \Omega ^ * \in \mathbb { R } ^ * \) represents a cumulative measurement process conducted over an extended series of finite time observation steps whose step count exceeds any standard integer bound:
+2. **Extended Temporal Measurement Scale**: A multiscale resolution quantity \( \Omega ^ * \in \mathbb { R } ^ * \) represents a cumulative measurement process conducted over an extended series of finite time observation steps whose step count exceeds any standard integer bound:
 
 \[
 |\Omega ^ *| \gt M , \quad \forall M \in \mathbb { Z } _ { \gt 0 }
@@ -452,7 +448,7 @@ An elementary finite-duration step is executed by a physical measurement process
 
 ====
 
-=== The Vernier Metrology Analogy
+=== The Vernier Metrology Analogy in MSRA
 
 * **Main Scale**: The standard rational/real partition grid \( \mathcal { G } _ N \), providing macro-level aperture flux readings \( r \in \mathbb { R } \).
 * **Vernier Auxiliary Scale**: The hyper-refined sub-grid \( \mathcal { G } _ { \omega } \), providing micro-level sub-blade displacements \( \delta _ { \omega } \) measured over finite observation time intervals.
@@ -460,10 +456,10 @@ An elementary finite-duration step is executed by a physical measurement process
 
 == Vernier Scale Arithmetic and Main Scale Projection
 
-Arithmetic operations on nonstandard numbers \( \mathbb { R } ^ * \) operate as composite measurement operations on aligned vernier scales, preserving exact algebraic ring and field properties.
+Arithmetic operations on multiscale resolution numbers \( \mathbb { R } ^ * \) operate under MSRA as composite measurement operations on aligned vernier scales, preserving exact algebraic ring and field properties.
 
 === Main Scale Projection (Standard Part Function)
-Every finite nonstandard vernier reading \( x ^ * \in \mathbb { R } ^ * \) decomposes uniquely into a main scale real aperture reading \( r \in \mathbb { R } \) plus a finite-duration observation residual \( \epsilon ^ * \) resulting from a measurement process conducted over a finite temporal duration:
+Under Multiscale Resolution Analysis (MSRA), every finite multiscale vernier reading \( x ^ * \in \mathbb { R } ^ * \) decomposes uniquely into a main scale real aperture reading \( r \in \mathbb { R } \) plus a finite-duration observation residual \( \epsilon ^ * \) resulting from a measurement process conducted over a finite temporal duration:
 
 
 \[
@@ -483,7 +479,7 @@ The **Main Scale Projection** operator \( \operatorname { st } : \operatorname {
 [THEOREM]
 .Theorem: Vernier Flux Conservation and Main Scale Projection
 ====
-For any finite nonstandard vernier measurement operations \( x ^ * , y ^ * \in \operatorname { Fin } ( \mathbb { R } ^ * ) \), the Main Scale Projection operator \( \operatorname { st } \) is a ring homomorphism into the real field \( \mathbb { R } \):
+For any finite multiscale vernier measurement operations \( x ^ * , y ^ * \in \operatorname { Fin } ( \mathbb { R } ^ * ) \), the Main Scale Projection operator \( \operatorname { st } \) is a ring homomorphism into the real field \( \mathbb { R } \):
 
 
 \[
@@ -491,7 +487,7 @@ For any finite nonstandard vernier measurement operations \( x ^ * , y ^ * \in \
 \]
 
 
-Furthermore, calculus differentials \( d\Psi \) and derivatives \( \frac { d\Psi } { dx } \) in the Clifford field are exact ratios of finite vernier grid displacements evaluated under Main Scale Projection over finite observation time intervals:
+Furthermore, in MSRA, calculus differentials \( d\Psi \) and derivatives \( \frac { d\Psi } { dx } \) in the Clifford field are exact ratios of finite vernier grid displacements evaluated under Main Scale Projection over finite observation time intervals:
 
 
 \[
@@ -588,7 +584,7 @@ This index provides a canonical reference of all axiomatic Postulates, Theorems,
 -- Chapter: *The Real Numbers* | Section: *Real Aperture Dynamics, Transcendental Functions, and Clifford Rotations*
 
 * xref:theorem-vernier-flux-conservation[**Theorem: Vernier Flux Conservation and Main Scale Projection**]
--- Chapter: *The Nonstandard Numbers* | Section: *Vernier Scale Arithmetic and Main Scale Projection*
+-- Chapter: *The Multiscale Resolution Numbers* | Section: *Vernier Scale Arithmetic and Main Scale Projection*
 
 == Definitions
 
@@ -598,8 +594,8 @@ This index provides a canonical reference of all axiomatic Postulates, Theorems,
 * xref:definition-real-aperture-limit[**Definition: Constructive Iris Aperture Real Number**]
 -- Chapter: *The Real Numbers* | Section: *Constructive Iris Aperture Limits and Rational Grid Refinement*
 
-* xref:definition-nonstandard-vernier-number[**Definition: Nonstandard Vernier Measurement Number**]
--- Chapter: *The Nonstandard Numbers* | Section: *Vernier Scale Metrology and Nonstandard Aperture Resolutions*
+* xref:definition-multiscale-vernier-number[**Definition: Multiscale Vernier Measurement Number**]
+-- Chapter: *The Multiscale Resolution Numbers* | Section: *Vernier Scale Metrology and Multiscale Aperture Resolutions*
 
 * xref:definition-master-field-equation[**Definition: The Master Field Equation**]
 -- Chapter: *Appendix: The Master Field Equation* | Section: *The Clifford Unified Master Field Equation*
