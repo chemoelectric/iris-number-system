@@ -333,7 +333,7 @@ Varying the rational aperture ratio \( r \) adjusts the central flux transmissio
 
 = The Real Numbers
 
-Constructing the real numbers R through constructive Iris aperture limits and convergent Cauchy sequences of rational partition grid measurements, establishing continuous flux parameters and transcendental bivector rotations without unconstructive non-denumerable infinities.
+Constructing the real numbers R through constructive Iris aperture refinements and convergent Cauchy sequences of rational partition grid measurements, establishing dense flux parameters and transcendental bivector rotations without unconstructive non-denumerable infinities.
 
 == Constructive Iris Aperture Limits and Rational Grid Refinement
 
@@ -353,12 +353,15 @@ A real number \( x \in \mathbb { R } \) is an active measurement process defined
 \]
 
 
-The real quantity \( x \) is the continuous aperture flux throughput limit:
+The real quantity \( x \) is the main scale aperture flux throughput value under Main Scale Projection:
 
 
 \[
-x \equiv \lim _ { N \to \infty } r _ N = \lim _ { N \to \infty } \text { ApertureFlux } _ N\left ( k _ N \cdot \delta _ N \right )
+x \equiv \text { st } ( r _ \omega ) = \text { st } \left ( \text { ApertureFlux } _ \omega \left ( k _ \omega \cdot \delta _ \omega \right ) \right )
 \]
+
+
+where \( r _ \omega = \frac { k _ \omega } { \omega } \in \mathcal { G } _ \omega \) is a hyper-refined vernier rational measurement state satisfying \( | r _ N - x | \lt \frac { 1 } { N } \) for all finite grid stages \( N \in \mathbb { Z } _ { \gt 0 } \).
 
 ====
 
