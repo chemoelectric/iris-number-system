@@ -105,7 +105,7 @@ export const INITIAL_TEXTBOOK: Textbook = {
   id: "textbook-iris-number-system",
   title: JSON.parse("\"The Iris Number System\""),
   subtitle: "Constructive Clifford Multivector Analysis",
-  author: JSON.parse("\"C. V. H. H. B. P. A.\""),
+  author: JSON.parse("\"Frédéric Blondel Custer\""),
   version: "2.1.0",
   lastUpdated: "2026-08-01",
   description: JSON.parse("\"A Rigorous Constructive Foundation for Mathematics and Physics\""),
@@ -113,12 +113,12 @@ export const INITIAL_TEXTBOOK: Textbook = {
   {
     "id": "chap-the-iris-number-system",
     "title": "The Iris Number System",
-    "summary": ":author: Frederic Custer\n:doctype: book\n:toc: left\n:toc-title: Table of Contents\n:stem: latexmath\n:sectnums!:\n\nA formal axiomatic development of the Counting-Iris Number System unifying discrete arithmetic, Clifford Algebra Cl(4,1,1), Exact Discrete Rational Grids, Jaynesian Maximum Entropy, and tautological proofs in number theory.",
+    "summary": ":author: Frédéric Blondel Custer\n:doctype: book\n:toc: left\n:toc-title: Table of Contents\n:stem: latexmath\n:sectnums!:\n\nA formal axiomatic development of the Counting-Iris Number System unifying discrete arithmetic, Clifford Algebra Cl(4,1,1), Exact Discrete Rational Grids, Jaynesian Maximum Entropy, and tautological proofs in number theory.",
     "sections": [
       {
         "id": "chap-the-iris-number-system-sec-1",
         "title": "The Iris Number System",
-        "contentAsciiDoc": ":author: Frederic Custer\n:doctype: book\n:toc: left\n:toc-title: Table of Contents\n:stem: latexmath\n:sectnums!:\n\nA formal axiomatic development of the Counting-Iris Number System unifying discrete arithmetic, Clifford Algebra Cl(4,1,1), Exact Discrete Rational Grids, Jaynesian Maximum Entropy, and tautological proofs in number theory."
+        "contentAsciiDoc": ":author: Frédéric Blondel Custer\n:doctype: book\n:toc: left\n:toc-title: Table of Contents\n:stem: latexmath\n:sectnums!:\n\nA formal axiomatic development of the Counting-Iris Number System unifying discrete arithmetic, Clifford Algebra Cl(4,1,1), Exact Discrete Rational Grids, Jaynesian Maximum Entropy, and tautological proofs in number theory."
       }
     ]
   },

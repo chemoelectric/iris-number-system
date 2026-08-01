@@ -1,5 +1,5 @@
 = The Iris Number System
-:author: Frederic Custer
+:author: Frédéric Blondel Custer
 :doctype: book
 :toc: left
 :toc-title: Table of Contents

@@ -1,5 +1,7 @@
 # Iris Number System Deduction & Inference Engine
 
+**Author:** Frédéric Blondel Custer
+
 An interactive deduction framework, analytical workbench, and comprehensive textbook environment for the **Counting-Iris Number System (INS)** in number theory, Clifford algebra $Cl(4,1,1)$, nonstandard analysis, Jaynesian Maximum Entropy probability, and constructive multivector analysis.
 
 ---
