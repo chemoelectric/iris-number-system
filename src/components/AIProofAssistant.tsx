@@ -60,7 +60,7 @@ export const AIProofAssistant: React.FC<AIProofAssistantProps> = ({
       const p = data.proof;
       const proofObj: TheoremProof = {
         id: `ai-proof-${Date.now()}`,
-        title: p.title || 'AI Generated Iris Deduction',
+        title: p.title || 'Inference Engine Generated Iris Deduction',
         domain: (p.domain as IrisDomain) || domain,
         hypothesis: p.hypothesis || 'Given statement assumptions',
         conclusion: p.conclusion || 'Proved assertion',
@@ -77,13 +77,13 @@ export const AIProofAssistant: React.FC<AIProofAssistantProps> = ({
         })),
         potentialCounterexamples: p.potentialCounterexamples || [],
         relatedLemmas: p.relatedLemmas || [],
-        author: 'AI Assistant',
+        author: 'Inference Engine',
         createdAt: new Date().toISOString().split('T')[0],
       };
 
       setGeneratedProof(proofObj);
     } catch (err: any) {
-      console.error('AI Proof generation error:', err);
+      console.error('Inference Engine proof generation error:', err);
       setError(err.message || 'An error occurred while generating the deduction.');
     } finally {
       setLoading(false);
@@ -116,7 +116,7 @@ export const AIProofAssistant: React.FC<AIProofAssistantProps> = ({
           <div>
             <div className="flex items-center space-x-2">
               <Bot className="w-6 h-6 text-amber-400" />
-              <h2 className="text-xl font-bold text-white">AI Theorem Prover & Deduction Assistant</h2>
+              <h2 className="text-xl font-bold text-white">Theorem Prover & Search-and-Inference Engine</h2>
             </div>
             <p className="text-slate-300 text-sm mt-1 max-w-2xl">
               Powered by Gemini 3.6 Flash server-side engine. Formulate any conjecture in Number Theory or Analysis to generate rigorous multi-step Iris proofs.
@@ -226,7 +226,7 @@ export const AIProofAssistant: React.FC<AIProofAssistantProps> = ({
             ) : (
               <>
                 <Sparkles className="w-4 h-4 text-slate-950" />
-                <span>Run AI Deduction Engine</span>
+                <span>Run Search & Inference Engine</span>
               </>
             )}
           </button>

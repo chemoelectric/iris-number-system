@@ -50,9 +50,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     },
     {
       id: 'assistant' as const,
-      label: 'AI Prover (Gemini)',
+      label: 'Inference Engine Prover',
       icon: Bot,
-      badge: 'AI',
+      badge: 'Infer',
     },
     {
       id: 'library' as const,
@@ -112,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   {item.badge && (
                     <span
                       className={`text-[9px] px-1.5 py-0.2 rounded font-semibold ${
-                        item.badge === 'AI'
+                        item.badge === 'Infer'
                           ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
                           : 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30'
                       }`}

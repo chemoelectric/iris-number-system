@@ -178,7 +178,7 @@ ${currentProof.steps
               className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-purple-600 hover:from-amber-400 hover:to-purple-500 text-slate-950 font-bold rounded-xl text-xs shadow-lg shadow-amber-500/20 transition"
             >
               <Bot className="w-4 h-4" />
-              <span>AI Deduction Assistant</span>
+              <span>Inference Engine Assistant</span>
             </button>
 
             <button

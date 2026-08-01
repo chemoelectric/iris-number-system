@@ -414,17 +414,17 @@ Constructing multiscale resolution numbers as measurement quantities evaluated a
 
 == Vernier Scale Metrology and Multiscale Aperture Resolutions
 
-In the Counting-Iris framework, **Multiscale Resolution Analysis (MSRA)** replaces abstract nonstandard analysis by constructing **The Multiscale Resolution Numbers** directly as physical measurement quantities evaluated across **finer and finer vernier scales** of the Iris partition grid.
+In the Counting-Iris framework, **Multiscale Resolution Analysis (MSRA)** replaces abstract nonstandard analysis by constructing **The Multiscale Resolution Numbers** (or simply **m-res numbers**) directly as physical measurement quantities evaluated across **finer and finer vernier scales** of the Iris partition grid.
 
-Rather than invoking non-constructive model-theoretic ultrafilters or external star-maps, MSRA provides a unified metrological foundation: multiscale resolution numbers are to real numbers what fine vernier gauge readings are to coarse main-scale ruler marks.
+Rather than invoking non-constructive model-theoretic ultrafilters or external star-maps, MSRA provides a unified metrological foundation: multiscale resolution numbers (m-res numbers) are to real numbers what fine vernier gauge readings are to coarse main-scale ruler marks.
 
-Just as a physical vernier caliper uses an auxiliary sliding scale aligned with a main scale to measure fractional displacements far below the main scale's smallest tick mark, multiscale resolution Iris numbers represent discrete measurement increments evaluated at hyper-refined vernier aperture resolutions \( \mathcal { G } _ { \omega } \).
+Just as a physical vernier caliper uses an auxiliary sliding scale aligned with a main scale to measure fractional displacements far below the main scale's smallest tick mark, multiscale resolution Iris numbers (m-res numbers) represent discrete measurement increments evaluated at hyper-refined vernier aperture resolutions \( \mathcal { G } _ { \omega } \).
 
 [#definition-multiscale-vernier-number]
 [DEFINITION]
-.Definition: Multiscale Vernier Measurement Number
+.Definition: Multiscale Vernier Measurement Number (m-res Number)
 ====
-A multiscale resolution number \( x ^ * \in \mathbb { R } ^ * \) is an active measurement operation defined under Multiscale Resolution Analysis (MSRA) on a hyper-refined vernier aperture grid \( \mathcal { G } _ { \omega } \), where \( \omega \) is an unbounded grid resolution parameter exceeding any standard integer count \( N \in \mathbb { Z } _ { \gt 0 } \):
+A multiscale resolution number (or **m-res number**) \( x ^ * \in \mathbb { R } ^ * \) is an active measurement operation defined under Multiscale Resolution Analysis (MSRA) on a hyper-refined vernier aperture grid \( \mathcal { G } _ { \omega } \), where \( \omega \) is an unbounded grid resolution parameter exceeding any standard integer count \( N \in \mathbb { Z } _ { \gt 0 } \):
 
 
 \[

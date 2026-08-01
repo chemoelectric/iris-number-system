@@ -29,7 +29,7 @@ async function startServer() {
     });
   };
 
-  // API Endpoint for AI Iris Deduction & Proof Generation
+  // API Endpoint for Search & Inference Engine Iris Deduction & Proof Generation
   app.post("/api/gemini/deduce", async (req, res) => {
     try {
       const { conjecture, domain, proofType, rigorLevel, currentSteps } = req.body;
@@ -105,7 +105,7 @@ Ensure the steps use formal Iris Number System notation where applicable (using 
     } catch (err: any) {
       console.error("Gemini deduction error:", err);
       return res.status(500).json({
-        error: err.message || "Failed to generate AI mathematical deduction.",
+        error: err.message || "Failed to generate mathematical deduction via inference engine.",
       });
     }
   });

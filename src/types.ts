@@ -79,7 +79,7 @@ export interface TheoremProof {
   steps: DeductionStep[];
   potentialCounterexamples?: string[];
   relatedLemmas?: string[];
-  author?: 'System' | 'AI Assistant' | 'User';
+  author?: 'System' | 'Inference Engine' | 'User';
   createdAt: string;
 }
 

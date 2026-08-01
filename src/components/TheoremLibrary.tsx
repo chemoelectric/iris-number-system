@@ -133,7 +133,7 @@ export const TheoremLibrary: React.FC<TheoremLibraryProps> = ({
                       )
                     }
                     className="p-1.5 bg-slate-800 hover:bg-slate-700 text-amber-300 rounded-lg text-xs font-medium transition"
-                    title="Explore with AI Prover"
+                    title="Explore with Inference Engine Prover"
                   >
                     <Bot className="w-4 h-4" />
                   </button>
