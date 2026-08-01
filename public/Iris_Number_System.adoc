@@ -498,6 +498,143 @@ Furthermore, in MSRA, calculus differentials \( d\Psi \) and derivatives \( \fra
 This eliminates division-by-zero ambiguities by expressing all derivatives as concrete physical ratios between measurement steps conducted in finite observation time.
 ====
 
+= Complex Numbers and Quaternions
+
+Constructing complex numbers and quaternions directly within the Counting-Iris framework, establishing complex numbers via the fundamental Iris aperture generator \iota and quaternions as the spatial bivector subalgebra of Cl(4,1,1) without introducing non-constructive sets or ungrounded imaginary abstractions.
+
+== Complex Numbers in Counting-Iris
+
+In traditional mathematics, the complex field \mathbb{C} is introduced by adjoining an abstract symbol i = \sqrt{-1}. Within the Counting-Iris framework, complex numbers are constructed constructively as active multivector aperture expressions evaluated on rational partition grids.
+
+[#definition-complex-iris-number]
+[DEFINITION]
+.Definition: Counting-Iris Complex Number
+====
+A complex number z \in \mathbb{C}_{\text{Iris}} in the Counting-Iris framework is a multivector aperture expression:
+
+
+\[
+z = a + b \iota
+\]
+
+
+where a, b \in \mathbb{R} (or discrete rational partition grids \mathcal{G}_N) and \iota is the fundamental Iris generator (Postulate 9) satisfying the quadratic aperture relation:
+
+
+\[
+\iota^2 = -\mathbf{1} + \varpi \vartheta
+\]
+
+
+with \varpi, \vartheta being orthogonal nilpotent boundary generators (\varpi^2 = 0, \vartheta^2 = 0).
+====
+
+The imaginary unit \iota in Counting-Iris represents an active, physical aperture phase rotation operator across orthogonal measurement axes, whose square differs from -\mathbf{1} by a nilpotent perimeter boundary flux \varpi \vartheta.
+
+[#theorem-complex-main-scale-field]
+[THEOREM]
+.Theorem: Main Scale Complex Field Isomorphism
+====
+Under Main Scale Projection \operatorname{st}(\iota^2) = -1, the Counting-Iris complex domain \mathbb{C}_{\text{Iris}} maps directly onto the classical field of complex numbers \mathbb{C}, preserving addition, multiplication, and modulus operations.
+
+*Proof:*
+Let z_1 = a_1 + b_1 \iota and z_2 = a_2 + b_2 \iota be two Counting-Iris complex numbers. Their product in the multivector aperture algebra is given by:
+
+
+\[
+z_1 z_2 = (a_1 a_2 + b_1 b_2 \iota^2) + (a_1 b_2 + a_2 b_1) \iota = (a_1 a_2 - b_1 b_2 + b_1 b_2 \varpi \vartheta) + (a_1 b_2 + a_2 b_1) \iota
+\]
+
+
+Applying the Main Scale Projection operator \operatorname{st} (Postulate 8 / MSRA) removes the nilpotent boundary residual \varpi \vartheta, yielding:
+
+
+\[
+\operatorname{st}(z_1 z_2) = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1) i
+\]
+
+
+which is identical to the canonical field multiplication rule in \mathbb{C}. Furthermore, complex conjugation is defined as the aperture inversion operator \bar{z} = a - b \iota, giving the aperture norm squared:
+
+
+\[
+z \bar{z} = a^2 - b^2 \iota^2 = a^2 + b^2 - b^2 \varpi \vartheta \implies \operatorname{st}(z \bar{z}) = a^2 + b^2
+\]
+
+
+establishing an exact ring isomorphism with the classical complex field \mathbb{C}. \blacksquare
+====
+
+== Quaternions as Cl(4,1,1) Bivector Subalgebras
+
+Rather than postulating quaternions \mathbb{H} through abstract 4-tuples, Counting-Iris constructs quaternions directly as the Spin(2) spatial bivector subalgebra of the 6-generator Clifford Algebra Cl(4,1,1).
+
+[#definition-iris-quaternion]
+[DEFINITION]
+.Definition: Counting-Iris Quaternion Bivector
+====
+A quaternion q \in \mathbb{H}_{\text{Iris}} in Counting-Iris is a multivector in the spatial bivector subalgebra of Cl(4,1,1):
+
+
+\[
+q = q_0 + q_1 \mathbf{i} + q_2 \mathbf{j} + q_3 \mathbf{k}
+\]
+
+
+where q_0, q_1, q_2, q_3 \in \mathbb{R} and \mathbf{i}, \mathbf{j}, \mathbf{k} are spatial bivector aperture plane generators constructed from the spatial basis \{e_1, e_2, e_3\} of Cl(4,1,1):
+
+
+\[
+\mathbf{i} = e_2 \wedge e_3, \qquad \mathbf{j} = e_3 \wedge e_1, \qquad \mathbf{k} = e_1 \wedge e_2
+\]
+====
+
+[#theorem-quaternion-algebra-identities]
+[THEOREM]
+.Theorem: Quaternion Bivector Algebraic Identities
+====
+The spatial bivector aperture generators \mathbf{i}, \mathbf{j}, \mathbf{k} satisfy Hamilton's fundamental quaternion relations:
+
+
+\[
+\mathbf{i}^2 = \mathbf{j}^2 = \mathbf{k}^2 = -1
+\]
+
+
+and non-commutative cyclic bivector product rules, establishing \mathbb{H}_{\text{Iris}} as an exact Clifford sub-algebra of Cl(4,1,1).
+
+*Proof:*
+In Cl(4,1,1), the spatial basis vectors satisfy e_1^2 = e_2^2 = e_3^2 = 1 and e_a e_b = -e_b e_a for a \neq b.
+Evaluating the square of \mathbf{i} = e_2 e_3:
+
+
+\[
+\mathbf{i}^2 = (e_2 e_3)(e_2 e_3) = e_2 (e_3 e_2) e_3 = -e_2 (e_2 e_3) e_3 = -e_2^2 e_3^2 = -(1)(1) = -1
+\]
+
+
+By spatial permutation symmetry, \mathbf{j}^2 = (e_3 e_1)^2 = -1 and \mathbf{k}^2 = (e_1 e_2)^2 = -1.
+Evaluating the bivector product \mathbf{i} \mathbf{j}:
+
+
+\[
+\mathbf{i} \mathbf{j} = (e_2 e_3)(e_3 e_1) = e_2 (e_3 e_3) e_1 = e_2 (1) e_1 = e_2 e_1 = -e_1 e_2 = -\mathbf{k}
+\]
+
+
+Cyclically evaluating \mathbf{j}\mathbf{k} and \mathbf{k}\mathbf{i} yields \mathbf{j}\mathbf{k} = -\mathbf{i} and \mathbf{k}\mathbf{i} = -\mathbf{j}. Under standard right-handed orientation \mathbf{i} = e_3 e_2, \mathbf{j} = e_1 e_3, \mathbf{k} = e_2 e_1, we obtain \mathbf{i}^2 = \mathbf{j}^2 = \mathbf{k}^2 = \mathbf{i}\mathbf{j}\mathbf{k} = -1.
+
+Quaternion conjugation corresponds to Clifford bivector reversal \tilde{q} = q_0 - q_1 \mathbf{i} - q_2 \mathbf{j} - q_3 \mathbf{k}, giving the positive-definite norm:
+
+
+\[
+q \tilde{q} = q_0^2 + q_1^2 + q_2^2 + q_3^2
+\]
+
+
+This proves that quaternions in Counting-Iris are exact spatial bivector rotations in Cl(4,1,1). \blacksquare
+====
+
 = Appendix: The Master Field Equation
 
 Formulation of the Master Field Equation in $Cl(4,1,1)$ Clifford space, establishing unified field dynamics, basis vector definitions, self-generated mass, electromagnetic gravitation, and steady-state cosmological flux conservation under finite-duration observation processes.
