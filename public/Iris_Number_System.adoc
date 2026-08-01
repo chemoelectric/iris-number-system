@@ -36,11 +36,11 @@ Under this directional measurement representation:
 
 Positive integers represent measurement operations counting steps in the forward direction, while negative integers represent identical measurement steps in the opposite spatial/algebraic direction from the zero origin.
 
-In this framework, every integer \( n \in \mathbb { Z } \) acts as an active **Operation of Measurement**—both as a directional tally of physical dots and as a discrete projection operator upon the spectrum of the Iris basis \{\bullet, \iota, \varpi, \vartheta\}.
+In this framework, every integer \( n \in \mathbb { Z } \) acts as an active **Operation of Measurement**—both as a directional tally of physical dots and as a discrete projection operator upon the spectrum of the Iris basis \( \{ \bullet , \iota , \varpi , \vartheta \} \).
 
 [NOTE]
 ====
-In the Iris Number System, the notation **etc** (*et cetera*) is explicitly utilized in place of standard mathematical ellipsis dots (\dots) to represent countable infinity. This serves as an intentional reminder to the reader that **etc** signifies *"and indefinitely onwards in similar fashion"*, denoting an active, open-ended operational process of step-by-step measurement. It carries none of the conventional mathematical assumptions or completed-infinity abstractions found in set theory and classical real analysis.
+In the Iris Number System, the notation **etc** (*et cetera*) is explicitly utilized in place of standard mathematical ellipsis dots \( ( \dots ) \) to represent countable infinity. This serves as an intentional reminder to the reader that **etc** signifies *"and indefinitely onwards in similar fashion"*, denoting an active, open-ended operational process of step-by-step measurement. It carries none of the conventional mathematical assumptions or completed-infinity abstractions found in set theory and classical real analysis.
 ====
 
 [NOTE]
@@ -573,7 +573,7 @@ This index provides a canonical reference of all axiomatic Postulates, Theorems,
 * xref:postulate-8[**Postulate 8: Action by Direct Contact via Topological Halos**]
 -- Chapter: *Initial Postulates of the Tautological Structure* | Section: *Initial Postulates of the Tautological Structure*
 
-* xref:postulate-iris-generator[**Postulate 9: Formal Definition of the Iris Generator (\iota)**]
+* xref:postulate-iris-generator[**Postulate 9: Formal Definition of the Iris Generator (\( \iota \))**]
 -- Chapter: *Initial Postulates of the Tautological Structure* | Section: *Initial Postulates of the Tautological Structure*
 
 == Theorems
