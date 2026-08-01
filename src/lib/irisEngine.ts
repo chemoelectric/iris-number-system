@@ -389,10 +389,10 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
   {
     id: 'ax-2',
     name: 'Axiom of Clifford Algebra Cl(4,1,1) Metric Signature',
-    latex: 'e_1^2 = e_2^2 = e_3^2 = e_4^2 = +1, \\quad e_5^2 = -1, \\quad e_0^2 = 0',
+    latex: 'e_1^2 = e_2^2 = e_3^2 = 1, \\quad e_4^2 = 0, \\quad e_+^2 = 1, \\quad e_-^2 = -1',
     domain: 'Clifford Algebra Cl(4,1,1)',
     category: 'Clifford',
-    description: 'Defines the 6-generator Clifford metric with 4 spatial, 1 timelike, and 1 null basis vector.',
+    description: 'Basis vectors {e_1, e_2, e_3, e_4, e_+, e_-} with null vectors e_\\infty = e_+ + e_- and e_0 = \\frac{1}{2}(e_- - e_+).',
   },
   {
     id: 'ax-3',
