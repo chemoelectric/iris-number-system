@@ -31,7 +31,7 @@ The **Iris Number System Deduction & Inference Engine** provides a constructive 
 
 4. **Iris Calculator & Multivector Workbench**
    - Full implementation of the $Cl(4,1,1)$ 6-generator Clifford algebra signature $(+,+,+,+,-,0)$.
-   - Embedded bivector quaternion algebra ($\mathbf{i} = e_{23}, \mathbf{j} = e_{31}, \mathbf{k} = e_{12}$).
+   - Embedded bivector quaternion algebra ($i = e_{23}, j = e_{31}, k = e_{12}$).
    - Discrete Spectrum Arithmetic ($x + \epsilon \cdot \text{residual} + \omega \cdot \text{scale}$) and Nonstandard Analysis Standard Part projection $\text{st}(x)$.
 
 5. **Zeta & Prime Spectrum Visualizer**

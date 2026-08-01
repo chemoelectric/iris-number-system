@@ -580,15 +580,15 @@ A quaternion \( q \in \mathbb{H}_{\text{Iris}} \) in Counting-Iris is a multivec
 
 
 \[
-q = q_0 + q_1 \mathbf{i} + q_2 \mathbf{j} + q_3 \mathbf{k}
+q = q_0 + q_1 i + q_2 j + q_3 k
 \]
 
 
-where \( q_0, q_1, q_2, q_3 \in \mathbb{R} \) and \( \mathbf{i}, \mathbf{j}, \mathbf{k} \) are spatial bivector aperture plane generators constructed from the spatial basis \( \{e_1, e_2, e_3\} \) of \( Cl(4,1,1) \):
+where \( q_0, q_1, q_2, q_3 \in \mathbb{R} \) and \( i, j, k \) are spatial bivector aperture plane generators constructed from the spatial basis \( \{e_1, e_2, e_3\} \) of \( Cl(4,1,1) \):
 
 
 \[
-\mathbf{i} = e_2 \wedge e_3, \qquad \mathbf{j} = e_3 \wedge e_1, \qquad \mathbf{k} = e_1 \wedge e_2
+i = e_2 \wedge e_3, \qquad j = e_3 \wedge e_1, \qquad k = e_1 \wedge e_2
 \]
 ====
 
@@ -596,11 +596,11 @@ where \( q_0, q_1, q_2, q_3 \in \mathbb{R} \) and \( \mathbf{i}, \mathbf{j}, \ma
 [THEOREM]
 .Theorem: Quaternion Bivector Algebraic Identities
 ====
-The spatial bivector aperture generators \( \mathbf{i}, \mathbf{j}, \mathbf{k} \) satisfy Hamilton's fundamental quaternion relations:
+The spatial bivector aperture generators \( i, j, k \) satisfy Hamilton's fundamental quaternion relations:
 
 
 \[
-\mathbf{i}^2 = \mathbf{j}^2 = \mathbf{k}^2 = -1
+i^2 = j^2 = k^2 = -1
 \]
 
 
@@ -608,26 +608,26 @@ and non-commutative cyclic bivector product rules, establishing \( \mathbb{H}_{\
 
 *Proof:*
 In \( Cl(4,1,1) \), the spatial basis vectors satisfy \( e_1^2 = e_2^2 = e_3^2 = 1 \) and \( e_a e_b = -e_b e_a \) for \( a \neq b \).
-Evaluating the square of \( \mathbf{i} = e_2 e_3 \):
+Evaluating the square of \( i = e_2 e_3 \):
 
 
 \[
-\mathbf{i}^2 = (e_2 e_3)(e_2 e_3) = e_2 (e_3 e_2) e_3 = -e_2 (e_2 e_3) e_3 = -e_2^2 e_3^2 = -(1)(1) = -1
+i^2 = (e_2 e_3)(e_2 e_3) = e_2 (e_3 e_2) e_3 = -e_2 (e_2 e_3) e_3 = -e_2^2 e_3^2 = -(1)(1) = -1
 \]
 
 
-By spatial permutation symmetry, \( \mathbf{j}^2 = (e_3 e_1)^2 = -1 \) and \( \mathbf{k}^2 = (e_1 e_2)^2 = -1 \).
-Evaluating the bivector product \( \mathbf{i} \mathbf{j} \):
+By spatial permutation symmetry, \( j^2 = (e_3 e_1)^2 = -1 \) and \( k^2 = (e_1 e_2)^2 = -1 \).
+Evaluating the bivector product \( i j \):
 
 
 \[
-\mathbf{i} \mathbf{j} = (e_2 e_3)(e_3 e_1) = e_2 (e_3 e_3) e_1 = e_2 (1) e_1 = e_2 e_1 = -e_1 e_2 = -\mathbf{k}
+i j = (e_2 e_3)(e_3 e_1) = e_2 (e_3 e_3) e_1 = e_2 (1) e_1 = e_2 e_1 = -e_1 e_2 = -k
 \]
 
 
-Cyclically evaluating \( \mathbf{j}\mathbf{k} \) and \( \mathbf{k}\mathbf{i} \) yields \( \mathbf{j}\mathbf{k} = -\mathbf{i} \) and \( \mathbf{k}\mathbf{i} = -\mathbf{j} \). Under standard right-handed orientation \( \mathbf{i} = e_3 e_2 \), \( \mathbf{j} = e_1 e_3 \), \( \mathbf{k} = e_2 e_1 \), we obtain \( \mathbf{i}^2 = \mathbf{j}^2 = \mathbf{k}^2 = \mathbf{i}\mathbf{j}\mathbf{k} = -1 \).
+Cyclically evaluating \( j k \) and \( k i \) yields \( j k = -i \) and \( k i = -j \). Under standard right-handed orientation \( i = e_3 e_2 \), \( j = e_1 e_3 \), \( k = e_2 e_1 \), we obtain \( i^2 = j^2 = k^2 = i j k = -1 \).
 
-Quaternion conjugation corresponds to Clifford bivector reversal \( \tilde{q} = q_0 - q_1 \mathbf{i} - q_2 \mathbf{j} - q_3 \mathbf{k} \), giving the positive-definite norm:
+Quaternion conjugation corresponds to Clifford bivector reversal \( \tilde{q} = q_0 - q_1 i - q_2 j - q_3 k \), giving the positive-definite norm:
 
 
 \[

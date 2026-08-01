@@ -397,7 +397,7 @@ export const DEFAULT_IRIS_AXIOMS: IrisAxiom[] = [
   {
     id: 'ax-3',
     name: 'Axiom of Quaternion Subalgebra Embedding',
-    latex: '\\mathbf{i} = e_{23}, \\quad \\mathbf{j} = e_{31}, \\quad \\mathbf{k} = e_{12} \\implies \\mathbf{i}^2 = \\mathbf{j}^2 = \\mathbf{k}^2 = \\mathbf{i}\\mathbf{j}\\mathbf{k} = -1',
+    latex: 'i = e_{23}, \\quad j = e_{31}, \\quad k = e_{12} \\implies i^2 = j^2 = k^2 = i j k = -1',
     domain: 'Clifford Algebra Cl(4,1,1)',
     category: 'Clifford',
     description: 'Quaternions H are naturally embedded as the bivector subalgebra of Cl(4,1,1).',
