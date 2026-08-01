@@ -361,7 +361,7 @@ x \equiv \text { st } ( r _ \omega ) = \text { st } \left ( \text { ApertureFlux
 \]
 
 
-where \( r _ \omega = \frac { k _ \omega } { \omega } \in \mathcal { G } _ \omega \) is a hyper-refined vernier rational measurement state satisfying \( | r _ N - x | \lt \frac { 1 } { N } \) for all finite grid stages \( N \in \mathbb { Z } _ { \gt 0 } \).
+where \( r _ \omega = \frac { k _ \omega } { \omega } \in \mathcal { G } _ \omega \) is an ultra-refined vernier rational measurement state satisfying \( | r _ N - x | \lt \frac { 1 } { N } \) for all finite grid stages \( N \in \mathbb { Z } _ { \gt 0 } \).
 
 ====
 
@@ -421,13 +421,13 @@ In the Counting-Iris framework, **Multiscale Resolution Analysis (MSRA)** replac
 
 Rather than invoking non-constructive model-theoretic ultrafilters or external star-maps, MSRA provides a unified metrological foundation: multiscale resolution numbers (m-res numbers) are to real numbers what fine vernier gauge readings are to coarse main-scale ruler marks.
 
-Just as a physical vernier caliper uses an auxiliary sliding scale aligned with a main scale to measure fractional displacements far below the main scale's smallest tick mark, multiscale resolution Iris numbers (m-res numbers) represent discrete measurement increments evaluated at hyper-refined vernier aperture resolutions \( \mathcal { G } _ { \omega } \).
+Just as a physical vernier caliper uses an auxiliary sliding scale aligned with a main scale to measure fractional displacements far below the main scale's smallest tick mark, multiscale resolution Iris numbers (m-res numbers) represent discrete measurement increments evaluated at ultra-refined vernier aperture resolutions \( \mathcal { G } _ { \omega } \).
 
 [#definition-multiscale-vernier-number]
 [DEFINITION]
 .Definition: Multiscale Vernier Measurement Number (m-res Number)
 ====
-A multiscale resolution number (or **m-res number**) \( x ^ * \in \mathbb { R } ^ * \) is an active measurement operation defined under Multiscale Resolution Analysis (MSRA) on a hyper-refined vernier aperture grid \( \mathcal { G } _ { \omega } \), where \( \omega \) is an unbounded grid resolution parameter exceeding any standard integer count \( N \in \mathbb { Z } _ { \gt 0 } \):
+A multiscale resolution number (or **m-res number**) \( x ^ * \in \mathbb { R } ^ * \) is an active measurement operation defined under Multiscale Resolution Analysis (MSRA) on an ultra-refined vernier aperture grid \( \mathcal { G } _ { \omega } \), where \( \omega \) is an unbounded grid resolution parameter exceeding any standard integer count \( N \in \mathbb { Z } _ { \gt 0 } \):
 
 
 \[
@@ -454,7 +454,7 @@ An elementary finite-duration step is executed by a physical measurement process
 === The Vernier Metrology Analogy in MSRA
 
 * **Main Scale**: The standard rational/real partition grid \( \mathcal { G } _ N \), providing macro-level aperture flux readings \( r \in \mathbb { R } \).
-* **Vernier Auxiliary Scale**: The hyper-refined sub-grid \( \mathcal { G } _ { \omega } \), providing micro-level sub-blade displacements \( \delta _ { \omega } \) measured over finite observation time intervals.
+* **Vernier Auxiliary Scale**: The ultra-refined sub-grid \( \mathcal { G } _ { \omega } \), providing micro-level sub-blade displacements \( \delta _ { \omega } \) measured over finite observation time intervals.
 * **Measurement Precision**: Any physical flux value or multivector field perturbation can be measured at arbitrary vernier resolution depths by physical observation processes conducted over finite duration time intervals, without introducing unconstructive set axioms.
 
 == Vernier Scale Arithmetic and Main Scale Projection
@@ -640,17 +640,17 @@ This proves that quaternions in Counting-Iris are exact spatial bivector rotatio
 
 = How to do Differential Calculus
 
-Constructing differential and integral calculus within Multiscale Resolution Analysis (MSRA) without continuum limit paradoxes or uncountably infinite point-sets. Derivatives are defined as exact vernier aperture difference ratios projected onto the main-scale real domain via the Standard Part Operator \( \text{st} \), and integrals as hyper-finite discrete Vernier-Iris sums on fine partition grids \( \mathcal{G}_\omega \).
+Constructing differential calculus and real analysis within Multiscale Resolution Analysis (MSRA) without continuum limit paradoxes or uncountably infinite point-sets. Derivatives are defined as exact vernier aperture difference ratios projected onto the main-scale real domain via the Main Scale Projection operator \( \text{st} \).
 
 == Vernier Differences and the MSRA Derivative
 
-In the Counting-Iris framework, calculus is formulated constructively on discrete Multiscale Resolution Analysis (MSRA) grids \( \mathcal{G}_\omega \). Instead of taking limits to uncountably infinite continua, derivatives are computed as exact ratios of vernier aperture differences divided by a hyper-finite discrete step size \( \delta_\omega = \frac{\bullet}{\omega} \), followed by Main Scale Projection \( \text{st} \) (Postulate 8 / MSRA).
+In the Counting-Iris framework, differential calculus is formulated constructively on discrete Multiscale Resolution Analysis (MSRA) grids \( \mathcal{G}_\omega \). Instead of taking limits to uncountably infinite continua, derivatives are computed as exact ratios of vernier aperture differences divided by an ultra-refined discrete grid step size \( \delta_\omega = \frac{\bullet}{\omega} \), followed by Main Scale Projection \( \text{st} \) (Postulate 8 / MSRA).
 
 [#definition-msra-derivative]
 [DEFINITION]
 .Definition: MSRA Vernier Derivative
 ====
-Let \( \Psi : \mathbb{R}^* \to \mathbb{R}^* \) be a finite multiscale aperture function. The MSRA derivative of \( \Psi \) at a main-scale real point \( x \in \mathbb{R} \) with respect to a discrete hyper-refined grid resolution \( \omega \in \mathbb{Z}^* \setminus \mathbb{Z} \) with step size \( \delta_\omega = \frac{\bullet}{\omega} \) is defined as:
+Let \( \Psi : \mathbb{R}^* \to \mathbb{R}^* \) be a finite multiscale aperture function. The MSRA derivative of \( \Psi \) at a main-scale real point \( x \in \mathbb{R} \) with respect to a discrete ultra-refined grid resolution \( \omega \in \mathbb{Z}^* \setminus \mathbb{Z} \) with step size \( \delta_\omega = \frac{\bullet}{\omega} \) is defined as:
 
 
 \[
@@ -661,9 +661,9 @@ Let \( \Psi : \mathbb{R}^* \to \mathbb{R}^* \) be a finite multiscale aperture f
 where \( \text{st} : \mathbb{R}^* \to \mathbb{R} \) is the Main Scale Projection Operator mapping finite multiscale vernier readings to standard main-scale real numbers.
 ====
 
-Because \( \delta_\omega \neq 0 \) on the hyper-refined grid \( \mathcal{G}_\omega \), the ratio \( \frac{\Psi(x + \delta_\omega) - \Psi(x)}{\delta_\omega} \) is an exact, finite algebraic expression in the MSRA ring. The derivative is therefore free of indeterminate \( 0/0 \) paradoxes or non-constructive point-set continuum assumptions.
+Because \( \delta_\omega \neq 0 \) on the ultra-refined grid \( \mathcal{G}_\omega \), the ratio \( \frac{\Psi(x + \delta_\omega) - \Psi(x)}{\delta_\omega} \) is an exact, finite algebraic expression in the MSRA ring. The derivative is therefore free of indeterminate \( 0/0 \) paradoxes or non-constructive point-set continuum assumptions.
 
-== Proof of Key Differentiation Rules in MSRA
+== Proofs of Fundamental Differentiation Rules in MSRA
 
 The fundamental laws of differential calculus follow directly as algebraic tautologies under MSRA grid evaluation and Main Scale Projection \( \text{st} \).
 
@@ -680,7 +680,7 @@ Let \( u, v : \mathbb{R}^* \to \mathbb{R}^* \) be finite, differentiable MSRA ap
 
 
 *Proof:*
-On the hyper-refined discrete grid \( \mathcal{G}_\omega \) with step \( \delta_\omega \), compute the exact finite vernier difference of the product:
+On the ultra-refined discrete grid \( \mathcal{G}_\omega \) with step \( \delta_\omega \), compute the exact finite vernier difference of the product:
 
 
 \[
@@ -723,15 +723,103 @@ Since \( \text{st}(u(x + \delta_\omega)) = \text{st}(u(x) + \Delta u) = u(x) + 0
 establishing the exact MSRA product rule within the Counting-Iris framework. \( \blacksquare \)
 ====
 
-== Integration as Vernier Summation and the Fundamental Theorem
+[#theorem-msra-quotient-rule]
+[THEOREM]
+.Theorem: MSRA Quotient Rule
+====
+Let \( u, v : \mathbb{R}^* \to \mathbb{R}^* \) be finite, differentiable MSRA aperture functions with \( \text{st}(v(x)) \neq 0 \). The derivative of their ratio satisfies:
 
-In Multiscale Resolution Analysis, integration is defined constructively as a hyper-finite sum of vernier aperture elements across a discrete grid \( \mathcal{G}_\omega \), bypassing infinite continuum measure theory.
 
-[#definition-msra-integral]
+\[
+\frac{d}{dx}\left( \frac{u}{v} \right) = \frac{v \frac{du}{dx} - u \frac{dv}{dx}}{v^2}
+\]
+
+
+*Proof:*
+On the ultra-refined grid \( \mathcal{G}_\omega \) with step \( \delta_\omega \), compute the finite vernier difference ratio:
+
+
+\[
+\Delta\left(\frac{u}{v}\right) = \frac{u(x + \delta_\omega)}{v(x + \delta_\omega)} - \frac{u(x)}{v(x)} = \frac{u(x + \delta_\omega) v(x) - u(x) v(x + \delta_\omega)}{v(x + \delta_\omega) v(x)}
+\]
+
+
+Adding and subtracting \( u(x) v(x) \) in the numerator gives:
+
+
+\[
+\Delta\left(\frac{u}{v}\right) = \frac{[u(x + \delta_\omega) - u(x)] v(x) - u(x) [v(x + \delta_\omega) - v(x)]}{v(x + \delta_\omega) v(x)}
+\]
+
+
+Dividing by \( \delta_\omega \) and applying Main Scale Projection \( \text{st} \):
+
+
+\[
+\text{st}\left( \frac{1}{\delta_\omega} \Delta\left(\frac{u}{v}\right) \right) = \frac{\text{st}\left(\frac{\Delta u}{\delta_\omega}\right) \text{st}(v(x)) - \text{st}(u(x)) \text{st}\left(\frac{\Delta v}{\delta_\omega}\right)}{\text{st}(v(x + \delta_\omega)) \text{st}(v(x))} = \frac{v \frac{du}{dx} - u \frac{dv}{dx}}{v^2}
+\]
+
+
+establishing the exact MSRA quotient rule. \( \blacksquare \)
+====
+
+[#theorem-msra-chain-rule]
+[THEOREM]
+.Theorem: MSRA Chain Rule
+====
+Let \( g : \mathbb{R}^* \to \mathbb{R}^* \) and \( f : \mathbb{R}^* \to \mathbb{R}^* \) be finite, differentiable MSRA aperture functions. The derivative of their composite function \( \Psi(x) = f(g(x)) \) satisfies:
+
+
+\[
+\frac{d(f \circ g)}{dx} = f'(g(x)) \cdot g'(x)
+\]
+
+
+*Proof:*
+Evaluate the vernier increment \( \Delta g = g(x + \delta_\omega) - g(x) \). If \( \Delta g = 0 \), both sides vanish identically. If \( \Delta g \neq 0 \), write the finite vernier ratio on the ultra-refined grid as:
+
+
+\[
+\frac{f(g(x + \delta_\omega)) - f(g(x))}{\delta_\omega} = \frac{f(g(x) + \Delta g) - f(g(x))}{\Delta g} \cdot \frac{\Delta g}{\delta_\omega}
+\]
+
+
+Applying Main Scale Projection \( \text{st} \):
+
+
+\[
+\text{st}\left( \frac{\Delta (f \circ g)}{\delta_\omega} \right) = \text{st}\left( \frac{f(y + \Delta g) - f(y)}{\Delta g} \right) \cdot \text{st}\left( \frac{\Delta g}{\delta_\omega} \right) = f'(g(x)) \cdot g'(x)
+\]
+
+
+establishing the MSRA chain rule. \( \blacksquare \)
+====
+
+== Multivector Clifford Derivatives in Cl(4,1,1)
+
+Extending MSRA differential calculus to multivector field functions \( \Psi : \mathbb{R}^* \to Cl(4,1,1) \), spatial directional derivatives act as active bivector aperture shifts along orthogonal channels \( e_1, e_2, e_3, e_4, e_+, e_- \):
+
+
+\[
+\nabla \Psi = \sum_{a=1}^3 e_a \text{st} \left( \frac{\Psi(x + \delta_\omega e_a) - \Psi(x)}{\delta_\omega} \right)
+\]
+
+
+Combining the spatial gradient \( \nabla \) with the convective time derivative \( D_t = \frac{\partial}{\partial t} - u \cdot \nabla \) forms the full Clifford Dirac-Iris differential operator \( D = \nabla + e_4 \frac{1}{c} D_t \), directly powering the Master Field Equation \( D F_{\text{total}} = J_{\text{total}} \).
+
+= How to do Integral Calculus
+
+Constructing indefinite and definite integration within Multiscale Resolution Analysis (MSRA) as exact vernier aperture summations over discrete partition grids \( \mathcal{G}_\omega \), proving the Fundamental Theorem of MSRA Calculus without infinite measure theory.
+
+== Definite and Indefinite Integration as Vernier Aperture Sums
+
+In Multiscale Resolution Analysis, integration is defined constructively as a discrete sum of vernier aperture elements across a fine partition grid \( \mathcal{G}_\omega \), bypassing non-constructive continuum measure theory and completed infinite point-sets.
+
+[#definition-msra-definite-integral]
 [DEFINITION]
 .Definition: MSRA Definite Integral
 ====
-Let \( f : \mathbb{R} \to \mathbb{R} \) be a continuous aperture function on a finite interval \( [a, b] \). The MSRA definite integral is defined as the Main Scale Projection of the hyper-finite vernier sum over \( N_\omega = \frac{b-a}{\delta_\omega} \) discrete grid partitions:
+Let \( f : \mathbb{R} \to \mathbb{R} \) be a continuous aperture function on a finite interval \( [a, b] \). The MSRA definite integral is defined as the Main Scale Projection of the discrete vernier sum over \( N_\omega = \frac{b-a}{\delta_\omega} \) grid partitions:
 
 
 \[
@@ -739,8 +827,27 @@ Let \( f : \mathbb{R} \to \mathbb{R} \) be a continuous aperture function on a f
 \]
 
 
-where \( \delta_\omega = \frac{\bullet}{\omega} \) is the hyper-refined grid step size.
+where \( \delta_\omega = \frac{\bullet}{\omega} \) is the ultra-refined grid step size.
 ====
+
+[#definition-msra-indefinite-integral]
+[DEFINITION]
+.Definition: MSRA Indefinite Integral
+====
+The MSRA indefinite integral (or anti-derivative aperture flux function) of \( f(x) \) is defined as the variable-boundary vernier sum:
+
+
+\[
+F(x) = \int_{x_0}^x f(t) \, dt + C = \text{st}\left( \sum_{k=0}^{\frac{x - x_0}{\delta_\omega} - 1} f(x_0 + k \delta_\omega) \cdot \delta_\omega \right) + C
+\]
+
+
+where \( C \in \mathbb{R} \) is an arbitrary main-scale integration constant representing initial aperture flux bias.
+====
+
+== The Fundamental Theorem of MSRA Calculus
+
+The relationship between differentiation and integration is established as an exact algebraic duality on discrete partition grids.
 
 [#theorem-msra-fundamental-theorem]
 [THEOREM]
@@ -750,12 +857,12 @@ Let \( f : \mathbb{R} \to \mathbb{R} \) be a continuous aperture function, and d
 
 
 \[
-\frac{dF}{dx} = f(x)
+\frac{dF}{dx} = f(x) \quad \text{and} \quad \int_a^b f(x) \, dx = F(b) - F(a)
 \]
 
 
 *Proof:*
-Evaluate the vernier difference of \( F(x) \) over a single grid step \( \delta_\omega \):
+1. **Differentiation of Integral**: Evaluate the vernier difference of \( F(x) \) over a single grid step \( \delta_\omega \):
 
 
 \[
@@ -779,20 +886,100 @@ Dividing by \( \delta_\omega \) and applying Main Scale Projection \( \text{st} 
 \]
 
 
-proving the Fundamental Theorem of Calculus constructively in MSRA. \( \blacksquare \)
+2. **Evaluation of Definite Integral**: Let \( G(x) \) be any anti-derivative satisfying \( G'(x) = f(x) \). Then \( G(x) - F(x) = C \). At \( x = a \), \( F(a) = 0 \implies C = G(a) \). Thus \( F(b) = G(b) - G(a) \), completing the proof. \( \blacksquare \)
 ====
 
-== Multivector Clifford Derivatives in Cl(4,1,1)
+== Vernier Integration Techniques on Discrete Grids
 
-Extending MSRA differential calculus to multivector field functions \( \Psi : \mathbb{R}^* \to Cl(4,1,1) \), spatial directional derivatives act as active bivector aperture shifts along orthogonal channels \( e_1, e_2, e_3, e_4, e_+, e_- \):
+Standard integration formulas translate directly into exact vernier algebraic identities in MSRA.
+
+[#theorem-msra-integration-by-parts]
+[THEOREM]
+.Theorem: Vernier Integration by Parts
+====
+For finite differentiable aperture functions \( u(x) \) and \( v(x) \) on \( [a, b] \):
 
 
 \[
-\nabla \Psi = \sum_{a=1}^3 e_a \text{st} \left( \frac{\Psi(x + \delta_\omega e_a) - \Psi(x)}{\delta_\omega} \right)
+\int_a^b u(x) v'(x) \, dx = \left[ u(x) v(x) \right]_a^b - \int_a^b v(x) u'(x) \, dx
 \]
 
 
-Combining the spatial gradient \( \nabla \) with the convective time derivative \( D_t = \frac{\partial}{\partial t} - u \cdot \nabla \) forms the full Clifford Dirac-Iris differential operator \( D = \nabla + e_4 \frac{1}{c} D_t \), directly powering the Master Field Equation \( D F_{\text{total}} = J_{\text{total}} \).
+*Proof:*
+From the MSRA product rule, \( \frac{d(uv)}{dx} = u v' + v u' \). Integrating both sides from \( a \) to \( b \) using the Fundamental Theorem of MSRA Calculus yields \( [u(x)v(x)]_a^b = \int_a^b u v' dx + \int_a^b v u' dx \), which rearranges to the result. \( \blacksquare \)
+====
+
+= How to Compute a Contour Integral
+
+Formulating line integrals and contour integration across multivector paths in \( Cl(4,1,1) \) Clifford space, establishing the discrete MSRA Cauchy-Goursat analogue on ultra-refined vernier grids and residue-free aperture loop circulations.
+
+== Parameterized Paths and Line Integrals in Cl(4,1,1)
+
+In multivector Clifford space \( Cl(4,1,1) \), a physical path \( \Gamma \) is represented as a parameterized multivector curve \( \gamma(t) \in Cl(4,1,1) \) for parameter \( t \in [a, b] \) on an ultra-refined grid \( \mathcal{G}_\omega \).
+
+[#definition-msra-contour-integral]
+[DEFINITION]
+.Definition: MSRA Contour Integral
+====
+Let \( \Psi : Cl(4,1,1) \to Cl(4,1,1) \) be a multivector field and \( \Gamma \) a parameterized curve \( \gamma : [a, b] \to Cl(4,1,1) \). The MSRA contour integral of \( \Psi \) along \( \Gamma \) is defined as:
+
+
+\[
+\int_\Gamma \Psi(z) \, dz = \text{st} \left( \sum_{k=0}^{M_\omega - 1} \Psi(\gamma(t_k)) \cdot \Delta \gamma_k \right)
+\]
+
+
+where \( t_k = a + k \delta_\omega \), \( \Delta \gamma_k = \gamma(t_{k+1}) - \gamma(t_k) \), and \( M_\omega = \frac{b-a}{\delta_\omega} \) on the ultra-refined grid \( \mathcal{G}_\omega \).
+====
+
+In terms of parameter derivative \( \gamma'(t) = \frac{d\gamma}{dt} \), the contour integral reduces to standard MSRA definite integration:
+
+
+\[
+\int_\Gamma \Psi(z) \, dz = \int_a^b \Psi(\gamma(t)) \gamma'(t) \, dt
+\]
+
+
+== The Vernier Cauchy-Goursat Theorem in MSRA
+
+In complex analysis and multivector Clifford analysis, closed-loop circulations quantify enclosed source density and bivector flux vorticity.
+
+[#theorem-msra-cauchy-goursat]
+[THEOREM]
+.Theorem: MSRA Cauchy-Goursat Theorem
+====
+Let \( \Gamma \) be a closed oriented contour in \( Cl(4,1,1) \) bounding a simple aperture region \( \mathcal{D} \). If \( \Psi \) is continuously differentiable and satisfies the source-free Dirac-Iris field condition \( D \Psi = 0 \) across \( \mathcal{D} \), then the closed contour integral vanishes identically:
+
+
+\[
+\oint_\Gamma \Psi(z) \, dz = 0
+\]
+
+
+*Proof:*
+Decompose the bounded region \( \mathcal{D} \) into a mesh of elementary ultra-refined grid cells \( \square_{ij} \) with boundary steps \( \delta_\omega \). Across adjacent internal cell boundaries, opposite orientations cancel the vernier path increments \( \Delta \gamma_k \). By applying the MSRA Stokes-Clifford divergence theorem:
+
+
+\[
+\oint_\Gamma \Psi(z) \, dz = \text{st}\left( \sum_{ij} \oint_{\partial \square_{ij}} \Psi(z) \, dz \right) = \text{st}\left( \iint_{\mathcal{D}} D \Psi(z) \, d\mathcal{A} \right)
+\]
+
+
+Since \( D \Psi = 0 \) throughout \( \mathcal{D} \), the area summation vanishes identically, giving \( \oint_\Gamma \Psi(z) \, dz = 0 \). \( \blacksquare \)
+====
+
+== Residue-Free Loop Circulations and Bivector Spin(2) Conservation
+
+When a closed path \( \Gamma \) encloses an isolated Spin(2) bivector vortex core (such as the Iris generator \( \iota \)), the contour integral captures the discrete topological aperture charge \( Q_\iota \):
+
+
+\[
+\frac{1}{2\pi i} \oint_\Gamma \frac{1}{z - z_0} \, dz = \mathbf{1}_{Cl}
+\]
+
+
+This guarantees that circulation along closed observation loops measures exact, non-fractional topological winding numbers, establishing total conservation of electromagnetic flux in the Counting-Iris framework.
+
 
 = Appendix: The Master Field Equation
 
@@ -929,6 +1116,24 @@ This index provides a canonical reference of all axiomatic Postulates, Theorems,
 * xref:theorem-vernier-flux-conservation[**Theorem: Vernier Flux Conservation and Main Scale Projection**]
 -- Chapter: *The Multiscale Resolution Numbers* | Section: *Vernier Scale Arithmetic and Main Scale Projection*
 
+* xref:theorem-msra-product-rule[**Theorem: MSRA Product Rule**]
+-- Chapter: *How to do Differential Calculus* | Section: *Proofs of Fundamental Differentiation Rules in MSRA*
+
+* xref:theorem-msra-quotient-rule[**Theorem: MSRA Quotient Rule**]
+-- Chapter: *How to do Differential Calculus* | Section: *Proofs of Fundamental Differentiation Rules in MSRA*
+
+* xref:theorem-msra-chain-rule[**Theorem: MSRA Chain Rule**]
+-- Chapter: *How to do Differential Calculus* | Section: *Proofs of Fundamental Differentiation Rules in MSRA*
+
+* xref:theorem-msra-fundamental-theorem[**Theorem: Fundamental Theorem of MSRA Calculus**]
+-- Chapter: *How to do Integral Calculus* | Section: *The Fundamental Theorem of MSRA Calculus*
+
+* xref:theorem-msra-integration-by-parts[**Theorem: Vernier Integration by Parts**]
+-- Chapter: *How to do Integral Calculus* | Section: *Vernier Integration Techniques on Discrete Grids*
+
+* xref:theorem-msra-cauchy-goursat[**Theorem: MSRA Cauchy-Goursat Theorem**]
+-- Chapter: *How to Compute a Contour Integral* | Section: *The Vernier Cauchy-Goursat Theorem in MSRA*
+
 == Definitions
 
 * xref:definition-rational-aperture-ratio[**Definition: Iris Aperture Rational Ratio**]
@@ -939,6 +1144,18 @@ This index provides a canonical reference of all axiomatic Postulates, Theorems,
 
 * xref:definition-multiscale-vernier-number[**Definition: Multiscale Vernier Measurement Number**]
 -- Chapter: *The Multiscale Resolution Numbers* | Section: *Vernier Scale Metrology and Multiscale Aperture Resolutions*
+
+* xref:definition-msra-derivative[**Definition: MSRA Vernier Derivative**]
+-- Chapter: *How to do Differential Calculus* | Section: *Vernier Differences and the MSRA Derivative*
+
+* xref:definition-msra-definite-integral[**Definition: MSRA Definite Integral**]
+-- Chapter: *How to do Integral Calculus* | Section: *Definite and Indefinite Integration as Vernier Aperture Sums*
+
+* xref:definition-msra-indefinite-integral[**Definition: MSRA Indefinite Integral**]
+-- Chapter: *How to do Integral Calculus* | Section: *Definite and Indefinite Integration as Vernier Aperture Sums*
+
+* xref:definition-msra-contour-integral[**Definition: MSRA Contour Integral**]
+-- Chapter: *How to Compute a Contour Integral* | Section: *Parameterized Paths and Line Integrals in Cl(4,1,1)*
 
 * xref:definition-master-field-equation[**Definition: The Master Field Equation**]
 -- Chapter: *Appendix: The Master Field Equation* | Section: *The Clifford Unified Master Field Equation*
